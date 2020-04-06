@@ -8,6 +8,9 @@
  *
  * @author Becca
  */
+
+package GUI;
+
 public class HowToPlayScreen extends javax.swing.JFrame {
 
     /**
