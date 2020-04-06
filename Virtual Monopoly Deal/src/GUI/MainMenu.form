@@ -28,10 +28,10 @@
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/howtoplaybutton.jpg"/>
+          <Image iconType="3" name="/images/howtoplaybutton.jpg"/>
         </Property>
         <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/howtoplaybuttonrollover.jpg"/>
+          <Image iconType="3" name="/images/howtoplaybuttonrollover.jpg"/>
         </Property>
       </Properties>
       <Events>
@@ -55,10 +55,10 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/playbutton.jpg"/>
+          <Image iconType="3" name="/images/playbutton.jpg"/>
         </Property>
         <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/playbuttonrollover.jpg"/>
+          <Image iconType="3" name="/images/playbuttonrollover.jpg"/>
         </Property>
       </Properties>
       <Events>
@@ -73,7 +73,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/monopoly_deal_logo_page.jpg"/>
+          <Image iconType="3" name="/images/monopoly_deal_logo_page.jpg"/>
         </Property>
       </Properties>
       <Constraints>

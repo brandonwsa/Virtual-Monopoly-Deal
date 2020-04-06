@@ -28,10 +28,10 @@
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/threeplayer.jpg"/>
+          <Image iconType="3" name="/images/threeplayer.jpg"/>
         </Property>
-        <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/threeplayerchosen.jpg"/>
+        <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/images/threeplayerchosen.jpg"/>
         </Property>
       </Properties>
       <Constraints>
@@ -43,16 +43,10 @@
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/oneplayer.jpg"/>
+          <Image iconType="3" name="/images/oneplayer.jpg"/>
         </Property>
-        <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/oneplayerchosen.jpg"/>
-        </Property>
-        <Property name="rolloverSelectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/oneplayerchosen.jpg"/>
-        </Property>
-        <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/oneplayerchosen.jpg"/>
+        <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/images/oneplayerchosen.jpg"/>
         </Property>
       </Properties>
       <Events>
@@ -67,10 +61,10 @@
     <Component class="javax.swing.JButton" name="jButton3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/twoplayer.jpg"/>
+          <Image iconType="3" name="/images/twoplayer.jpg"/>
         </Property>
-        <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/twoplayerchosen.jpg"/>
+        <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/images/twoplayerchosen.jpg"/>
         </Property>
       </Properties>
       <Constraints>
@@ -82,10 +76,10 @@
     <Component class="javax.swing.JButton" name="jButton4">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/backbutton.jpg"/>
+          <Image iconType="3" name="/images/backbutton.jpg"/>
         </Property>
         <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/backbuttonrollover.jpg"/>
+          <Image iconType="3" name="/images/backbuttonrollover.jpg"/>
         </Property>
       </Properties>
       <Events>
@@ -100,10 +94,10 @@
     <Component class="javax.swing.JButton" name="jButton5">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/playwithbots.jpg"/>
+          <Image iconType="3" name="/images/playwithbots.jpg"/>
         </Property>
         <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/playwithbotsrollover.jpg"/>
+          <Image iconType="3" name="/images/playwithbotsrollover.jpg"/>
         </Property>
       </Properties>
       <Constraints>
@@ -115,10 +109,10 @@
     <Component class="javax.swing.JButton" name="jButton6">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/playwithfriends.jpg"/>
+          <Image iconType="3" name="/images/playwithfriends.jpg"/>
         </Property>
         <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/playwithfriendsrollover.jpg"/>
+          <Image iconType="3" name="/images/playwithfriendsrollover.jpg"/>
         </Property>
       </Properties>
       <Constraints>
@@ -130,12 +124,15 @@
     <Component class="javax.swing.JButton" name="jButton7">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/gobutton.jpg"/>
+          <Image iconType="3" name="/images/gobutton.jpg"/>
         </Property>
         <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/gobuttonrollover.jpg"/>
+          <Image iconType="3" name="/images/gobuttonrollover.jpg"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="1610" y="890" width="200" height="80"/>
@@ -145,7 +142,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/optionsbackground.png"/>
+          <Image iconType="3" name="/images/optionsbackground.png"/>
         </Property>
       </Properties>
       <Constraints>

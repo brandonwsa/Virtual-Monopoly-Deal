@@ -28,10 +28,10 @@
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/backbutton.jpg"/>
+          <Image iconType="3" name="/images/backbutton.jpg"/>
         </Property>
         <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/backbuttonrollover.jpg"/>
+          <Image iconType="3" name="/images/backbuttonrollover.jpg"/>
         </Property>
       </Properties>
       <Events>
@@ -46,7 +46,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/HowToPlayBackground.png"/>
+          <Image iconType="3" name="/images/HowToPlayBackground.png"/>
         </Property>
       </Properties>
       <Constraints>
