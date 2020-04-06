@@ -8,6 +8,8 @@
  *
  * @author Becca
  */
+
+package GUI;
 public class MainMenu extends javax.swing.JFrame {
 
     /**
