@@ -8,6 +8,8 @@
  *
  * @author Becca
  */
+
+package GUI;
 public class PlayScreen extends javax.swing.JFrame {
 
     /**
