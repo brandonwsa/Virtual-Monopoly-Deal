@@ -98,7 +98,7 @@ public class WinnerScreen extends javax.swing.JFrame {
         });
         jLayeredPane1.add(playAgainButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 720, 370, -1));
 
-        moneyEmblem.setIcon(new javax.swing.ImageIcon("D:\\Docs\\Western Stuff\\Semester 4\\Soft Eng I\\Virtual-Monopoly-Deal\\Virtual Monopoly Deal\\images\\money emblem red.png")); // NOI18N
+        moneyEmblem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/money emblem red.png"))); // NOI18N
         jLayeredPane1.add(moneyEmblem, new org.netbeans.lib.awtextra.AbsoluteConstraints(1610, 170, -1, -1));
 
         playersTotalMoney.setEditable(false);
@@ -127,7 +127,7 @@ public class WinnerScreen extends javax.swing.JFrame {
         });
         jLayeredPane1.add(playersTotalProperties, new org.netbeans.lib.awtextra.AbsoluteConstraints(1750, 350, -1, -1));
 
-        background.setIcon(new javax.swing.ImageIcon("D:\\Docs\\Western Stuff\\Semester 4\\Soft Eng I\\Virtual-Monopoly-Deal\\Virtual Monopoly Deal\\images\\winner screen background.png")); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/winner screen background.png"))); // NOI18N
         background.setText("jLabel1");
         jLayeredPane1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 

@@ -25,21 +25,800 @@ public class GamePlayScreen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        confirmExitPanel = new javax.swing.JPanel();
+        areYouSureLabel = new javax.swing.JLabel();
+        yesToExitButton = new javax.swing.JButton();
+        noToExitButton = new javax.swing.JButton();
+        menuPanel = new javax.swing.JPanel();
+        exitGameButton = new javax.swing.JButton();
+        howToPlayButton = new javax.swing.JButton();
+        resumeButton = new javax.swing.JButton();
+        menuLabel = new javax.swing.JLabel();
+        yourHandPanel = new javax.swing.JPanel();
+        handSlot_1 = new javax.swing.JButton();
+        handSlot_2 = new javax.swing.JButton();
+        handSlot_3 = new javax.swing.JButton();
+        handSlot_4 = new javax.swing.JButton();
+        handSlot_5 = new javax.swing.JButton();
+        handSlot_6 = new javax.swing.JButton();
+        handSlot_7 = new javax.swing.JButton();
+        handSlot_8 = new javax.swing.JButton();
+        handSlot_9 = new javax.swing.JButton();
+        handSlot_10 = new javax.swing.JButton();
+        handSlot_11 = new javax.swing.JButton();
+        handSlot_12 = new javax.swing.JButton();
+        player3TotalMoney = new javax.swing.JTextField();
+        propertiesLabel = new javax.swing.JLabel();
+        moneyLabel = new javax.swing.JLabel();
+        discardDeckLabel = new javax.swing.JLabel();
+        discardDeckButton = new javax.swing.JButton();
+        deckButton = new javax.swing.JButton();
+        deckLabel = new javax.swing.JLabel();
+        moneyEmblem1 = new javax.swing.JLabel();
+        viewMenuButton = new javax.swing.JButton();
+        endTurnEarlyButton = new javax.swing.JButton();
+        viewHandButton = new javax.swing.JButton();
+        hideHandButton = new javax.swing.JButton();
+        player3PlayArea = new javax.swing.JPanel();
+        player3MoneySlot = new javax.swing.JButton();
+        player3PropertySlot_1 = new javax.swing.JButton();
+        player3PropertySlot_2 = new javax.swing.JButton();
+        player3PropertySlot_3 = new javax.swing.JButton();
+        player3PropertySlot_4 = new javax.swing.JButton();
+        player3PropertySlot_5 = new javax.swing.JButton();
+        player3PropertySlot_6 = new javax.swing.JButton();
+        player3PropertySlot_7 = new javax.swing.JButton();
+        player3PropertySlot_8 = new javax.swing.JButton();
+        player3PropertySlot_9 = new javax.swing.JButton();
+        player3PropertySlot_10 = new javax.swing.JButton();
+        player3Label = new javax.swing.JLabel();
+        player2PlayArea = new javax.swing.JPanel();
+        player2MoneySlot = new javax.swing.JButton();
+        player2PropertySlot_1 = new javax.swing.JButton();
+        player2PropertySlot_2 = new javax.swing.JButton();
+        player2PropertySlot_3 = new javax.swing.JButton();
+        player2PropertySlot_4 = new javax.swing.JButton();
+        player2PropertySlot_5 = new javax.swing.JButton();
+        player2PropertySlot_6 = new javax.swing.JButton();
+        player2PropertySlot_7 = new javax.swing.JButton();
+        player2PropertySlot_8 = new javax.swing.JButton();
+        player2PropertySlot_9 = new javax.swing.JButton();
+        player2PropertySlot_10 = new javax.swing.JButton();
+        moneyEmblem = new javax.swing.JLabel();
+        player2TotalMoney = new javax.swing.JTextField();
+        player2Label = new javax.swing.JLabel();
+        yourPlayArea = new javax.swing.JPanel();
+        yourMoneySlot = new javax.swing.JButton();
+        yourPropertySlot_1 = new javax.swing.JButton();
+        yourPropertySlot_2 = new javax.swing.JButton();
+        yourPropertySlot_3 = new javax.swing.JButton();
+        yourPropertySlot_4 = new javax.swing.JButton();
+        yourPropertySlot_5 = new javax.swing.JButton();
+        yourPropertySlot_6 = new javax.swing.JButton();
+        yourPropertySlot_7 = new javax.swing.JButton();
+        yourPropertySlot_8 = new javax.swing.JButton();
+        yourPropertySlot_9 = new javax.swing.JButton();
+        yourPropertySlot_10 = new javax.swing.JButton();
+        yourTotalMoney = new javax.swing.JTextField();
+        moneyEmblem2 = new javax.swing.JLabel();
+        youLabel = new javax.swing.JLabel();
+        toWinnerScreenButton = new javax.swing.JButton();
+        showRentPrompt = new javax.swing.JButton();
+        showTestCardsButton = new javax.swing.JButton();
+        tableBackground = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLayeredPane1.setPreferredSize(new java.awt.Dimension(1920, 1080));
+        jLayeredPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        confirmExitPanel.setBackground(new java.awt.Color(153, 0, 0));
+        confirmExitPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 255, 255)));
+        confirmExitPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        areYouSureLabel.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        areYouSureLabel.setForeground(new java.awt.Color(255, 255, 255));
+        areYouSureLabel.setText("Are you sure you want to exit the game?");
+        confirmExitPanel.add(areYouSureLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
+
+        yesToExitButton.setBackground(new java.awt.Color(255, 255, 255));
+        yesToExitButton.setForeground(new java.awt.Color(0, 0, 0));
+        yesToExitButton.setText("Yes");
+        yesToExitButton.setBorder(exitGameButton.getBorder());
+        yesToExitButton.setPreferredSize(new java.awt.Dimension(128, 32));
+        yesToExitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yesToExitButtonActionPerformed(evt);
+            }
+        });
+        confirmExitPanel.add(yesToExitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
+
+        noToExitButton.setBackground(new java.awt.Color(255, 255, 255));
+        noToExitButton.setForeground(new java.awt.Color(0, 0, 0));
+        noToExitButton.setText("Nope, nevermind!");
+        noToExitButton.setBorder(exitGameButton.getBorder());
+        noToExitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                noToExitButtonActionPerformed(evt);
+            }
+        });
+        confirmExitPanel.add(noToExitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, -1, -1));
+
+        confirmExitPanel.setVisible(false);
+
+        jLayeredPane1.add(confirmExitPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 400, 420, 150));
+
+        menuPanel.setBackground(new java.awt.Color(153, 0, 0));
+        menuPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 255, 255)));
+        menuPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        menuPanel.setVisible(false);
+
+        exitGameButton.setBackground(new java.awt.Color(255, 255, 255));
+        exitGameButton.setForeground(new java.awt.Color(0, 0, 0));
+        exitGameButton.setText("Exit Game");
+        exitGameButton.setPreferredSize(new java.awt.Dimension(100, 40));
+        exitGameButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitGameButtonActionPerformed(evt);
+            }
+        });
+        menuPanel.add(exitGameButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 190, 40));
+
+        howToPlayButton.setBackground(new java.awt.Color(255, 255, 255));
+        howToPlayButton.setForeground(new java.awt.Color(0, 0, 0));
+        howToPlayButton.setText("How To Play");
+        howToPlayButton.setBorder(exitGameButton.getBorder());
+        howToPlayButton.setPreferredSize(new java.awt.Dimension(100, 40));
+        howToPlayButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                howToPlayButtonActionPerformed(evt);
+            }
+        });
+        menuPanel.add(howToPlayButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 190, -1));
+
+        resumeButton.setBackground(new java.awt.Color(255, 255, 255));
+        resumeButton.setForeground(new java.awt.Color(0, 0, 0));
+        resumeButton.setText("Resume");
+        resumeButton.setBorder(exitGameButton.getBorder());
+        resumeButton.setPreferredSize(new java.awt.Dimension(100, 40));
+        resumeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resumeButtonActionPerformed(evt);
+            }
+        });
+        menuPanel.add(resumeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 190, -1));
+
+        menuLabel.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        menuLabel.setForeground(new java.awt.Color(255, 255, 255));
+        menuLabel.setText("Menu");
+        menuPanel.add(menuLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, -1, -1));
+
+        jLayeredPane1.add(menuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 480, 210, 280));
+
+        yourHandPanel.setBackground(new java.awt.Color(153,0,0,150));
+        yourHandPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 255, 255)));
+        yourHandPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        handSlot_1.setBackground(new java.awt.Color(153, 0, 0));
+        handSlot_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png"))); // NOI18N
+        handSlot_1.setBorder(null);
+        handSlot_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                handSlot_1ActionPerformed(evt);
+            }
+        });
+        yourHandPanel.add(handSlot_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 150, 228));
+
+        handSlot_2.setBackground(new java.awt.Color(153, 0, 0));
+        handSlot_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png"))); // NOI18N
+        handSlot_2.setBorder(null);
+        handSlot_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                handSlot_2ActionPerformed(evt);
+            }
+        });
+        yourHandPanel.add(handSlot_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 150, 228));
+
+        handSlot_3.setBackground(new java.awt.Color(153, 0, 0));
+        handSlot_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png"))); // NOI18N
+        handSlot_3.setBorder(null);
+        handSlot_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                handSlot_3ActionPerformed(evt);
+            }
+        });
+        yourHandPanel.add(handSlot_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 150, 228));
+
+        handSlot_4.setBackground(new java.awt.Color(153, 0, 0));
+        handSlot_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png"))); // NOI18N
+        handSlot_4.setBorder(null);
+        handSlot_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                handSlot_4ActionPerformed(evt);
+            }
+        });
+        yourHandPanel.add(handSlot_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 150, 228));
+
+        handSlot_5.setBackground(new java.awt.Color(153, 0, 0));
+        handSlot_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png"))); // NOI18N
+        handSlot_5.setBorder(null);
+        handSlot_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                handSlot_5ActionPerformed(evt);
+            }
+        });
+        yourHandPanel.add(handSlot_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, 150, 228));
+
+        handSlot_6.setBackground(new java.awt.Color(153, 0, 0));
+        handSlot_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png"))); // NOI18N
+        handSlot_6.setBorder(null);
+        handSlot_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                handSlot_6ActionPerformed(evt);
+            }
+        });
+        yourHandPanel.add(handSlot_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 10, 150, 228));
+
+        handSlot_7.setBackground(new java.awt.Color(153, 0, 0));
+        handSlot_7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png"))); // NOI18N
+        handSlot_7.setBorder(null);
+        handSlot_7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                handSlot_7ActionPerformed(evt);
+            }
+        });
+        yourHandPanel.add(handSlot_7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 150, 228));
+
+        handSlot_8.setBackground(new java.awt.Color(153, 0, 0));
+        handSlot_8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png"))); // NOI18N
+        handSlot_8.setBorder(null);
+        handSlot_8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                handSlot_8ActionPerformed(evt);
+            }
+        });
+        yourHandPanel.add(handSlot_8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 150, 228));
+
+        handSlot_9.setBackground(new java.awt.Color(153, 0, 0));
+        handSlot_9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png"))); // NOI18N
+        handSlot_9.setBorder(null);
+        handSlot_9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                handSlot_9ActionPerformed(evt);
+            }
+        });
+        yourHandPanel.add(handSlot_9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, 150, 228));
+
+        handSlot_10.setBackground(new java.awt.Color(153, 0, 0));
+        handSlot_10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png"))); // NOI18N
+        handSlot_10.setBorder(null);
+        handSlot_10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                handSlot_10ActionPerformed(evt);
+            }
+        });
+        yourHandPanel.add(handSlot_10, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, 150, 228));
+
+        handSlot_11.setBackground(new java.awt.Color(153, 0, 0));
+        handSlot_11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png"))); // NOI18N
+        handSlot_11.setBorder(null);
+        handSlot_11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                handSlot_11ActionPerformed(evt);
+            }
+        });
+        yourHandPanel.add(handSlot_11, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 250, 150, 228));
+
+        handSlot_12.setBackground(new java.awt.Color(153, 0, 0));
+        handSlot_12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png"))); // NOI18N
+        handSlot_12.setBorder(null);
+        handSlot_12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                handSlot_12ActionPerformed(evt);
+            }
+        });
+        yourHandPanel.add(handSlot_12, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 250, 150, 228));
+
+        yourHandPanel.setVisible(false);
+
+        jLayeredPane1.add(yourHandPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 280, 970, 490));
+
+        player3TotalMoney.setEditable(false);
+        player3TotalMoney.setBackground(null);
+        player3TotalMoney.setFont(new java.awt.Font("Eras Demi ITC", 0, 54)); // NOI18N
+        player3TotalMoney.setForeground(new java.awt.Color(255, 255, 255));
+        player3TotalMoney.setText("0");
+        player3TotalMoney.setBorder(null);
+        player3TotalMoney.setOpaque(false);
+        jLayeredPane1.add(player3TotalMoney, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, 70, -1));
+
+        propertiesLabel.setFont(new java.awt.Font("Eras Demi ITC", 0, 24)); // NOI18N
+        propertiesLabel.setForeground(new java.awt.Color(255, 255, 255));
+        propertiesLabel.setText("Properties:");
+        jLayeredPane1.add(propertiesLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, -1, -1));
+
+        moneyLabel.setFont(new java.awt.Font("Eras Demi ITC", 0, 24)); // NOI18N
+        moneyLabel.setForeground(new java.awt.Color(255, 255, 255));
+        moneyLabel.setText("Money:");
+        jLayeredPane1.add(moneyLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, -1, -1));
+
+        discardDeckLabel.setFont(new java.awt.Font("Eras Demi ITC", 0, 24)); // NOI18N
+        discardDeckLabel.setForeground(new java.awt.Color(255, 255, 255));
+        discardDeckLabel.setText("Discard Deck:");
+        jLayeredPane1.add(discardDeckLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 10, -1, -1));
+
+        discardDeckButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        discardDeckButton.setBorder(null);
+        discardDeckButton.setContentAreaFilled(false);
+        jLayeredPane1.add(discardDeckButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 40, -1, -1));
+
+        deckButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back_of_card.png"))); // NOI18N
+        deckButton.setBorder(null);
+        deckButton.setContentAreaFilled(false);
+        jLayeredPane1.add(deckButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 40, -1, -1));
+
+        deckLabel.setFont(new java.awt.Font("Eras Demi ITC", 0, 24)); // NOI18N
+        deckLabel.setForeground(new java.awt.Color(255, 255, 255));
+        deckLabel.setText("Deck:");
+        jLayeredPane1.add(deckLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, -1, -1));
+
+        moneyEmblem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/money emblem red.png"))); // NOI18N
+        jLayeredPane1.add(moneyEmblem1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 70, -1));
+
+        viewMenuButton.setBackground(new java.awt.Color(153, 0, 0));
+        viewMenuButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        viewMenuButton.setForeground(new java.awt.Color(255, 255, 255));
+        viewMenuButton.setText("View Menu");
+        viewMenuButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        viewMenuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewMenuButtonActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(viewMenuButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 120, 140, 50));
+
+        endTurnEarlyButton.setBackground(new java.awt.Color(153, 0, 0));
+        endTurnEarlyButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        endTurnEarlyButton.setForeground(new java.awt.Color(255, 255, 255));
+        endTurnEarlyButton.setText("End Turn Early");
+        endTurnEarlyButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        endTurnEarlyButton.setPreferredSize(new java.awt.Dimension(160, 50));
+        jLayeredPane1.add(endTurnEarlyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 110, -1, -1));
+
+        viewHandButton.setBackground(new java.awt.Color(153, 0, 0));
+        viewHandButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        viewHandButton.setForeground(new java.awt.Color(255, 255, 255));
+        viewHandButton.setText("View Hand");
+        viewHandButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        viewHandButton.setPreferredSize(new java.awt.Dimension(160, 50));
+        viewHandButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewHandButtonActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(viewHandButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1410, 110, -1, -1));
+
+        hideHandButton.setBackground(new java.awt.Color(153, 0, 0));
+        hideHandButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        hideHandButton.setForeground(new java.awt.Color(255, 255, 255));
+        hideHandButton.setText("Hide Hand");
+        hideHandButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        hideHandButton.setPreferredSize(new java.awt.Dimension(160, 50));
+        hideHandButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hideHandButtonActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(hideHandButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1620, 110, -1, -1));
+
+        player3PlayArea.setBackground(new java.awt.Color(0, 0, 0));
+        player3PlayArea.setOpaque(false);
+        player3PlayArea.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        player3MoneySlot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3MoneySlot.setBorder(null);
+        player3MoneySlot.setContentAreaFilled(false);
+        player3MoneySlot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3MoneySlotActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3MoneySlot, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
+
+        player3PropertySlot_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_1.setBorder(null);
+        player3PropertySlot_1.setContentAreaFilled(false);
+        player3PlayArea.add(player3PropertySlot_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, -1, -1));
+
+        player3PropertySlot_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_2.setBorder(null);
+        player3PropertySlot_2.setContentAreaFilled(false);
+        player3PlayArea.add(player3PropertySlot_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 10, -1, -1));
+
+        player3PropertySlot_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_3.setBorder(null);
+        player3PropertySlot_3.setContentAreaFilled(false);
+        player3PlayArea.add(player3PropertySlot_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, -1, -1));
+
+        player3PropertySlot_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_4.setBorder(null);
+        player3PropertySlot_4.setContentAreaFilled(false);
+        player3PlayArea.add(player3PropertySlot_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 10, -1, -1));
+
+        player3PropertySlot_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_5.setBorder(null);
+        player3PropertySlot_5.setContentAreaFilled(false);
+        player3PlayArea.add(player3PropertySlot_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 10, -1, -1));
+
+        player3PropertySlot_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_6.setBorder(null);
+        player3PropertySlot_6.setContentAreaFilled(false);
+        player3PlayArea.add(player3PropertySlot_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 10, -1, -1));
+
+        player3PropertySlot_7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_7.setBorder(null);
+        player3PropertySlot_7.setContentAreaFilled(false);
+        player3PlayArea.add(player3PropertySlot_7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 10, -1, -1));
+
+        player3PropertySlot_8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_8.setBorder(null);
+        player3PropertySlot_8.setContentAreaFilled(false);
+        player3PlayArea.add(player3PropertySlot_8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 10, -1, -1));
+
+        player3PropertySlot_9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_9.setBorder(null);
+        player3PropertySlot_9.setContentAreaFilled(false);
+        player3PlayArea.add(player3PropertySlot_9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 10, -1, -1));
+
+        player3PropertySlot_10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_10.setBorder(null);
+        player3PropertySlot_10.setContentAreaFilled(false);
+        player3PlayArea.add(player3PropertySlot_10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1750, 10, -1, -1));
+
+        player3Label.setFont(new java.awt.Font("Eras Demi ITC", 0, 16)); // NOI18N
+        player3Label.setForeground(new java.awt.Color(255, 255, 255));
+        player3Label.setText("Player3:");
+        player3PlayArea.add(player3Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
+
+        jLayeredPane1.add(player3PlayArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 1910, 250));
+
+        player2PlayArea.setBackground(new java.awt.Color(0, 0, 0));
+        player2PlayArea.setOpaque(false);
+        player2PlayArea.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        player2MoneySlot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2MoneySlot.setBorder(null);
+        player2MoneySlot.setContentAreaFilled(false);
+        player2MoneySlot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2MoneySlotActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2MoneySlot, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
+
+        player2PropertySlot_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_1.setBorder(null);
+        player2PropertySlot_1.setContentAreaFilled(false);
+        player2PlayArea.add(player2PropertySlot_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, -1, -1));
+
+        player2PropertySlot_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_2.setBorder(null);
+        player2PropertySlot_2.setContentAreaFilled(false);
+        player2PlayArea.add(player2PropertySlot_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 10, -1, -1));
+
+        player2PropertySlot_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_3.setBorder(null);
+        player2PropertySlot_3.setContentAreaFilled(false);
+        player2PlayArea.add(player2PropertySlot_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, -1, -1));
+
+        player2PropertySlot_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_4.setBorder(null);
+        player2PropertySlot_4.setContentAreaFilled(false);
+        player2PlayArea.add(player2PropertySlot_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 10, -1, -1));
+
+        player2PropertySlot_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_5.setBorder(null);
+        player2PropertySlot_5.setContentAreaFilled(false);
+        player2PlayArea.add(player2PropertySlot_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 10, -1, -1));
+
+        player2PropertySlot_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_6.setBorder(null);
+        player2PropertySlot_6.setContentAreaFilled(false);
+        player2PlayArea.add(player2PropertySlot_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 10, -1, -1));
+
+        player2PropertySlot_7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_7.setBorder(null);
+        player2PropertySlot_7.setContentAreaFilled(false);
+        player2PlayArea.add(player2PropertySlot_7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 10, -1, -1));
+
+        player2PropertySlot_8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_8.setBorder(null);
+        player2PropertySlot_8.setContentAreaFilled(false);
+        player2PlayArea.add(player2PropertySlot_8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 10, -1, -1));
+
+        player2PropertySlot_9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_9.setBorder(null);
+        player2PropertySlot_9.setContentAreaFilled(false);
+        player2PlayArea.add(player2PropertySlot_9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 10, -1, -1));
+
+        player2PropertySlot_10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_10.setBorder(null);
+        player2PropertySlot_10.setContentAreaFilled(false);
+        player2PlayArea.add(player2PropertySlot_10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1750, 10, -1, -1));
+
+        moneyEmblem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/money emblem red.png"))); // NOI18N
+        player2PlayArea.add(moneyEmblem, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 70, -1));
+
+        player2TotalMoney.setEditable(false);
+        player2TotalMoney.setBackground(null);
+        player2TotalMoney.setFont(new java.awt.Font("Eras Demi ITC", 0, 54)); // NOI18N
+        player2TotalMoney.setForeground(new java.awt.Color(255, 255, 255));
+        player2TotalMoney.setText("0");
+        player2TotalMoney.setBorder(null);
+        player2TotalMoney.setOpaque(false);
+        player2TotalMoney.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2TotalMoneyActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2TotalMoney, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 70, -1));
+
+        player2Label.setFont(new java.awt.Font("Eras Demi ITC", 0, 16)); // NOI18N
+        player2Label.setForeground(new java.awt.Color(255, 255, 255));
+        player2Label.setText("Player2:");
+        player2PlayArea.add(player2Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
+
+        jLayeredPane1.add(player2PlayArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 540, 1910, 250));
+
+        yourPlayArea.setBackground(new java.awt.Color(0, 0, 0));
+        yourPlayArea.setOpaque(false);
+        yourPlayArea.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        yourMoneySlot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_money_slot.png"))); // NOI18N
+        yourMoneySlot.setBorder(null);
+        yourMoneySlot.setContentAreaFilled(false);
+        yourPlayArea.add(yourMoneySlot, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
+
+        yourPropertySlot_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_property_slot.png"))); // NOI18N
+        yourPropertySlot_1.setBorder(null);
+        yourPropertySlot_1.setContentAreaFilled(false);
+        yourPlayArea.add(yourPropertySlot_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, -1, -1));
+
+        yourPropertySlot_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_property_slot.png"))); // NOI18N
+        yourPropertySlot_2.setBorder(null);
+        yourPropertySlot_2.setContentAreaFilled(false);
+        yourPlayArea.add(yourPropertySlot_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 10, -1, -1));
+
+        yourPropertySlot_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_property_slot.png"))); // NOI18N
+        yourPropertySlot_3.setBorder(null);
+        yourPropertySlot_3.setContentAreaFilled(false);
+        yourPlayArea.add(yourPropertySlot_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, -1, -1));
+
+        yourPropertySlot_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_property_slot.png"))); // NOI18N
+        yourPropertySlot_4.setBorder(null);
+        yourPropertySlot_4.setContentAreaFilled(false);
+        yourPlayArea.add(yourPropertySlot_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 10, -1, -1));
+
+        yourPropertySlot_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_property_slot.png"))); // NOI18N
+        yourPropertySlot_5.setBorder(null);
+        yourPropertySlot_5.setContentAreaFilled(false);
+        yourPlayArea.add(yourPropertySlot_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 10, -1, -1));
+
+        yourPropertySlot_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_property_slot.png"))); // NOI18N
+        yourPropertySlot_6.setBorder(null);
+        yourPropertySlot_6.setContentAreaFilled(false);
+        yourPlayArea.add(yourPropertySlot_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 10, -1, -1));
+
+        yourPropertySlot_7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_property_slot.png"))); // NOI18N
+        yourPropertySlot_7.setBorder(null);
+        yourPropertySlot_7.setContentAreaFilled(false);
+        yourPlayArea.add(yourPropertySlot_7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 10, -1, -1));
+
+        yourPropertySlot_8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_property_slot.png"))); // NOI18N
+        yourPropertySlot_8.setBorder(null);
+        yourPropertySlot_8.setContentAreaFilled(false);
+        yourPlayArea.add(yourPropertySlot_8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 10, -1, -1));
+
+        yourPropertySlot_9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_property_slot.png"))); // NOI18N
+        yourPropertySlot_9.setBorder(null);
+        yourPropertySlot_9.setContentAreaFilled(false);
+        yourPlayArea.add(yourPropertySlot_9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 10, -1, -1));
+
+        yourPropertySlot_10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_property_slot.png"))); // NOI18N
+        yourPropertySlot_10.setBorder(null);
+        yourPropertySlot_10.setContentAreaFilled(false);
+        yourPlayArea.add(yourPropertySlot_10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1750, 10, -1, -1));
+
+        yourTotalMoney.setEditable(false);
+        yourTotalMoney.setBackground(null);
+        yourTotalMoney.setFont(new java.awt.Font("Eras Demi ITC", 0, 54)); // NOI18N
+        yourTotalMoney.setForeground(new java.awt.Color(255, 255, 255));
+        yourTotalMoney.setText("0");
+        yourTotalMoney.setBorder(null);
+        yourTotalMoney.setOpaque(false);
+        yourPlayArea.add(yourTotalMoney, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 70, -1));
+
+        moneyEmblem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/money emblem red.png"))); // NOI18N
+        yourPlayArea.add(moneyEmblem2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 70, -1));
+
+        youLabel.setFont(new java.awt.Font("Eras Demi ITC", 0, 16)); // NOI18N
+        youLabel.setForeground(new java.awt.Color(255, 255, 255));
+        youLabel.setText("You:");
+        yourPlayArea.add(youLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
+
+        jLayeredPane1.add(yourPlayArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 790, 1910, 250));
+
+        toWinnerScreenButton.setText("winner screen");
+        toWinnerScreenButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toWinnerScreenButtonActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(toWinnerScreenButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 10, -1, -1));
+
+        showRentPrompt.setText("show rent prompt");
+        jLayeredPane1.add(showRentPrompt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 10, -1, -1));
+
+        showTestCardsButton.setText("show test cards");
+        showTestCardsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showTestCardsButtonActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(showTestCardsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1510, 10, -1, -1));
+
+        tableBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/table background.png"))); // NOI18N
+        tableBackground.setText("jLabel1");
+        tableBackground.setPreferredSize(new java.awt.Dimension(1920, 1080));
+        jLayeredPane1.add(tableBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void toWinnerScreenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toWinnerScreenButtonActionPerformed
+        WinnerScreen WS = new WinnerScreen();
+        WS.setVisible(true);
+        this.setVisible(false); //sets game play screen view to false
+    }//GEN-LAST:event_toWinnerScreenButtonActionPerformed
+
+    private void player2TotalMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2TotalMoneyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2TotalMoneyActionPerformed
+
+    private void viewMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMenuButtonActionPerformed
+        menuPanel.setVisible(true); //pops menu up
+        
+    }//GEN-LAST:event_viewMenuButtonActionPerformed
+
+    private void resumeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resumeButtonActionPerformed
+        menuPanel.setVisible(false);
+    }//GEN-LAST:event_resumeButtonActionPerformed
+
+    private void exitGameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitGameButtonActionPerformed
+        menuPanel.setVisible(false);
+        confirmExitPanel.setVisible(true);
+    }//GEN-LAST:event_exitGameButtonActionPerformed
+
+    private void yesToExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yesToExitButtonActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_yesToExitButtonActionPerformed
+
+    private void noToExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noToExitButtonActionPerformed
+        confirmExitPanel.setVisible(false);
+        menuPanel.setVisible(true);
+    }//GEN-LAST:event_noToExitButtonActionPerformed
+
+    private void howToPlayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_howToPlayButtonActionPerformed
+        HowToPlayScreen HTPS = new HowToPlayScreen();
+        HTPS.setVisible(true);
+    }//GEN-LAST:event_howToPlayButtonActionPerformed
+
+    private void handSlot_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handSlot_1ActionPerformed
+        
+    }//GEN-LAST:event_handSlot_1ActionPerformed
+
+    private void handSlot_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handSlot_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_handSlot_2ActionPerformed
+
+    private void handSlot_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handSlot_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_handSlot_3ActionPerformed
+
+    private void handSlot_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handSlot_4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_handSlot_4ActionPerformed
+
+    private void handSlot_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handSlot_5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_handSlot_5ActionPerformed
+
+    private void handSlot_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handSlot_6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_handSlot_6ActionPerformed
+
+    private void handSlot_7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handSlot_7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_handSlot_7ActionPerformed
+
+    private void handSlot_8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handSlot_8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_handSlot_8ActionPerformed
+
+    private void handSlot_9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handSlot_9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_handSlot_9ActionPerformed
+
+    private void handSlot_10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handSlot_10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_handSlot_10ActionPerformed
+
+    private void handSlot_11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handSlot_11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_handSlot_11ActionPerformed
+
+    private void handSlot_12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handSlot_12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_handSlot_12ActionPerformed
+
+    private void viewHandButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewHandButtonActionPerformed
+        yourHandPanel.setVisible(true);
+    }//GEN-LAST:event_viewHandButtonActionPerformed
+
+    private void hideHandButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hideHandButtonActionPerformed
+        yourHandPanel.setVisible(false);
+    }//GEN-LAST:event_hideHandButtonActionPerformed
+
+    private void player2MoneySlotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2MoneySlotActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2MoneySlotActionPerformed
+
+    private void player3MoneySlotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3MoneySlotActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3MoneySlotActionPerformed
+
+    private void showTestCardsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showTestCardsButtonActionPerformed
+        //played cards
+        yourMoneySlot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/$1M-money-card1 (Custom).png")));
+        yourPropertySlot_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/brown-property-card1 (Custom).png")));
+        yourPropertySlot_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/dark-blue-property-card1 (Custom).png")));
+        yourTotalMoney.setText("1");
+        
+        //cards in hand
+        handSlot_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/blue-and-green-rent-card1 (Custom).png")));
+        handSlot_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/force-deal-action-card3 (Custom).png")));
+        handSlot_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/$10M-money-card (Custom).png")));
+        handSlot_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/green-property-card2 (Custom).png")));
+        
+        //player 2 cards
+        player2MoneySlot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/$5M-money-card1 (Custom).png")));
+        player2PropertySlot_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/orange-property-card1 (Custom).png")));
+        player2PropertySlot_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/red-property-card1 (Custom).png")));
+        player2PropertySlot_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/green-property-card1 (Custom).png")));
+        player2TotalMoney.setText("5");
+                
+        //player 3 cards
+        player3MoneySlot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/$10M-money-card (Custom).png")));
+        player3PropertySlot_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/railroad-property-card2 (Custom).png")));
+        player3TotalMoney.setText("10");
+        
+    }//GEN-LAST:event_showTestCardsButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,5 +856,87 @@ public class GamePlayScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel areYouSureLabel;
+    private javax.swing.JPanel confirmExitPanel;
+    private javax.swing.JButton deckButton;
+    private javax.swing.JLabel deckLabel;
+    private javax.swing.JButton discardDeckButton;
+    private javax.swing.JLabel discardDeckLabel;
+    private javax.swing.JButton endTurnEarlyButton;
+    private javax.swing.JButton exitGameButton;
+    private javax.swing.JButton handSlot_1;
+    private javax.swing.JButton handSlot_10;
+    private javax.swing.JButton handSlot_11;
+    private javax.swing.JButton handSlot_12;
+    private javax.swing.JButton handSlot_2;
+    private javax.swing.JButton handSlot_3;
+    private javax.swing.JButton handSlot_4;
+    private javax.swing.JButton handSlot_5;
+    private javax.swing.JButton handSlot_6;
+    private javax.swing.JButton handSlot_7;
+    private javax.swing.JButton handSlot_8;
+    private javax.swing.JButton handSlot_9;
+    private javax.swing.JButton hideHandButton;
+    private javax.swing.JButton howToPlayButton;
+    private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JLabel menuLabel;
+    private javax.swing.JPanel menuPanel;
+    private javax.swing.JLabel moneyEmblem;
+    private javax.swing.JLabel moneyEmblem1;
+    private javax.swing.JLabel moneyEmblem2;
+    private javax.swing.JLabel moneyLabel;
+    private javax.swing.JButton noToExitButton;
+    private javax.swing.JLabel player2Label;
+    private javax.swing.JButton player2MoneySlot;
+    private javax.swing.JPanel player2PlayArea;
+    private javax.swing.JButton player2PropertySlot_1;
+    private javax.swing.JButton player2PropertySlot_10;
+    private javax.swing.JButton player2PropertySlot_2;
+    private javax.swing.JButton player2PropertySlot_3;
+    private javax.swing.JButton player2PropertySlot_4;
+    private javax.swing.JButton player2PropertySlot_5;
+    private javax.swing.JButton player2PropertySlot_6;
+    private javax.swing.JButton player2PropertySlot_7;
+    private javax.swing.JButton player2PropertySlot_8;
+    private javax.swing.JButton player2PropertySlot_9;
+    private javax.swing.JTextField player2TotalMoney;
+    private javax.swing.JLabel player3Label;
+    private javax.swing.JButton player3MoneySlot;
+    private javax.swing.JPanel player3PlayArea;
+    private javax.swing.JButton player3PropertySlot_1;
+    private javax.swing.JButton player3PropertySlot_10;
+    private javax.swing.JButton player3PropertySlot_2;
+    private javax.swing.JButton player3PropertySlot_3;
+    private javax.swing.JButton player3PropertySlot_4;
+    private javax.swing.JButton player3PropertySlot_5;
+    private javax.swing.JButton player3PropertySlot_6;
+    private javax.swing.JButton player3PropertySlot_7;
+    private javax.swing.JButton player3PropertySlot_8;
+    private javax.swing.JButton player3PropertySlot_9;
+    private javax.swing.JTextField player3TotalMoney;
+    private javax.swing.JLabel propertiesLabel;
+    private javax.swing.JButton resumeButton;
+    private javax.swing.JButton showRentPrompt;
+    private javax.swing.JButton showTestCardsButton;
+    private javax.swing.JLabel tableBackground;
+    private javax.swing.JButton toWinnerScreenButton;
+    private javax.swing.JButton viewHandButton;
+    private javax.swing.JButton viewMenuButton;
+    private javax.swing.JButton yesToExitButton;
+    private javax.swing.JLabel youLabel;
+    private javax.swing.JPanel yourHandPanel;
+    private javax.swing.JButton yourMoneySlot;
+    private javax.swing.JPanel yourPlayArea;
+    private javax.swing.JButton yourPropertySlot_1;
+    private javax.swing.JButton yourPropertySlot_10;
+    private javax.swing.JButton yourPropertySlot_2;
+    private javax.swing.JButton yourPropertySlot_3;
+    private javax.swing.JButton yourPropertySlot_4;
+    private javax.swing.JButton yourPropertySlot_5;
+    private javax.swing.JButton yourPropertySlot_6;
+    private javax.swing.JButton yourPropertySlot_7;
+    private javax.swing.JButton yourPropertySlot_8;
+    private javax.swing.JButton yourPropertySlot_9;
+    private javax.swing.JTextField yourTotalMoney;
     // End of variables declaration//GEN-END:variables
 }
