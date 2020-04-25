@@ -104,7 +104,6 @@ public class GamePlayScreen extends javax.swing.JFrame {
         moneyEmblem2 = new javax.swing.JLabel();
         youLabel = new javax.swing.JLabel();
         toWinnerScreenButton = new javax.swing.JButton();
-        showRentPrompt = new javax.swing.JButton();
         showTestCardsButton = new javax.swing.JButton();
         tableBackground = new javax.swing.JLabel();
 
@@ -657,9 +656,6 @@ public class GamePlayScreen extends javax.swing.JFrame {
         });
         jLayeredPane1.add(toWinnerScreenButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 10, -1, -1));
 
-        showRentPrompt.setText("show rent prompt");
-        jLayeredPane1.add(showRentPrompt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 10, -1, -1));
-
         showTestCardsButton.setText("show test cards");
         showTestCardsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -916,7 +912,6 @@ public class GamePlayScreen extends javax.swing.JFrame {
     private javax.swing.JTextField player3TotalMoney;
     private javax.swing.JLabel propertiesLabel;
     private javax.swing.JButton resumeButton;
-    private javax.swing.JButton showRentPrompt;
     private javax.swing.JButton showTestCardsButton;
     private javax.swing.JLabel tableBackground;
     private javax.swing.JButton toWinnerScreenButton;
