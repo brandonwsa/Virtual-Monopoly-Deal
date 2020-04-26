@@ -78,6 +78,7 @@ public class GamePlayScreen extends javax.swing.JFrame {
         player2PropertySlot_1 = new javax.swing.JButton();
         player2PropertySlot_2 = new javax.swing.JButton();
         player2PropertySlot_3 = new javax.swing.JButton();
+        player2PropertySlot_4_2 = new javax.swing.JButton();
         player2PropertySlot_4 = new javax.swing.JButton();
         player2PropertySlot_5 = new javax.swing.JButton();
         player2PropertySlot_6 = new javax.swing.JButton();
@@ -105,6 +106,7 @@ public class GamePlayScreen extends javax.swing.JFrame {
         youLabel = new javax.swing.JLabel();
         toWinnerScreenButton = new javax.swing.JButton();
         showTestCardsButton = new javax.swing.JButton();
+        showBotActions = new javax.swing.JButton();
         tableBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -350,11 +352,21 @@ public class GamePlayScreen extends javax.swing.JFrame {
         discardDeckButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
         discardDeckButton.setBorder(null);
         discardDeckButton.setContentAreaFilled(false);
+        discardDeckButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                discardDeckButtonActionPerformed(evt);
+            }
+        });
         jLayeredPane1.add(discardDeckButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 40, -1, -1));
 
         deckButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back_of_card.png"))); // NOI18N
         deckButton.setBorder(null);
         deckButton.setContentAreaFilled(false);
+        deckButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deckButtonActionPerformed(evt);
+            }
+        });
         jLayeredPane1.add(deckButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 40, -1, -1));
 
         deckLabel.setFont(new java.awt.Font("Eras Demi ITC", 0, 24)); // NOI18N
@@ -511,6 +523,10 @@ public class GamePlayScreen extends javax.swing.JFrame {
         player2PropertySlot_3.setContentAreaFilled(false);
         player2PlayArea.add(player2PropertySlot_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, -1, -1));
 
+        player2PropertySlot_4_2.setBorder(null);
+        player2PropertySlot_4_2.setContentAreaFilled(false);
+        player2PlayArea.add(player2PropertySlot_4_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 40, 150, 200));
+
         player2PropertySlot_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
         player2PropertySlot_4.setBorder(null);
         player2PropertySlot_4.setContentAreaFilled(false);
@@ -577,6 +593,11 @@ public class GamePlayScreen extends javax.swing.JFrame {
         yourMoneySlot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_money_slot.png"))); // NOI18N
         yourMoneySlot.setBorder(null);
         yourMoneySlot.setContentAreaFilled(false);
+        yourMoneySlot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourMoneySlotActionPerformed(evt);
+            }
+        });
         yourPlayArea.add(yourMoneySlot, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
 
         yourPropertySlot_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_property_slot.png"))); // NOI18N
@@ -592,6 +613,11 @@ public class GamePlayScreen extends javax.swing.JFrame {
         yourPropertySlot_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_property_slot.png"))); // NOI18N
         yourPropertySlot_3.setBorder(null);
         yourPropertySlot_3.setContentAreaFilled(false);
+        yourPropertySlot_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_3ActionPerformed(evt);
+            }
+        });
         yourPlayArea.add(yourPropertySlot_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, -1, -1));
 
         yourPropertySlot_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_property_slot.png"))); // NOI18N
@@ -663,6 +689,14 @@ public class GamePlayScreen extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(showTestCardsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1510, 10, -1, -1));
+
+        showBotActions.setText("Show Bot Actions");
+        showBotActions.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showBotActionsActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(showBotActions, new org.netbeans.lib.awtextra.AbsoluteConstraints(1740, 10, -1, -1));
 
         tableBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/table background.png"))); // NOI18N
         tableBackground.setText("jLabel1");
@@ -816,6 +850,57 @@ public class GamePlayScreen extends javax.swing.JFrame {
         
     }//GEN-LAST:event_showTestCardsButtonActionPerformed
 
+    private void discardDeckButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_discardDeckButtonActionPerformed
+        //will show removing a card from your hand to the discard deck.
+        handSlot_8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png")));
+        discardDeckButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/green-property-card3 (Custom).png")));
+    }//GEN-LAST:event_discardDeckButtonActionPerformed
+
+    private int testCount = 0; //for showing cards being added to hand one at a time from deck. Testing GUI purposes. Will be removed in future.
+    private void deckButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deckButtonActionPerformed
+        //these if statements display cards being added to players hand one at a time when you click the deck. This logic will be removed in the future
+        //for demonstrating UI purposes only.
+        if (testCount == 0){
+           handSlot_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/deal-breaker-action-card1 (Custom).png"))); 
+        }
+        
+        if (testCount == 1){
+            handSlot_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/all-color-wild-rent-card1 (Custom).png")));
+        }
+        
+        if (testCount == 2){
+            handSlot_7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/$5M-money-card2 (Custom).png")));
+        }
+        
+        if (testCount == 3){
+           handSlot_8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/green-property-card3 (Custom).png"))); 
+        }
+        
+        testCount++;
+        
+    }//GEN-LAST:event_deckButtonActionPerformed
+
+    private void yourPropertySlot_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_3ActionPerformed
+        //will show moving a property from your hand to a property slot.
+        yourPropertySlot_3.setIcon(handSlot_4.getIcon());
+        handSlot_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png")));
+    }//GEN-LAST:event_yourPropertySlot_3ActionPerformed
+
+    private void yourMoneySlotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourMoneySlotActionPerformed
+        
+        yourMoneySlot.setIcon(handSlot_3.getIcon());
+        handSlot_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png")));
+        yourTotalMoney.setText("11");
+    }//GEN-LAST:event_yourMoneySlotActionPerformed
+
+    private void showBotActionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showBotActionsActionPerformed
+        //shows player 2 taking a turn
+        player2PropertySlot_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/yellow-property-card1 (Custom).png")));
+        player2PropertySlot_4_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/yellow-property-card2 (Custom).png"))); //this is an invisible button on top of slot_4
+        player2MoneySlot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/$1M-money-card2 (Custom).png")));
+        player2TotalMoney.setText("6");
+    }//GEN-LAST:event_showBotActionsActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -890,6 +975,7 @@ public class GamePlayScreen extends javax.swing.JFrame {
     private javax.swing.JButton player2PropertySlot_2;
     private javax.swing.JButton player2PropertySlot_3;
     private javax.swing.JButton player2PropertySlot_4;
+    private javax.swing.JButton player2PropertySlot_4_2;
     private javax.swing.JButton player2PropertySlot_5;
     private javax.swing.JButton player2PropertySlot_6;
     private javax.swing.JButton player2PropertySlot_7;
@@ -912,6 +998,7 @@ public class GamePlayScreen extends javax.swing.JFrame {
     private javax.swing.JTextField player3TotalMoney;
     private javax.swing.JLabel propertiesLabel;
     private javax.swing.JButton resumeButton;
+    private javax.swing.JButton showBotActions;
     private javax.swing.JButton showTestCardsButton;
     private javax.swing.JLabel tableBackground;
     private javax.swing.JButton toWinnerScreenButton;
