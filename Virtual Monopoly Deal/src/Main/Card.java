@@ -8,7 +8,7 @@ public class Card{
     private String color_2;
     
     public void createCard(String cardName){
-        name = cardName;
+        name = cardName; //need to configure this method or create constructor to initialize values in card object 
 }
     public String getName(){
         return name;
