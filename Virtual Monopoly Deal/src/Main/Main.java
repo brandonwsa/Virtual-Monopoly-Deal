@@ -15,5 +15,6 @@ public class Main {
     
     public static void main(String[] args){
         MM.setVisible(true);
+        //can either call the controller class here, or this class can be controller class.
     }
 }
