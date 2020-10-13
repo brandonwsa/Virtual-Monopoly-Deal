@@ -11,11 +11,16 @@
 
 package GUI;
 public class PlayScreen extends javax.swing.JFrame {
+    
+    public static int numberOfPlayers;
+    public static boolean toGamePlayScreen;
 
     /**
      * Creates new form OptionsScreen
      */
     public PlayScreen() {
+        numberOfPlayers = 0;
+        toGamePlayScreen = false;
         initComponents();
     }
 
@@ -141,20 +146,24 @@ public class PlayScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
         GamePlayScreen GPS = new GamePlayScreen();
         GPS.setVisible(true);
+        toGamePlayScreen = true;
         dispose();//closes the jframe
     }//GEN-LAST:event_goButtonActionPerformed
 
     private void threePlayersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_threePlayersActionPerformed
         threePlayers.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/threeplayerchosen.jpg"))); // NOI18N
         selectedPlayerOptions.setText("You selected to play with three players");
+        numberOfPlayers = 3;
     }//GEN-LAST:event_threePlayersActionPerformed
 
     private void twoPlayersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twoPlayersActionPerformed
         selectedPlayerOptions.setText("You selected to play with two players");
+        numberOfPlayers = 2;
     }//GEN-LAST:event_twoPlayersActionPerformed
 
     private void onePlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onePlayerActionPerformed
         selectedPlayerOptions.setText("You selected to play with one player");
+        numberOfPlayers = 1;
     }//GEN-LAST:event_onePlayerActionPerformed
 
     private void playWithBotsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playWithBotsActionPerformed
@@ -200,6 +209,7 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;

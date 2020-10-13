@@ -11,6 +11,7 @@
 
 package GUI;
 public class MainMenu extends javax.swing.JFrame {
+    
 
     /**
      * Creates new form StartScreen
@@ -18,6 +19,7 @@ public class MainMenu extends javax.swing.JFrame {
     public MainMenu() {
         initComponents();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
