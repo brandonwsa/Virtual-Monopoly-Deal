@@ -23,17 +23,19 @@ public class Game {
     }
     
     public void runGame(){
-
+        
         //get game setup info, player name, player count.
         while(inPreGameState == true){
             //gets plyer count.
             checkNumberOfPlayers(); 
             checkPlayerName();
+            
         }
-
+        
+        System.out.println("Entering main game loop"); //for testing
         //main game loop.
         while(true){
-
+            
         }
     }
     
@@ -43,15 +45,16 @@ public class Game {
      * Will get the number of players to play against from PlayScreen.java
      */
     private void checkNumberOfPlayers(){
+     //   boolean toGamePlayScreen = PlayScreen.toGamePlayScreen;
+        
         if(PlayScreen.toGamePlayScreen == false){
-                System.out.println(PlayScreen.toGamePlayScreen);
                 numberOfPlayers = PlayScreen.numberOfPlayers;
-                //will also get names of players too here.
-                System.out.println(numberOfPlayers);
+                System.out.println(); //for some reason, this println statement is needed here inorder for the loop this method is in to exit properly when it's suppose to........
         }
         else{ //pre game state is over, set to false.
             inPreGameState = false;
         }
+        
     }
     
     /**
