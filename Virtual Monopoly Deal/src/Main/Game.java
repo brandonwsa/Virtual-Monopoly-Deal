@@ -26,8 +26,9 @@ public class Game {
         
         //get game setup info, player name, player count.
         while(inPreGameState == true){
-            //gets plyer count.
-            checkNumberOfPlayers(); 
+            //gets player count.
+            checkNumberOfPlayers();
+            //gets player name.
             checkPlayerName();
             
         }
@@ -45,8 +46,6 @@ public class Game {
      * Will get the number of players to play against from PlayScreen.java
      */
     private void checkNumberOfPlayers(){
-     //   boolean toGamePlayScreen = PlayScreen.toGamePlayScreen;
-        
         if(PlayScreen.toGamePlayScreen == false){
                 numberOfPlayers = PlayScreen.numberOfPlayers;
                 System.out.println(); //for some reason, this println statement is needed here inorder for the loop this method is in to exit properly when it's suppose to........
