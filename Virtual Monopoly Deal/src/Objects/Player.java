@@ -24,10 +24,8 @@ public class Player{
      * creates object
      */
     protected void init(){
-        //will need to communicate with playScreen.java and grab name inputed.
-        //name = playScreen.getPlayerName();
         completedProperties = 0;
-        lastCardPlayed = new Card();
+   //     lastCardPlayed = new Card(); //commented out to prevent class from having an error.
     }
     
     public List getHand(){
@@ -48,6 +46,14 @@ public class Player{
     
     public int getCompletedProperties(){
         return completedProperties;
+    }
+    
+    public String getName(){
+        return name;
+    }
+    
+    public void setName(String n){
+        name = n;
     }
     
     public void addToHand(Card card){

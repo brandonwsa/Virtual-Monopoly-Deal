@@ -8,7 +8,7 @@ public class Deck {
     private Stack<Card> cardsInDeck;
     private int amountOfCards;
     
-    public void createDeck(){
+    public Deck(){
     cardsInDeck = new Stack<Card>();
     
     }
