@@ -14,6 +14,7 @@ public class PlayScreen extends javax.swing.JFrame {
     
     public static int numberOfPlayers;
     public static boolean toGamePlayScreen;
+    public static String playerName;
 
     /**
      * Creates new form OptionsScreen
@@ -37,7 +38,6 @@ public class PlayScreen extends javax.swing.JFrame {
         selectedPlayerOptions = new javax.swing.JLabel();
         selectedGameModeOption = new javax.swing.JLabel();
         threePlayers = new javax.swing.JButton();
-        onePlayer = new javax.swing.JButton();
         twoPlayers = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
         goButton = new javax.swing.JButton();
@@ -69,21 +69,7 @@ public class PlayScreen extends javax.swing.JFrame {
                 threePlayersActionPerformed(evt);
             }
         });
-        getContentPane().add(threePlayers, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 590, 340, 110));
-
-        onePlayer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/oneplayer.jpg"))); // NOI18N
-        onePlayer.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/oneplayerchosen.jpg"))); // NOI18N
-        onePlayer.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                onePlayerMousePressed(evt);
-            }
-        });
-        onePlayer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                onePlayerActionPerformed(evt);
-            }
-        });
-        getContentPane().add(onePlayer, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 350, 340, 110));
+        getContentPane().add(threePlayers, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 530, 340, 110));
 
         twoPlayers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/twoplayer.jpg"))); // NOI18N
         twoPlayers.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/twoplayerchosen.jpg"))); // NOI18N
@@ -92,7 +78,7 @@ public class PlayScreen extends javax.swing.JFrame {
                 twoPlayersActionPerformed(evt);
             }
         });
-        getContentPane().add(twoPlayers, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 470, 340, 110));
+        getContentPane().add(twoPlayers, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 390, 340, 110));
 
         backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/backbutton.jpg"))); // NOI18N
         backButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/backbuttonrollover.jpg"))); // NOI18N
@@ -117,10 +103,6 @@ public class PlayScreen extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void onePlayerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_onePlayerMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_onePlayerMousePressed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
@@ -150,13 +132,9 @@ public class PlayScreen extends javax.swing.JFrame {
         numberOfPlayers = 2;
     }//GEN-LAST:event_twoPlayersActionPerformed
 
-    private void onePlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onePlayerActionPerformed
-        selectedPlayerOptions.setText("You selected to play with one player");
-        numberOfPlayers = 1;
-    }//GEN-LAST:event_onePlayerActionPerformed
-
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
+            playerName = jTextField1.getText();
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
@@ -201,7 +179,6 @@ public class PlayScreen extends javax.swing.JFrame {
     private javax.swing.JButton goButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JButton onePlayer;
     private javax.swing.JLabel selectedGameModeOption;
     private javax.swing.JLabel selectedPlayerOptions;
     private javax.swing.JButton threePlayers;
