@@ -7,6 +7,7 @@ package Main;
 import GUI.PlayScreen;
 import Objects.Player;
 import Objects.Bot;
+import Objects.Deck;
 
 /**
  * Refactor code as much as possible when adding new additions to keep this class clean and easy to read!
@@ -21,6 +22,8 @@ public class Game {
     private Player player; //will always be initiliazed.
     private Bot bot_1; //default bot, will always be initialized.
     private Bot bot_2; //will only be declared, unless total number of players playing is 3, then will be initialized.
+    public Deck gameDeck;
+    
     
     /**
      * Constructor.
@@ -41,8 +44,11 @@ public class Game {
             checkPlayerName();//gets player name.   
         }
         
+        //create deck Object
+        createDeck();
+        
         //make players and bot objects.
-        createPlayersAndBots();
+        createPlayersAndBots(gameDeck);
         
         System.out.println("Entering main game loop"); //for testing
         //main game loop.
@@ -78,24 +84,45 @@ public class Game {
      * Will create the player and bot objects. Also sets the name of the player.
      * If numberOfPlayers wasn't set properly to be > 0, then print a message.
      */
-    private void createPlayersAndBots(){
+    private void createPlayersAndBots(Deck d){
         //create player and bots.
         if (numberOfPlayers > 0){
             //make player and set player name.
             player = new Player();
             player.setName(name);
             
+           //add 5 cards to player hand
+            for(int i = 0; i < 5;i++){
+                player.addToHand(d.getTopCard());
+            }
+            
             //make bot 1
             bot_1 = new Bot();
+            
+            //add 5 cards to Bot_1 hand
+            for(int i = 0; i < 5;i++){
+                bot_1.addToHand(d.getTopCard());
+            }
             
             //if player selected to play with 3 total players, then make the 2nd bot.
             if (numberOfPlayers == 3){
                 bot_2 = new Bot();
+                
+                //add 5 cards to Bot_2 hand
+                for(int i = 0; i < 5;i++){
+                    bot_2.addToHand(d.getTopCard());
+            }
             }
         }
         else{ //if numberOfPlayers was some how not > 0 after player selected amount of players. Will happen if player hits "Go" while not selecting number of players from PlayScreen.java
             System.out.println("Error when making player and bots. NumberOfPlayers = "+numberOfPlayers);
         }
     }
+    
+    private void createDeck(){
+        gameDeck = new Deck();
+        gameDeck.shuffle();
+    }
+    
     
 }
