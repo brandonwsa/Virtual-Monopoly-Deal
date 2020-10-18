@@ -8,9 +8,10 @@ public class Player{
  //   protected int ID; //dont think we need
     protected int completedProperties;
     protected Card lastCardPlayed;
-    protected List<Card> hand; //wont do anything until first card is added to hand.
+    protected static List<Card> hand; //wont do anything until first card is added to hand.
     protected List<Card> money; //wont do anything until first money is added. //if this list is null, money = 0 in game.
     protected List<Card>/*<PropertySlot>*/ properties; //wont do anything until first property is added.
+    protected List<Card> discardDeck;//where the cards will be discarded..... do we need this? 
     //might be good to have an totalMoney, will add up all the money the player has. Property slot may be a 2d array
     
     /**
@@ -18,6 +19,7 @@ public class Player{
      */
     public Player(){
         init();
+        
     }
     
     /**
@@ -28,7 +30,7 @@ public class Player{
    //     lastCardPlayed = new Card(); //commented out to prevent class from having an error.
     }
     
-    public List getHand(){
+    public static List getHand(){
         return hand;
     }
     
@@ -82,16 +84,19 @@ public class Player{
     
     /**
      * Draws card from deck.
+     * @param d
      */
-    public void drawCard(){
-        //draws card from deck
+    public void drawCard(Deck d){
+        hand.add(d.getTopCard());
     }
     
     /**
      * Discards the card the player wants to.
+     * @param card
      */
-    public void discardCard(){
+    public void discardCard(Card card){
         //discards the card the player wants to.
+        //do we need a discard deck? if we already have a removeCardFromHand method?
     }
     
     /**
