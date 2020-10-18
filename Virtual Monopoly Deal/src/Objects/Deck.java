@@ -2,12 +2,12 @@ package Objects;
 
 /*deck.java*/
 
+import java.util.Collections;
 import java.util.Stack;
 public class Deck {
     
-    private Stack<Card> cardsInDeck;
+    Stack<Card> cardsInDeck;
     private int amountOfCards;
-    
     public Deck(){
     cardsInDeck = new Stack<Card>();
     
@@ -28,5 +28,14 @@ public class Deck {
     public Card getTopCard(){
         return cardsInDeck.pop();
     
+    }
+    
+    public int shuffle(){
+        try{
+        Collections.shuffle(cardsInDeck);
+        }catch(Exception e){
+                return 1;//if error occurs
+        }
+        return 0;
     }
 }
