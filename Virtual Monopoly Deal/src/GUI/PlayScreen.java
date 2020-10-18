@@ -33,19 +33,26 @@ public class PlayScreen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextField1 = new javax.swing.JTextField();
         selectedPlayerOptions = new javax.swing.JLabel();
         selectedGameModeOption = new javax.swing.JLabel();
         threePlayers = new javax.swing.JButton();
         onePlayer = new javax.swing.JButton();
         twoPlayers = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
-        playWithBots = new javax.swing.JButton();
-        playWithFriends = new javax.swing.JButton();
         goButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 850, 290, 70));
 
         selectedPlayerOptions.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         selectedPlayerOptions.setForeground(new java.awt.Color(255, 255, 255));
@@ -62,7 +69,7 @@ public class PlayScreen extends javax.swing.JFrame {
                 threePlayersActionPerformed(evt);
             }
         });
-        getContentPane().add(threePlayers, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 720, 340, 110));
+        getContentPane().add(threePlayers, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 590, 340, 110));
 
         onePlayer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/oneplayer.jpg"))); // NOI18N
         onePlayer.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/oneplayerchosen.jpg"))); // NOI18N
@@ -76,7 +83,7 @@ public class PlayScreen extends javax.swing.JFrame {
                 onePlayerActionPerformed(evt);
             }
         });
-        getContentPane().add(onePlayer, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 480, 340, 110));
+        getContentPane().add(onePlayer, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 350, 340, 110));
 
         twoPlayers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/twoplayer.jpg"))); // NOI18N
         twoPlayers.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/twoplayerchosen.jpg"))); // NOI18N
@@ -85,7 +92,7 @@ public class PlayScreen extends javax.swing.JFrame {
                 twoPlayersActionPerformed(evt);
             }
         });
-        getContentPane().add(twoPlayers, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 600, 340, 110));
+        getContentPane().add(twoPlayers, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 470, 340, 110));
 
         backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/backbutton.jpg"))); // NOI18N
         backButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/backbuttonrollover.jpg"))); // NOI18N
@@ -95,24 +102,6 @@ public class PlayScreen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 890, 200, 80));
-
-        playWithBots.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/playwithbots.jpg"))); // NOI18N
-        playWithBots.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/playwithbotsrollover.jpg"))); // NOI18N
-        playWithBots.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playWithBotsActionPerformed(evt);
-            }
-        });
-        getContentPane().add(playWithBots, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 600, 370, 110));
-
-        playWithFriends.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/playwithfriends.jpg"))); // NOI18N
-        playWithFriends.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/playwithfriendsrollover.jpg"))); // NOI18N
-        playWithFriends.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                playWithFriendsActionPerformed(evt);
-            }
-        });
-        getContentPane().add(playWithFriends, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 480, 370, 110));
 
         goButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gobutton.jpg"))); // NOI18N
         goButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gobuttonrollover.jpg"))); // NOI18N
@@ -166,13 +155,9 @@ public class PlayScreen extends javax.swing.JFrame {
         numberOfPlayers = 1;
     }//GEN-LAST:event_onePlayerActionPerformed
 
-    private void playWithBotsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playWithBotsActionPerformed
-        selectedGameModeOption.setText("You selected to play with bots");
-    }//GEN-LAST:event_playWithBotsActionPerformed
-
-    private void playWithFriendsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playWithFriendsActionPerformed
-        selectedGameModeOption.setText("You selected to play with friends");
-    }//GEN-LAST:event_playWithFriendsActionPerformed
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,9 +200,8 @@ public class PlayScreen extends javax.swing.JFrame {
     private javax.swing.JButton backButton;
     private javax.swing.JButton goButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton onePlayer;
-    private javax.swing.JButton playWithBots;
-    private javax.swing.JButton playWithFriends;
     private javax.swing.JLabel selectedGameModeOption;
     private javax.swing.JLabel selectedPlayerOptions;
     private javax.swing.JButton threePlayers;
