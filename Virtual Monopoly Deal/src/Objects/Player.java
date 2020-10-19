@@ -1,5 +1,6 @@
 package Objects;
 import java.util.List;
+import java.util.ArrayList;
 
 
 public class Player{
@@ -8,7 +9,7 @@ public class Player{
  //   protected int ID; //dont think we need
     protected int completedProperties;
     protected Card lastCardPlayed;
-    protected static List<Card> hand; //wont do anything until first card is added to hand.
+    protected List<Card> hand; //wont do anything until first card is added to hand.
     protected List<Card> money; //wont do anything until first money is added. //if this list is null, money = 0 in game.
     protected List<Card>/*<PropertySlot>*/ properties; //wont do anything until first property is added.
     protected List<Card> discardDeck;//where the cards will be discarded..... do we need this? 
@@ -27,10 +28,11 @@ public class Player{
      */
     protected void init(){
         completedProperties = 0;
+        hand = new ArrayList<Card>();
    //     lastCardPlayed = new Card(); //commented out to prevent class from having an error.
     }
     
-    public static List getHand(){
+    public List getHand(){
         return hand;
     }
     
@@ -108,5 +110,12 @@ public class Player{
         //  action.playRentCard(card);
     }
     //... add more of these action calls that will call action.
+    
+    public void printHand(){
+        for (int i=0; i<hand.size(); i++){
+            System.out.println(hand.get(i).getName());
+        }
+            
+    }
     
 }

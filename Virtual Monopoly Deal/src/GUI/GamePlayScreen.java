@@ -670,6 +670,7 @@ public class GamePlayScreen extends javax.swing.JFrame {
         youLabel.setFont(new java.awt.Font("Eras Demi ITC", 0, 16)); // NOI18N
         youLabel.setForeground(new java.awt.Color(255, 255, 255));
         youLabel.setText("You:");
+        youLabel.setText(PlayScreen.playerName);
         yourPlayArea.add(youLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
 
         jLayeredPane1.add(yourPlayArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 790, 1910, 250));

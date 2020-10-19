@@ -4,23 +4,36 @@ package Objects;
 
 import java.util.Collections;
 import java.util.Stack;
+
 public class Deck {
     
-    Stack<Card> cardsInDeck;
+    private Stack<Card> cardsInDeck;
     private int amountOfCards;
-    public Deck(){
-    cardsInDeck = new Stack<Card>();
     
+    public Deck(){
+        cardsInDeck = new Stack<Card>();
+
+    }
+    
+    /**
+     * Fills deck with cards.
+     */
+    public void fillDeck(){
+        //fill deck with cards. 110 total cards in the deck
+        for (int i=0; i<110; i++){
+            Card card = new Card(i, 0);
+            addCard(card);
+        }
     }
     
     public int addCard(Card card){
-    try{
-        cardsInDeck.push(card);
-    }
-    catch(Exception e){
-        return 1;//returns 1 if error id caught 
-    }
-    return 0;
+        try{
+            cardsInDeck.push(card);
+        }
+        catch(Exception e){
+            return 1;//returns 1 if error id caught 
+        }
+        return 0;
         
         
     }
@@ -32,10 +45,20 @@ public class Deck {
     
     public int shuffle(){
         try{
-        Collections.shuffle(cardsInDeck);
+            Collections.shuffle(cardsInDeck);
         }catch(Exception e){
-                return 1;//if error occurs
+            System.out.println("Error shuffling deck. Exception: "+e);
+            return 1;//if error occurs
         }
         return 0;
+    }
+    
+    /**
+     * Prints the cards in the deck.
+     */
+    public void printCards(){
+        for (int i=0; i<cardsInDeck.size(); i++){
+            System.out.println(cardsInDeck.get(i).getName());  
+        }  
     }
 }

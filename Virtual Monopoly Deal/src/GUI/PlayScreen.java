@@ -115,6 +115,9 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void goButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goButtonActionPerformed
         // TODO add your handling code here:
+        //gets playerName from text field
+        playerName = jTextField1.getText();
+        
         GamePlayScreen GPS = new GamePlayScreen();
         GPS.setVisible(true);
         toGamePlayScreen = true;
@@ -134,7 +137,8 @@ public class PlayScreen extends javax.swing.JFrame {
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
-            playerName = jTextField1.getText();
+      //      playerName = jTextField1.getText();
+      //      System.out.println(playerName);
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**

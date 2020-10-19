@@ -22,7 +22,8 @@ public class Game {
     private Player player; //will always be initiliazed.
     private Bot bot_1; //default bot, will always be initialized.
     private Bot bot_2; //will only be declared, unless total number of players playing is 3, then will be initialized.
-    public Deck gameDeck;
+    private Deck gameDeck;
+    private Deck discardDeck; //used to house the cards that are discarded.
     
     
     /**
@@ -31,6 +32,7 @@ public class Game {
     public Game(){
         numberOfPlayers = 0;
         inPreGameState = true;
+        discardDeck = new Deck();
     }
     
     /**
@@ -43,12 +45,12 @@ public class Game {
             checkNumberOfPlayers();//gets player count.
             checkPlayerName();//gets player name.   
         }
-        
+
         //create deck Object
         createDeck();
         
         //make players and bot objects.
-        createPlayersAndBots(gameDeck);
+        createPlayersAndBots();
         
         System.out.println("Entering main game loop"); //for testing
         //main game loop.
@@ -65,7 +67,7 @@ public class Game {
     private void checkNumberOfPlayers(){
         if(PlayScreen.toGamePlayScreen == false){
                 numberOfPlayers = PlayScreen.numberOfPlayers;
-                System.out.println(); //for some reason, this println statement is needed here inorder for the loop this method is in to exit properly when it's suppose to........
+             //   System.out.println(); //for some reason, this println statement is needed here inorder for the loop this method is in to exit properly when it's suppose to........
         }
         else{ //pre game state is over, set to false.
             inPreGameState = false;
@@ -77,14 +79,21 @@ public class Game {
      * Will get the name the user inputted from PlayScreen.
      */
     private void checkPlayerName(){
-        //will get player name from playscreen.
+        
+        if(PlayScreen.toGamePlayScreen == false){
+            name = PlayScreen.playerName;
+        }
+        else{ //pre game state is over, set to false.
+            inPreGameState = false;
+        }
     }
     
     /**
      * Will create the player and bot objects. Also sets the name of the player.
      * If numberOfPlayers wasn't set properly to be > 0, then print a message.
+     * Also deals each player their 5 starting cards.
      */
-    private void createPlayersAndBots(Deck d){
+    private void createPlayersAndBots(){
         //create player and bots.
         if (numberOfPlayers > 0){
             //make player and set player name.
@@ -93,7 +102,7 @@ public class Game {
             
            //add 5 cards to player hand
             for(int i = 0; i < 5;i++){
-                player.addToHand(d.getTopCard());
+                player.addToHand(gameDeck.getTopCard());
             }
             
             //make bot 1
@@ -101,7 +110,7 @@ public class Game {
             
             //add 5 cards to Bot_1 hand
             for(int i = 0; i < 5;i++){
-                bot_1.addToHand(d.getTopCard());
+                bot_1.addToHand(gameDeck.getTopCard());
             }
             
             //if player selected to play with 3 total players, then make the 2nd bot.
@@ -110,8 +119,8 @@ public class Game {
                 
                 //add 5 cards to Bot_2 hand
                 for(int i = 0; i < 5;i++){
-                    bot_2.addToHand(d.getTopCard());
-            }
+                    bot_2.addToHand(gameDeck.getTopCard());
+                }
             }
         }
         else{ //if numberOfPlayers was some how not > 0 after player selected amount of players. Will happen if player hits "Go" while not selecting number of players from PlayScreen.java
@@ -121,8 +130,10 @@ public class Game {
     
     private void createDeck(){
         gameDeck = new Deck();
+        gameDeck.fillDeck();
         gameDeck.shuffle();
     }
+    
     
     
 }

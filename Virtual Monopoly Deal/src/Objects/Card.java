@@ -61,4 +61,8 @@ public class Card{
     public String getColor_2(){
         return color_2;
     }
+    
+    public int getCardNameArraySize(){
+        return cardNames.length;
+    }
 }
