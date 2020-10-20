@@ -5,6 +5,7 @@ public class Card{
     
     private String name;
     private String type;
+    private String imagePath;
     private int value;
     private final int[] values = {0, 1, 2, 3, 4, 5, 10}; //used to house value of cards.
     private final String[] cardNames = {"$10M-money-card (Custom)", "$1M-money-card1 (Custom)", "$1M-money-card2 (Custom)", "$1M-money-card3 (Custom)", "$1M-money-card4 (Custom)", 
@@ -22,12 +23,14 @@ public class Card{
         "orange-and-pink-rent-card1 (Custom)", "orange-and-pink-rent-card2 (Custom)", "orange-and-pink-wildcard-card1 (Custom)", "orange-and-pink-wildcard-card2 (Custom)", "orange-property-card1 (Custom)", 
         "orange-property-card2 (Custom)", "orange-property-card3 (Custom)", "pass-go-action-card1 (Custom)", "pass-go-action-card10 (Custom)", "pass-go-action-card2 (Custom)", 
         "pass-go-action-card3 (Custom)", "pass-go-action-card4 (Custom)", "pass-go-action-card5 (Custom)", "pass-go-action-card6 (Custom)", "pass-go-action-card7 (Custom)", "pass-go-action-card8 (Custom)", 
-        "pass-go-action-card9 (Custom)", "pink-property-card1 (Custom)", "pink-property-card2 (Custom)", "pink-property-card3 (Custom)", "quick-start-rules-cards-back (Custom)", 
-        "quick-start-rules-cards-front (Custom)", "railraod-and-green-wildcard-card (Custom)", "railraod-and-light-blue-wildcard-card (Custom)", "railroad-and-utility-rent-card1 (Custom)", 
+        "pass-go-action-card9 (Custom)", "pink-property-card1 (Custom)", "pink-property-card2 (Custom)", "pink-property-card3 (Custom)", "railraod-and-green-wildcard-card (Custom)", 
+        "railraod-and-light-blue-wildcard-card (Custom)", "railroad-and-utility-rent-card1 (Custom)", 
         "railroad-and-utility-rent-card2 (Custom)", "railroad-and-utility-wildcard-card (Custom)", "railroad-property-card1 (Custom)", "railroad-property-card2 (Custom)", "railroad-property-card3 (Custom)", 
         "railroad-property-card4 (Custom)", "red-and-yellow-rent-card1 (Custom)", "red-and-yellow-rent-card2 (Custom)", "red-and-yellow-wildcard-card1 (Custom)", "red-and-yellow-wildcard-card2 (Custom)", 
         "red-property-card1 (Custom)", "red-property-card2 (Custom)", "red-property-card3 (Custom)", "sly-deal-action-card1 (Custom)", "sly-deal-action-card2 (Custom)", "sly-deal-action-card3 (Custom)", 
         "utility-property-card1 (Custom)", "utility-property-card2 (Custom)", "yellow-property-card1 (Custom)", "yellow-property-card2 (Custom)", "yellow-property-card3 (Custom)"}; //used to house image name of cards
+    private final String[] cardTypes = {"money", "property", "rent", "wild-rent", "wildcard", "action"}; //used to house the types of cards a card can be.
+                                                                                                        //wildcard is wild property card.
     private String color_1;
     private String color_2;
     
@@ -39,12 +42,27 @@ public class Card{
     public Card(int cardName, int cardValue){
         name = cardNames[cardName]; //need to configure this method or create constructor to initialize values in card object 
         value = values[cardValue];
+        
+        //set card type. Will iterate through all the card types and find out with card is what type based on the card's name.
+        for (int i=0; i<cardTypes.length; i++){
+            if (name.toLowerCase().contains(cardTypes[i].toLowerCase())){
+                type = cardTypes[i];
+            } 
+        }
+        
+        //sets card image path
+        imagePath = "/images/MonopolyCards/"+name+".png";
+        
     }
     
     
     public String getName(){
         return name;
    }
+    
+    public String getImagePath(){
+        return imagePath;
+    }
     
     public String getType(){
         return type;

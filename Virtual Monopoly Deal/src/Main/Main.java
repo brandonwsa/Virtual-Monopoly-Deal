@@ -4,21 +4,22 @@
 package Main;
 
 import GUI.MainMenu;
+import GUI.GamePlayScreen;
 
 /**
  *
  * @author brand
  */
 public class Main {
-    
-    private static final MainMenu MM = new MainMenu(); //made as private for now, may need to change to protected or no modifier in future.
-    
+    public static GamePlayScreen GPS = new GamePlayScreen();
     
     public static void main(String[] args){
+        
+        MainMenu MM = new MainMenu(); //made as private for now, may need to change to protected or no modifier in future.
         MM.setVisible(true);
         
         //make and starts game
-        Game VirtualMonopolyDeal = new Game();
+        Game VirtualMonopolyDeal = new Game(GPS);
         VirtualMonopolyDeal.runGame();
         
         

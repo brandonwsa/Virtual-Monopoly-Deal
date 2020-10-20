@@ -12,11 +12,13 @@
 package GUI;
 public class MainMenu extends javax.swing.JFrame {
     
-
+  //  private static GamePlayScreen GPS;
+    
     /**
      * Creates new form StartScreen
      */
-    public MainMenu() {
+    public MainMenu(/*GamePlayScreen gps*/) {
+   //     GPS = gps;
         initComponents();
     }
     

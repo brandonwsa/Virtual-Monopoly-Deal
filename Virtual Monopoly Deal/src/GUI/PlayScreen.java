@@ -10,11 +10,13 @@
  */
 
 package GUI;
+
 public class PlayScreen extends javax.swing.JFrame {
     
     public static int numberOfPlayers;
     public static boolean toGamePlayScreen;
     public static String playerName;
+    private GamePlayScreen GPS;
 
     /**
      * Creates new form OptionsScreen
@@ -118,7 +120,7 @@ public class PlayScreen extends javax.swing.JFrame {
         //gets playerName from text field
         playerName = jTextField1.getText();
         
-        GamePlayScreen GPS = new GamePlayScreen();
+        GPS = Main.Main.GPS;
         GPS.setVisible(true);
         toGamePlayScreen = true;
         dispose();//closes the jframe

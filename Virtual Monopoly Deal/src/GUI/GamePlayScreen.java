@@ -3,11 +3,14 @@
  */
 package GUI;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author brand
  */
 public class GamePlayScreen extends javax.swing.JFrame {
+    
 
     /**
      * Creates new form GamePlayScreen
@@ -902,6 +905,20 @@ public class GamePlayScreen extends javax.swing.JFrame {
         player2TotalMoney.setText("6");
     }//GEN-LAST:event_showBotActionsActionPerformed
 
+    public void setPlayerStartingHand(ArrayList cardImagePaths){
+        handSlot_1.setIcon(new javax.swing.ImageIcon(getClass().getResource(cardImagePaths.get(0).toString())));
+        handSlot_2.setIcon(new javax.swing.ImageIcon(getClass().getResource(cardImagePaths.get(1).toString())));
+        handSlot_3.setIcon(new javax.swing.ImageIcon(getClass().getResource(cardImagePaths.get(2).toString())));
+        handSlot_4.setIcon(new javax.swing.ImageIcon(getClass().getResource(cardImagePaths.get(3).toString())));
+        handSlot_5.setIcon(new javax.swing.ImageIcon(getClass().getResource(cardImagePaths.get(4).toString())));
+    }
+    
+    public void setPlayerName(String name){
+        youLabel.setText(name);
+    }
+    
+    
+    
     /**
      * @param args the command line arguments
      */

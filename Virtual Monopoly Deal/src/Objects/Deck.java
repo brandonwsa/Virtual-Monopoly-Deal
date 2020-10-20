@@ -19,9 +19,10 @@ public class Deck {
      * Fills deck with cards.
      */
     public void fillDeck(){
-        //fill deck with cards. 110 total cards in the deck
-        for (int i=0; i<110; i++){
-            Card card = new Card(i, 0);
+        Card card;
+        //fill deck with cards. 108 total cards in the deck
+        for (int i=0; i<108; i++){
+            card = new Card(i, 0);
             addCard(card);
         }
     }
@@ -54,11 +55,11 @@ public class Deck {
     }
     
     /**
-     * Prints the cards in the deck.
+     * Prints the cards in the deck, the name and their type.
      */
     public void printCards(){
         for (int i=0; i<cardsInDeck.size(); i++){
-            System.out.println(cardsInDeck.get(i).getName());  
+            System.out.println(cardsInDeck.get(i).getName()+"\t type: "+cardsInDeck.get(i).getType());  
         }  
     }
 }

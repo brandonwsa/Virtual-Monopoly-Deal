@@ -4,10 +4,14 @@
  */
 package Main;
 
+import java.util.List;
+import java.util.ArrayList;
 import GUI.PlayScreen;
 import Objects.Player;
 import Objects.Bot;
 import Objects.Deck;
+import Objects.Card;
+import GUI.GamePlayScreen;
 
 /**
  * Refactor code as much as possible when adding new additions to keep this class clean and easy to read!
@@ -24,12 +28,14 @@ public class Game {
     private Bot bot_2; //will only be declared, unless total number of players playing is 3, then will be initialized.
     private Deck gameDeck;
     private Deck discardDeck; //used to house the cards that are discarded.
+    private GamePlayScreen GPS;
     
     
     /**
      * Constructor.
      */
-    public Game(){
+    public Game(GamePlayScreen gamePlayScreen){
+        GPS = gamePlayScreen;
         numberOfPlayers = 0;
         inPreGameState = true;
         discardDeck = new Deck();
@@ -45,12 +51,18 @@ public class Game {
             checkNumberOfPlayers();//gets player count.
             checkPlayerName();//gets player name.   
         }
+        
+        //set player name on GPS
+        GPS.setPlayerName(name);
 
         //create deck Object
         createDeck();
         
         //make players and bot objects.
         createPlayersAndBots();
+        
+        //sets the players hand in gameplay screen to their cards
+        setPlayerHand();
         
         System.out.println("Entering main game loop"); //for testing
         //main game loop.
@@ -128,12 +140,38 @@ public class Game {
         }
     }
     
+    /**
+     * Creates the game play deck.
+     */
     private void createDeck(){
         gameDeck = new Deck();
         gameDeck.fillDeck();
         gameDeck.shuffle();
+    //    gameDeck.printCards();
     }
     
-    
+    /**
+     * gets the card names from the player hand and calls GamePlayScreen to set the images.
+     */
+    private void setPlayerHand(){
+        ArrayList cardImagePaths = new ArrayList();
+        Card c;
+        List<Card> hand = player.getHand();
+        
+        try{
+            for (int i=0; i<hand.size(); i++){
+                c = hand.get(i);
+                cardImagePaths.add(c.getImagePath());
+           //     System.out.println(cardImagePaths.get(i));
+            }
+            GPS.setPlayerStartingHand(cardImagePaths);
+        }
+        catch(Exception e){
+            System.out.println("Error when setting player hand with card images in GPS. e:"+e);
+        }
+        
+        
+        
+    }
     
 }
