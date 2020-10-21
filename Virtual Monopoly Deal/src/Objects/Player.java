@@ -95,10 +95,11 @@ public class Player{
     /**
      * Discards the card the player wants to.
      * @param card
+     * @param discard
      */
-    public void discardCard(Card card){
+    public void discardCard(Card card, Deck discard){
         //discards the card the player wants to.
-        //do we need a discard deck? if we already have a removeCardFromHand method?
+        discard.addCard(card);
     }
     
     /**
