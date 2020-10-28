@@ -105,12 +105,12 @@ public class Player{
         }
     }
     
-    private void addMoney(Card card){
+    protected void addMoney(Card card){
         money.add(card);
         totalMoney += card.getValue();
     }
     
-    private void addProperty(Card card){
+    protected void addProperty(Card card){
         properties.add(card);
     }
     
@@ -122,7 +122,7 @@ public class Player{
      * takes card and removes it from player's hand list by setting it to null.
      * @param card 
      */
-    private void removeCardFromHand(Card card){
+    protected void removeCardFromHand(Card card){
         int i = 0;
         
         //iterate through hand to find matching card to remove. Returns out once found.
