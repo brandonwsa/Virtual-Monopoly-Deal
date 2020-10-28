@@ -11,12 +11,37 @@ import java.util.ArrayList;
  */
 public class GamePlayScreen extends javax.swing.JFrame {
     
+    private int[] handSlotButtonPressed = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //used to monitor which hand slot is pressed, index 0 = handslot 1... index 11 = handslot 12
+                                                                                //A 1 will be placed where the hand slot button was pressed. So if handslot 1 was pressed, index 0 will be changed to 1.
+                                                                                //will need to be reset back to all 0's at end of checking which hand slot button was pressed.
+                                                                                //This is a 1x12 matrix array.
+    private ArrayList<javax.swing.JButton> handSlots = new ArrayList<javax.swing.JButton>(); //used to house hand slot buttons. Will allow for easier access of handslots using indexes.
+    private boolean yourMoneySlotButtonPressed = false;
+ //   private int[][] yourPropertySlots = new int[4][10]; //2D array used to store information on whether or not a specified property slot was pressed or not. If one was pressed, a 1 will be
+                                                       //temporarily placed in the correct row column association with the property slot button.
+    private int[] yourPropertySlotPressed = {0, 0}; //used to store information about what property slot was pressed. Will contain 2 ints, row index and column index of property
 
     /**
      * Creates new form GamePlayScreen
      */
     public GamePlayScreen() {
         initComponents();
+        
+        //add handslot buttons to arraylist
+        handSlots.add(handSlot_1);
+        handSlots.add(handSlot_2);
+        handSlots.add(handSlot_3);
+        handSlots.add(handSlot_4);
+        handSlots.add(handSlot_5);
+        handSlots.add(handSlot_6);
+        handSlots.add(handSlot_7);
+        handSlots.add(handSlot_8);
+        handSlots.add(handSlot_9);
+        handSlots.add(handSlot_10);
+        handSlots.add(handSlot_11);
+        handSlots.add(handSlot_12);
+        
+        
     }
 
     /**
@@ -606,6 +631,11 @@ public class GamePlayScreen extends javax.swing.JFrame {
         yourPropertySlot_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_property_slot.png"))); // NOI18N
         yourPropertySlot_1.setBorder(null);
         yourPropertySlot_1.setContentAreaFilled(false);
+        yourPropertySlot_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_1ActionPerformed(evt);
+            }
+        });
         yourPlayArea.add(yourPropertySlot_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, -1, -1));
 
         yourPropertySlot_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_property_slot.png"))); // NOI18N
@@ -665,6 +695,11 @@ public class GamePlayScreen extends javax.swing.JFrame {
         yourTotalMoney.setText("0");
         yourTotalMoney.setBorder(null);
         yourTotalMoney.setOpaque(false);
+        yourTotalMoney.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourTotalMoneyActionPerformed(evt);
+            }
+        });
         yourPlayArea.add(yourTotalMoney, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 70, -1));
 
         moneyEmblem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/money emblem red.png"))); // NOI18N
@@ -764,51 +799,51 @@ public class GamePlayScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_howToPlayButtonActionPerformed
 
     private void handSlot_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handSlot_1ActionPerformed
-        
+        handSlotButtonPressed[0] = 1;
     }//GEN-LAST:event_handSlot_1ActionPerformed
 
     private void handSlot_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handSlot_2ActionPerformed
-        // TODO add your handling code here:
+        handSlotButtonPressed[1] = 1;
     }//GEN-LAST:event_handSlot_2ActionPerformed
 
     private void handSlot_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handSlot_3ActionPerformed
-        // TODO add your handling code here:
+        handSlotButtonPressed[2] = 1;
     }//GEN-LAST:event_handSlot_3ActionPerformed
 
     private void handSlot_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handSlot_4ActionPerformed
-        // TODO add your handling code here:
+        handSlotButtonPressed[3] = 1;
     }//GEN-LAST:event_handSlot_4ActionPerformed
 
     private void handSlot_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handSlot_5ActionPerformed
-        // TODO add your handling code here:
+        handSlotButtonPressed[4] = 1;
     }//GEN-LAST:event_handSlot_5ActionPerformed
 
     private void handSlot_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handSlot_6ActionPerformed
-        // TODO add your handling code here:
+        handSlotButtonPressed[5] = 1;
     }//GEN-LAST:event_handSlot_6ActionPerformed
 
     private void handSlot_7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handSlot_7ActionPerformed
-        // TODO add your handling code here:
+        handSlotButtonPressed[6] = 1;
     }//GEN-LAST:event_handSlot_7ActionPerformed
 
     private void handSlot_8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handSlot_8ActionPerformed
-        // TODO add your handling code here:
+        handSlotButtonPressed[7] = 1;
     }//GEN-LAST:event_handSlot_8ActionPerformed
 
     private void handSlot_9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handSlot_9ActionPerformed
-        // TODO add your handling code here:
+        handSlotButtonPressed[8] = 1;
     }//GEN-LAST:event_handSlot_9ActionPerformed
 
     private void handSlot_10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handSlot_10ActionPerformed
-        // TODO add your handling code here:
+        handSlotButtonPressed[9] = 1;
     }//GEN-LAST:event_handSlot_10ActionPerformed
 
     private void handSlot_11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handSlot_11ActionPerformed
-        // TODO add your handling code here:
+        handSlotButtonPressed[10] = 1;
     }//GEN-LAST:event_handSlot_11ActionPerformed
 
     private void handSlot_12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_handSlot_12ActionPerformed
-        // TODO add your handling code here:
+        handSlotButtonPressed[11] = 1;
     }//GEN-LAST:event_handSlot_12ActionPerformed
 
     private void viewHandButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewHandButtonActionPerformed
@@ -828,82 +863,47 @@ public class GamePlayScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_player3MoneySlotActionPerformed
 
     private void showTestCardsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showTestCardsButtonActionPerformed
-        //played cards
-        yourMoneySlot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/$1M-money-card1 (Custom).png")));
-        yourPropertySlot_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/brown-property-card1 (Custom).png")));
-        yourPropertySlot_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/dark-blue-property-card1 (Custom).png")));
-        yourTotalMoney.setText("1");
-        
-        //cards in hand
-        handSlot_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/blue-and-green-rent-card1 (Custom).png")));
-        handSlot_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/force-deal-action-card3 (Custom).png")));
-        handSlot_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/$10M-money-card (Custom).png")));
-        handSlot_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/green-property-card2 (Custom).png")));
-        
-        //player 2 cards
-        player2MoneySlot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/$5M-money-card1 (Custom).png")));
-        player2PropertySlot_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/orange-property-card1 (Custom).png")));
-        player2PropertySlot_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/red-property-card1 (Custom).png")));
-        player2PropertySlot_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/green-property-card1 (Custom).png")));
-        player2TotalMoney.setText("5");
-                
-        //player 3 cards
-        player3MoneySlot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/$10M-money-card (Custom).png")));
-        player3PropertySlot_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/railroad-property-card2 (Custom).png")));
-        player3TotalMoney.setText("10");
-        
+
     }//GEN-LAST:event_showTestCardsButtonActionPerformed
 
     private void discardDeckButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_discardDeckButtonActionPerformed
-        //will show removing a card from your hand to the discard deck.
-        handSlot_8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png")));
-        discardDeckButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/green-property-card3 (Custom).png")));
+
     }//GEN-LAST:event_discardDeckButtonActionPerformed
 
-    private int testCount = 0; //for showing cards being added to hand one at a time from deck. Testing GUI purposes. Will be removed in future.
+  //DONT NEED ANYMORE, WAS USSED TO SHOW OFF GUI  private int testCount = 0; //for showing cards being added to hand one at a time from deck. Testing GUI purposes. Will be removed in future.
+    
+    /**
+     * 
+     * @param evt 
+     */
     private void deckButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deckButtonActionPerformed
-        //these if statements display cards being added to players hand one at a time when you click the deck. This logic will be removed in the future
-        //for demonstrating UI purposes only.
-        if (testCount == 0){
-           handSlot_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/deal-breaker-action-card1 (Custom).png"))); 
-        }
-        
-        if (testCount == 1){
-            handSlot_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/all-color-wild-rent-card1 (Custom).png")));
-        }
-        
-        if (testCount == 2){
-            handSlot_7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/$5M-money-card2 (Custom).png")));
-        }
-        
-        if (testCount == 3){
-           handSlot_8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/green-property-card3 (Custom).png"))); 
-        }
-        
-        testCount++;
+
         
     }//GEN-LAST:event_deckButtonActionPerformed
 
     private void yourPropertySlot_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_3ActionPerformed
-        //will show moving a property from your hand to a property slot.
-        yourPropertySlot_3.setIcon(handSlot_4.getIcon());
-        handSlot_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png")));
+   
+ 
     }//GEN-LAST:event_yourPropertySlot_3ActionPerformed
 
     private void yourMoneySlotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourMoneySlotActionPerformed
+        yourMoneySlotButtonPressed = true;
         
-        yourMoneySlot.setIcon(handSlot_3.getIcon());
-        handSlot_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png")));
-        yourTotalMoney.setText("11");
+
     }//GEN-LAST:event_yourMoneySlotActionPerformed
 
     private void showBotActionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showBotActionsActionPerformed
         //shows player 2 taking a turn
-        player2PropertySlot_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/yellow-property-card1 (Custom).png")));
-        player2PropertySlot_4_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/yellow-property-card2 (Custom).png"))); //this is an invisible button on top of slot_4
-        player2MoneySlot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MonopolyCards/$1M-money-card2 (Custom).png")));
-        player2TotalMoney.setText("6");
+
     }//GEN-LAST:event_showBotActionsActionPerformed
+
+    private void yourPropertySlot_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_1ActionPerformed
+        setYourPropertySlotPressed(1, 1);
+    }//GEN-LAST:event_yourPropertySlot_1ActionPerformed
+
+    private void yourTotalMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourTotalMoneyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_yourTotalMoneyActionPerformed
 
     public void setPlayerStartingHand(ArrayList cardImagePaths){
         handSlot_1.setIcon(new javax.swing.ImageIcon(getClass().getResource(cardImagePaths.get(0).toString())));
@@ -916,6 +916,171 @@ public class GamePlayScreen extends javax.swing.JFrame {
     public void setPlayerName(String name){
         youLabel.setText(name);
     }
+    
+    public void setYourTotalMoney(int value){
+        yourTotalMoney.setText(""+value);
+    }
+    
+    public void setYourPropertySlotPressed(int row, int column){
+        yourPropertySlotPressed[0] = row;
+        yourPropertySlotPressed[1] = column;
+    }
+    
+     /**
+     * Will set the boolean value of your money slot.
+     * @param value 
+     */
+    public void setYourMoneySlotButtonAction(boolean value){
+        yourMoneySlotButtonPressed = value;
+    }
+    
+    
+    /**
+     * Checks to see which hand slot button was pressed.
+     * @return hand slot number, or 0 if no hand slot was pressed.
+     */
+    public int checkHandSlotButtonPressed(){
+        
+        try{
+            //iterate through int array to find which button was pressed.
+            for (int i=0; i<handSlotButtonPressed.length; i++){
+                //button pressed will be the only 1 in the array.
+                if(handSlotButtonPressed[i] == 1){
+                    handSlotButtonPressed[i] = 0; //reset back to 0, since we know what button was pressed now.
+                    return i+1; //returns handslot number
+                }
+            }
+        }
+        catch(Exception e){
+            System.out.println("Error when checking hand slot button pressed. e: "+e);
+        }
+
+        return 0;
+    }
+    
+    /**
+     * Will check to see which property slot button was pressed, if any
+     * @return ArrayList used to store index of which row and column had the property slot.
+     */
+ /*   public ArrayList<Integer> checkPropertySlotButtonPressed(){
+    //    ArrayList<Integer> propertySlot = new ArrayList<>();
+        
+        try{
+            if(yourPropertySlotPressed[0] > 0 && yourPropertySlotPressed[1] > 0){
+                propertySlot.add(i); //gets the index of where the property slot was from row
+                propertySlot.add(j); //gets the index of where the property slot was from column
+                yourPropertySlots[i][j] = 0; //reset back to 0.
+                return propertySlot;
+            }
+
+        }
+        catch(Exception e){
+            System.out.println("Error when checking property slot button pressed. e: "+e);
+        }
+        
+        return propertySlot;
+    } */
+    
+    
+    public int[] getYourPropertySlotPressed(){
+        return yourPropertySlotPressed;
+    }
+    
+
+    /**
+     * gets the hand slot card image path from handslot num provided, using handSlots arraylist.
+     * @param handSlot
+     * @return card image path from hand slot.
+     */
+    public String getHandSlotCardImage(int handSlot){
+        return handSlots.get(handSlot-1).getIcon().toString(); //handSlot-1 is accurate representation of correlating handSlot to handSlot number passed in.
+    }
+    
+    /**
+     * Will get the boolean value of your money slot button
+     * @return 
+     */
+    public boolean getYourMoneySlotButtonAction(){
+        return yourMoneySlotButtonPressed;
+    }
+    
+    /**
+     * Displays a property card in property slot given the image path
+     * @param imagePath 
+     */
+    public void displayPlayedPropertyCard(String imagePath){
+        //will need to do all this if statements for each matrix index of property slots for player
+        if (yourPropertySlotPressed[0] == 1 && yourPropertySlotPressed[1] == 1){
+            yourPropertySlot_1.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagePath)));
+        }
+        
+    }
+    
+    /**
+     * Displays a money card on your money slot with given image path
+     * @param imagePath 
+     */
+    public void displayPlayedMoneyCard(String imagePath){
+        yourMoneySlot.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagePath)));
+    }
+    
+    
+    /**
+     * removes the card image from the player's hand at appropriate slot, resetting image back to empty card slot
+     * @param handSlotNum 
+     */
+    public void removeCardImageFromHand(int handSlotNum){
+        if (handSlotNum == 1){
+            handSlot_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png")));
+        }
+        
+        if (handSlotNum == 2){
+            handSlot_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png")));
+        }
+        
+        if (handSlotNum == 3){
+            handSlot_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png")));
+        }
+        
+        if (handSlotNum == 4){
+            handSlot_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png")));
+        }
+        
+        if (handSlotNum == 5){
+            handSlot_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png")));
+        }
+        
+        if (handSlotNum == 6){
+            handSlot_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png")));
+        }
+        
+        if (handSlotNum == 7){
+            handSlot_7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png")));
+        }
+        
+        if (handSlotNum == 8){
+            handSlot_8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png")));
+        }
+        
+        if (handSlotNum == 9){
+            handSlot_9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png")));
+        }
+        
+        if (handSlotNum == 10){
+            handSlot_10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png")));
+        }
+        
+        if (handSlotNum == 11){
+            handSlot_11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png")));
+        }
+        
+        if (handSlotNum == 12){
+            handSlot_12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png")));
+        }
+        
+    }
+
+    
     
     
     

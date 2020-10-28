@@ -21,8 +21,9 @@ public class Deck {
     public void fillDeck(){
         Card card;
         //fill deck with cards. 108 total cards in the deck
+        //card value is set to 1 TEMPORARILY
         for (int i=0; i<108; i++){
-            card = new Card(i, 0);
+            card = new Card(i, 1);
             addCard(card);
         }
     }
