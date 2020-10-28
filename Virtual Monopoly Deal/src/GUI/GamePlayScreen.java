@@ -17,6 +17,7 @@ public class GamePlayScreen extends javax.swing.JFrame {
                                                                                 //This is a 1x12 matrix array.
     private ArrayList<javax.swing.JButton> handSlots = new ArrayList<javax.swing.JButton>(); //used to house hand slot buttons. Will allow for easier access of handslots using indexes.
     private boolean yourMoneySlotButtonPressed = false;
+    //shouldnt need this 2D array anymore, but keeping in case we do.
  //   private int[][] yourPropertySlots = new int[4][10]; //2D array used to store information on whether or not a specified property slot was pressed or not. If one was pressed, a 1 will be
                                                        //temporarily placed in the correct row column association with the property slot button.
     private int[] yourPropertySlotPressed = {0, 0}; //used to store information about what property slot was pressed. Will contain 2 ints, row index and column index of property
@@ -905,6 +906,10 @@ public class GamePlayScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_yourTotalMoneyActionPerformed
 
+    /**
+     * Set player starting hand visually in GUI.
+     * @param cardImagePaths 
+     */
     public void setPlayerStartingHand(ArrayList cardImagePaths){
         handSlot_1.setIcon(new javax.swing.ImageIcon(getClass().getResource(cardImagePaths.get(0).toString())));
         handSlot_2.setIcon(new javax.swing.ImageIcon(getClass().getResource(cardImagePaths.get(1).toString())));
@@ -913,14 +918,27 @@ public class GamePlayScreen extends javax.swing.JFrame {
         handSlot_5.setIcon(new javax.swing.ImageIcon(getClass().getResource(cardImagePaths.get(4).toString())));
     }
     
+    /**
+     * Set the player's name visually in GUI
+     * @param name 
+     */
     public void setPlayerName(String name){
         youLabel.setText(name);
     }
     
+    /**
+     * Sets your total money visually in the GUI
+     * @param value 
+     */
     public void setYourTotalMoney(int value){
         yourTotalMoney.setText(""+value);
     }
     
+    /**
+     * sets int[] of your propertyslot location to correlated property slot button in GUI.
+     * @param row
+     * @param column 
+     */
     public void setYourPropertySlotPressed(int row, int column){
         yourPropertySlotPressed[0] = row;
         yourPropertySlotPressed[1] = column;
@@ -957,31 +975,11 @@ public class GamePlayScreen extends javax.swing.JFrame {
 
         return 0;
     }
-    
-    /**
-     * Will check to see which property slot button was pressed, if any
-     * @return ArrayList used to store index of which row and column had the property slot.
-     */
- /*   public ArrayList<Integer> checkPropertySlotButtonPressed(){
-    //    ArrayList<Integer> propertySlot = new ArrayList<>();
-        
-        try{
-            if(yourPropertySlotPressed[0] > 0 && yourPropertySlotPressed[1] > 0){
-                propertySlot.add(i); //gets the index of where the property slot was from row
-                propertySlot.add(j); //gets the index of where the property slot was from column
-                yourPropertySlots[i][j] = 0; //reset back to 0.
-                return propertySlot;
-            }
 
-        }
-        catch(Exception e){
-            System.out.println("Error when checking property slot button pressed. e: "+e);
-        }
-        
-        return propertySlot;
-    } */
-    
-    
+    /**
+     * Gets your property slot num
+     * @return int[] of property slot num in row column form
+     */
     public int[] getYourPropertySlotPressed(){
         return yourPropertySlotPressed;
     }

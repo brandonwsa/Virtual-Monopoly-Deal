@@ -105,12 +105,12 @@ public class Player{
         }
     }
     
-    public void addMoney(Card card){
+    private void addMoney(Card card){
         money.add(card);
         totalMoney += card.getValue();
     }
     
-    public void addProperty(Card card){
+    private void addProperty(Card card){
         properties.add(card);
     }
     
@@ -122,7 +122,7 @@ public class Player{
      * takes card and removes it from player's hand list by setting it to null.
      * @param card 
      */
-    public void removeCardFromHand(Card card){
+    private void removeCardFromHand(Card card){
         int i = 0;
         
         //iterate through hand to find matching card to remove. Returns out once found.
@@ -162,6 +162,39 @@ public class Player{
         //  action.playRentCard(card);
     }
     //... add more of these action calls that will call action.
+    
+    
+    /**
+     * Plays a property card by adding it to player's properties and removing it from player's hand
+     * @param propertySlot 
+     */
+    public void playPropertyCard(int[] propertySlot){
+        Card c = getCardToPlay();
+        
+        System.out.println(c.getName()); //for testing
+        
+        System.out.println("Property added to slot: "+propertySlot[0]+" "+propertySlot[1]); //for testing
+        
+        //add card to player's properties
+        addProperty(c);
+        
+        //remove card from player's hand.
+        removeCardFromHand(c);
+    }
+    
+    
+    public void playMoneyCard(){
+        Card c = getCardToPlay();
+        
+        System.out.println(c.getName()); //for testing
+        System.out.println("Added money"); //for tetsing
+
+        //adds card to player's list of money. Also adds the value of the card to player's total money
+        addMoney(c);
+        
+        //remove card from player's hand.
+        removeCardFromHand(c);
+    }
     
     public void printHand(){
         for (int i=0; i<hand.size(); i++){

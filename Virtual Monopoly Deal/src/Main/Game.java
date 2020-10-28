@@ -72,65 +72,8 @@ public class Game {
         while(true){
             
             //if turn = players:
-            //see if hand slot button was pressed.
-            handSlotPressed = GPS.checkHandSlotButtonPressed();
+            playerTakeTurn();
             
-            if (handSlotPressed > 0){
-                System.out.println("\n Handslot pressed: "+handSlotPressed); //for testing
-                
-                //set card to play for player
-                List<Card> hand = player.getHand();
-                player.setCardToPlay(hand.get(handSlotPressed-1)); //minus one gives correct index.
-                System.out.println("Card pressed: "+player.getCardToPlay()); //for testing
-                
-                // if the card player wants to play is not null (empty card slot)
-                if (player.getCardToPlay() != null){
-            
-                    //will be 0 if money button pressed, 1 if property button pressed, -1 if somehow nothing pressed.
-                    int slotButtonPressed = waitForSlotButtonPress(hand);
-     
-                    
-                    if (player.getCardToPlay() != null){ //has to recheck for null card incase player chose different card after picking first one.
-                            try{
-                                //check card type to play.
-                                String cardType = player.getCardToPlay().getType().toLowerCase();
-
-                                if ((cardType.equals("property") || cardType.equals("wildcard")) && slotButtonPressed == 1){ //slotButtonPressed == 1 means that a property slot was pressed.
-                                    playPropertyCard();
-                                    GPS.removeCardImageFromHand(handSlotPressed);
-                                }
-                                else if ((cardType.equals("money") || cardType.equals("action") || cardType.equals("wild-rent") || cardType.equals("rent")) && slotButtonPressed == 0){//player is playing a card to add to their bank.
-                                    playMoneyCard();
-                                    GPS.removeCardImageFromHand(handSlotPressed);
-                                }
-                                else if (cardType.equals("rent")){
-                                    playRentCard();
-                                }
-                                else if (cardType.equals("wild-rent")){
-                                    playWildRentCard();
-                                }
-                                else if (cardType.equals("action")){
-                                    playActionCard();
-                                }
-                                else{ //no valid actions made
-                                    player.setCardToPlay(null);
-                                }
-                                
-                        }
-                        catch(Exception e){
-                            System.out.println("Can't play this card card. e:"+e);
-                            GPS.setYourMoneySlotButtonAction(false);
-                        }
-                    }
-                    
-                    
-                    
-                }
-                
-            }
-            //reset check values for buttons pressed.
-            GPS.setYourMoneySlotButtonAction(false);
-            GPS.setYourPropertySlotPressed(0, 0);
         }
     }
     
@@ -245,6 +188,66 @@ public class Game {
     
     
     /**
+     * The actions the player can take when taking their turn.
+     */
+    private void playerTakeTurn(){
+        //see if hand slot button was pressed.
+        handSlotPressed = GPS.checkHandSlotButtonPressed();
+
+        if (handSlotPressed > 0){
+            System.out.println("\n Handslot pressed: "+handSlotPressed); //for testing
+
+            //set card to play for player
+            List<Card> hand = player.getHand();
+            player.setCardToPlay(hand.get(handSlotPressed-1)); //minus one gives correct index.
+            System.out.println("Card pressed: "+player.getCardToPlay()); //for testing
+
+            // if the card player wants to play is not null (empty card slot)
+            if (player.getCardToPlay() != null){
+
+                //will be 0 if money button pressed, 1 if property button pressed, -1 if somehow nothing pressed.
+                int slotButtonPressed = waitForSlotButtonPress(hand);
+
+
+                if (player.getCardToPlay() != null){ //has to recheck for null card incase player chose different card after picking first one.
+                        try{
+                            //check card type to play.
+                            String cardType = player.getCardToPlay().getType().toLowerCase();
+
+                            if ((cardType.equals("property") || cardType.equals("wildcard")) && slotButtonPressed == 1){ //slotButtonPressed == 1 means that a property slot was pressed.
+                                playPropertyCard();
+                            }
+                            else if ((cardType.equals("money") || cardType.equals("action") || cardType.equals("wild-rent") || cardType.equals("rent")) && slotButtonPressed == 0){//player is playing a card to add to their bank.
+                                playMoneyCard();
+                            }
+                            else if (cardType.equals("rent")){
+                                playRentCard();
+                            }
+                            else if (cardType.equals("wild-rent")){
+                                playWildRentCard();
+                            }
+                            else if (cardType.equals("action")){
+                                playActionCard();
+                            }
+                            else{ //no valid actions made
+                                player.setCardToPlay(null);
+                            }
+
+                    }
+                    catch(Exception e){
+                        System.out.println("Can't play this card card. e:"+e);
+                        GPS.setYourMoneySlotButtonAction(false);
+                    }
+                }
+            }
+
+        }
+        //reset check values for buttons pressed.
+        GPS.setYourMoneySlotButtonAction(false);
+        GPS.setYourPropertySlotPressed(0, 0);
+    }
+    
+    /**
      * Will wait for either a money slot or property slot to be pressed.
      * yourPropertySlotPressed will contain number other than 0's for the 2 indexes if a property slot is pressed. The numbers will be that property slots matrix location.
      * @param hand
@@ -279,7 +282,7 @@ public class Game {
             }
 
         }
-        System.out.println("Money slot pressed: "+yourMoneySlotPressed+"\t Property slot num is: "+yourPropertySlotPressed[0]+" "+yourPropertySlotPressed[1]);
+        System.out.println("Money slot pressed: "+yourMoneySlotPressed+"\t Property slot num is: "+yourPropertySlotPressed[0]+" "+yourPropertySlotPressed[1]); //for testing
         
         if (yourMoneySlotPressed == true){
             return 0;
@@ -294,55 +297,50 @@ public class Game {
     
     /**
      * Plays the property the player wants to
+     * May refactor these in future for bot objects to use these methods as well
      */
     private void playPropertyCard(){
+        //capture card to play
         Card c = player.getCardToPlay();
         
-        System.out.println(c.getName()); //for testing
-        
+        //play property card
         int[] yourPropertySlotPressed = GPS.getYourPropertySlotPressed(); //int array of where the property is located in the matrix of player's properties.
-        System.out.println("Property added to slot: "+yourPropertySlotPressed[0]+" "+yourPropertySlotPressed[1]); //for testing
-        
-        //add card to player's properties
-        player.addProperty(c);
-        
-        //get card image path
-        String imagePath = c.getImagePath();
-        
+        player.playPropertyCard(yourPropertySlotPressed);
+
         //display card in GUI
-        GPS.displayPlayedPropertyCard(imagePath);
-        
-        //remove card from player's hand.
-        player.removeCardFromHand(c);
+        GPS.displayPlayedPropertyCard(c.getImagePath());
         
         //reset back to no property slot as we are done
         GPS.setYourPropertySlotPressed(0, 0);
+        
+        //remove card image from hand in GUI
+        GPS.removeCardImageFromHand(handSlotPressed);
     }
     
     /**
      * Plays the money card the player wants to
+     * May refactor these in future for bot objects to use these methods as well
      */
     private void playMoneyCard(){
+        //capture card to play
         Card c = player.getCardToPlay();
         
-        System.out.println(c.getName()); //for testing
-        System.out.println("Added money"); //for tetsing
-
-        //adds card to player's list of money. Also adds the value of the card to player's total money
-        player.addMoney(c);
+        //play money card
+        player.playMoneyCard();
         
         //display player money count
         GPS.setYourTotalMoney(player.getTotalMoney());
         
-        //get card image path
-        String imagePath = c.getImagePath();
-        
         //display card in GUI
-        GPS.displayPlayedMoneyCard(imagePath);
+        GPS.displayPlayedMoneyCard(c.getImagePath());
+        
+        //remove card image from hand in GUI
+        GPS.removeCardImageFromHand(handSlotPressed);
     }
     
     /**
      * Plays the rent card player wants to
+     * May refactor these in future for bot objects to use these methods as well
      */
     private void playRentCard(){
         
@@ -350,6 +348,7 @@ public class Game {
     
     /**
      * Plays wild rent card player wants to
+     * May refactor these in future for bot objects to use these methods as well
      */
     private void playWildRentCard(){
         
@@ -357,6 +356,7 @@ public class Game {
     
     /**
      * Plays action card player wants to
+     * May refactor these in future for bot objects to use these methods as well
      */
     private void playActionCard(){
         
