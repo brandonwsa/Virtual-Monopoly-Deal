@@ -17,6 +17,8 @@ public class GamePlayScreen extends javax.swing.JFrame {
                                                                                 //This is a 1x12 matrix array.
     private ArrayList<javax.swing.JButton> handSlots = new ArrayList<javax.swing.JButton>(); //used to house hand slot buttons. Will allow for easier access of handslots using indexes.
     private boolean yourMoneySlotButtonPressed = false;
+    private boolean discardDeckPressed =  false;
+    private boolean cardDeckPressed = false;
     //shouldnt need this 2D array anymore, but keeping in case we do.
  //   private int[][] yourPropertySlots = new int[4][10]; //2D array used to store information on whether or not a specified property slot was pressed or not. If one was pressed, a 1 will be
                                                        //temporarily placed in the correct row column association with the property slot button.
@@ -153,7 +155,6 @@ public class GamePlayScreen extends javax.swing.JFrame {
         confirmExitPanel.add(areYouSureLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
 
         yesToExitButton.setBackground(new java.awt.Color(255, 255, 255));
-        yesToExitButton.setForeground(new java.awt.Color(0, 0, 0));
         yesToExitButton.setText("Yes");
         yesToExitButton.setBorder(exitGameButton.getBorder());
         yesToExitButton.setPreferredSize(new java.awt.Dimension(128, 32));
@@ -165,7 +166,6 @@ public class GamePlayScreen extends javax.swing.JFrame {
         confirmExitPanel.add(yesToExitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
 
         noToExitButton.setBackground(new java.awt.Color(255, 255, 255));
-        noToExitButton.setForeground(new java.awt.Color(0, 0, 0));
         noToExitButton.setText("Nope, nevermind!");
         noToExitButton.setBorder(exitGameButton.getBorder());
         noToExitButton.addActionListener(new java.awt.event.ActionListener() {
@@ -185,7 +185,6 @@ public class GamePlayScreen extends javax.swing.JFrame {
         menuPanel.setVisible(false);
 
         exitGameButton.setBackground(new java.awt.Color(255, 255, 255));
-        exitGameButton.setForeground(new java.awt.Color(0, 0, 0));
         exitGameButton.setText("Exit Game");
         exitGameButton.setPreferredSize(new java.awt.Dimension(100, 40));
         exitGameButton.addActionListener(new java.awt.event.ActionListener() {
@@ -196,7 +195,6 @@ public class GamePlayScreen extends javax.swing.JFrame {
         menuPanel.add(exitGameButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 190, 40));
 
         howToPlayButton.setBackground(new java.awt.Color(255, 255, 255));
-        howToPlayButton.setForeground(new java.awt.Color(0, 0, 0));
         howToPlayButton.setText("How To Play");
         howToPlayButton.setBorder(exitGameButton.getBorder());
         howToPlayButton.setPreferredSize(new java.awt.Dimension(100, 40));
@@ -208,7 +206,6 @@ public class GamePlayScreen extends javax.swing.JFrame {
         menuPanel.add(howToPlayButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 190, -1));
 
         resumeButton.setBackground(new java.awt.Color(255, 255, 255));
-        resumeButton.setForeground(new java.awt.Color(0, 0, 0));
         resumeButton.setText("Resume");
         resumeButton.setBorder(exitGameButton.getBorder());
         resumeButton.setPreferredSize(new java.awt.Dimension(100, 40));
@@ -381,6 +378,7 @@ public class GamePlayScreen extends javax.swing.JFrame {
         discardDeckButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
         discardDeckButton.setBorder(null);
         discardDeckButton.setContentAreaFilled(false);
+        discardDeckButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png"))); // NOI18N
         discardDeckButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 discardDeckButtonActionPerformed(evt);
@@ -868,7 +866,7 @@ public class GamePlayScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_showTestCardsButtonActionPerformed
 
     private void discardDeckButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_discardDeckButtonActionPerformed
-
+        discardDeckPressed = true;
     }//GEN-LAST:event_discardDeckButtonActionPerformed
 
   //DONT NEED ANYMORE, WAS USSED TO SHOW OFF GUI  private int testCount = 0; //for showing cards being added to hand one at a time from deck. Testing GUI purposes. Will be removed in future.
@@ -878,8 +876,7 @@ public class GamePlayScreen extends javax.swing.JFrame {
      * @param evt 
      */
     private void deckButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deckButtonActionPerformed
-
-        
+       cardDeckPressed = true;
     }//GEN-LAST:event_deckButtonActionPerformed
 
     private void yourPropertySlot_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_3ActionPerformed
@@ -889,8 +886,6 @@ public class GamePlayScreen extends javax.swing.JFrame {
 
     private void yourMoneySlotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourMoneySlotActionPerformed
         yourMoneySlotButtonPressed = true;
-        
-
     }//GEN-LAST:event_yourMoneySlotActionPerformed
 
     private void showBotActionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showBotActionsActionPerformed
@@ -952,6 +947,22 @@ public class GamePlayScreen extends javax.swing.JFrame {
         yourMoneySlotButtonPressed = value;
     }
     
+    /**
+     * Will set the boolean value of your discard deck.
+     * @param value 
+     */
+    public void setYourDiscardDeckPressed(boolean value){
+        discardDeckPressed = value;
+    }
+    
+     /**
+     * Will set the boolean value of your card deck.
+     * @param value 
+     */
+    public void setYourCardDeckPressed(boolean value){
+        cardDeckPressed = value;
+    }
+    
     
     /**
      * Checks to see which hand slot button was pressed.
@@ -982,6 +993,22 @@ public class GamePlayScreen extends javax.swing.JFrame {
      */
     public int[] getYourPropertySlotPressed(){
         return yourPropertySlotPressed;
+    }
+    
+    /**
+     * Tells you if the discard deck has been selected
+     * @return true if selected, false if not selected
+     */
+    public boolean getYourDiscardDeckPressed(){
+        return discardDeckPressed;
+    }
+    
+    /**
+     * Tells you if the card deck has been selected
+     * @return true if selected, false if not selected
+     */
+    public boolean getYourCardDeckPressed(){
+        return cardDeckPressed;
     }
     
 
@@ -1077,10 +1104,79 @@ public class GamePlayScreen extends javax.swing.JFrame {
         }
         
     }
-
-    
-    
-    
+    /**
+     * Adds correct card to first available hand slot in GUI
+     * @param imagePath 
+     */
+    public void addCardImageToHand(String imagePath){
+          
+          if(getHandSlotCardImage(1).contains("/images/empty_card_slot.png")==true){
+               handSlot_1.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagePath)));
+               System.out.println("placed card in handSlot_1");
+          }
+          
+          else if(getHandSlotCardImage(2).contains("/images/empty_card_slot.png")==true){
+               handSlot_2.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagePath)));
+               System.out.println("placed card in handSlot_2");
+          }
+          
+          else if(getHandSlotCardImage(3).contains("/images/empty_card_slot.png")==true){
+               handSlot_3.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagePath)));
+               System.out.println("placed card in handSlot_3");
+          }
+          
+          else if(getHandSlotCardImage(4).contains("/images/empty_card_slot.png")==true){
+               handSlot_4.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagePath)));
+               System.out.println("placed card in handSlot_4");
+          }
+          
+          else if(getHandSlotCardImage(5).contains("/images/empty_card_slot.png")==true){
+               handSlot_5.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagePath)));
+               System.out.println("placed card in handSlot_5");
+          }
+          
+          else if(getHandSlotCardImage(6).contains("/images/empty_card_slot.png")==true){
+               handSlot_6.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagePath)));
+               System.out.println("placed card in handSlot_6");
+          }
+          
+          else if(getHandSlotCardImage(7).contains("/images/empty_card_slot.png")==true){
+               handSlot_7.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagePath)));
+               System.out.println("placed card in handSlot_7");
+          }
+          
+          else if(getHandSlotCardImage(8).contains("/images/empty_card_slot.png")==true){
+               handSlot_8.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagePath)));
+               System.out.println("placed card in handSlot_8");
+          }
+          
+          else if(getHandSlotCardImage(9).contains("/images/empty_card_slot.png")==true){
+               handSlot_9.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagePath)));
+               System.out.println("placed card in handSlot_9");
+          }
+          
+          else if(getHandSlotCardImage(10).contains("/images/empty_card_slot.png")==true){
+               handSlot_10.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagePath)));
+               System.out.println("placed card in handSlot_10");
+          }
+         
+          else if(getHandSlotCardImage(11).contains("/images/empty_card_slot.png")==true){
+               handSlot_11.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagePath)));
+               System.out.println("placed card in handSlot_11");
+          }
+          
+          else if(getHandSlotCardImage(12).contains("/images/empty_card_slot.png")==true){
+               handSlot_12.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagePath)));
+               System.out.println("placed card in handSlot_12");
+          }
+          
+          else{
+              System.out.println("Could not draw card from deck: "+getHandSlotCardImage(12));
+          }
+          
+                
+    }
+        
     
     /**
      * @param args the command line arguments
