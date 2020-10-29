@@ -378,7 +378,6 @@ public class GamePlayScreen extends javax.swing.JFrame {
         discardDeckButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
         discardDeckButton.setBorder(null);
         discardDeckButton.setContentAreaFilled(false);
-        discardDeckButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_card_slot.png"))); // NOI18N
         discardDeckButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 discardDeckButtonActionPerformed(evt);
@@ -1171,10 +1170,15 @@ public class GamePlayScreen extends javax.swing.JFrame {
           }
           
           else{
-              System.out.println("Could not draw card from deck: "+getHandSlotCardImage(12));
+              System.out.println("Could not draw card from deck: "+imagePath);
           }
           
                 
+    }
+    
+    public void addCardImageToDiscardDeck(String img){
+        discardDeckButton.setIcon(new javax.swing.ImageIcon(getClass().getResource(img)));
+       
     }
         
     
