@@ -140,9 +140,10 @@ public class Player{
      * @param c
      */
     public void drawCard(Card c){
+   
+            addToHand(c);
+       
         
-        addToHand(c);
-        System.out.println(c.getName()+" was added to player hand");
     }
     
     /**
