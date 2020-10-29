@@ -392,10 +392,12 @@ public class Game {
         //Add card to discard deck
         player.discardCard(c, discardDeck);
         
+        GPS.addCardImageToDiscardDeck(c.getImagePath());
+        
         //remove card image from hand in GUI
         GPS.removeCardImageFromHand(handSlotPressed);
     }
-    
+   
     
      /**
      * Adds top card to hand and to GUI
@@ -403,13 +405,19 @@ public class Game {
      */
     private void drawCard(){
         //capture card to play
-        Card c = gameDeck.getTopCard();
+         List<Card> hand = player.getHand();
+        if(hand.get(11)==null){
+            Card c = gameDeck.getTopCard();
         
         //draw card
         player.drawCard(c);
         
         //add card to hand in GUI
         GPS.addCardImageToHand(c.getImagePath());
+        }
+        else{
+            System.out.println("Card was not drawn: player hand is full");
+        }
        
     }
      
