@@ -137,10 +137,12 @@ public class Player{
     
     /**
      * Draws card from deck.
-     * @param d
+     * @param c
      */
-    public void drawCard(Deck d){
-        hand.add(d.getTopCard());
+    public void drawCard(Card c){
+        
+        addToHand(c);
+        System.out.println(c.getName()+" was added to player hand");
     }
     
     /**
@@ -151,6 +153,7 @@ public class Player{
     public void discardCard(Card card, Deck discard){
         //discards the card the player wants to.
         discard.addCard(card);
+        System.out.println(card.getName()+" card was discarded");//included for testing/tracking purposes
     }
     
     /**
