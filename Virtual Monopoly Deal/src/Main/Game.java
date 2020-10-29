@@ -205,16 +205,22 @@ public class Game {
             // if the card player wants to play is not null (empty card slot)
             if (player.getCardToPlay() != null){
 
-                //will be 0 if money button pressed, 1 if property button pressed, -1 if somehow nothing pressed.
+                //will be 0 if money button pressed, 1 if property button pressed, 2 if discard deck was pressed, and -1 if somehow nothing pressed.
                 int slotButtonPressed = waitForSlotButtonPress(hand);
 
 
                 if (player.getCardToPlay() != null){ //has to recheck for null card incase player chose different card after picking first one.
+                    System.out.println("type of slot pressed: "+slotButtonPressed);
+                   
                         try{
                             //check card type to play.
                             String cardType = player.getCardToPlay().getType().toLowerCase();
-
-                            if ((cardType.equals("property") || cardType.equals("wildcard")) && slotButtonPressed == 1){ //slotButtonPressed == 1 means that a property slot was pressed.
+                            
+                          
+                            if(slotButtonPressed==2){
+                                 discardCard();
+                            }
+                            else if ((cardType.equals("property") || cardType.equals("wildcard")) && slotButtonPressed == 1){ //slotButtonPressed == 1 means that a property slot was pressed.
                                 playPropertyCard();
                             }
                             else if ((cardType.equals("money") || cardType.equals("action") || cardType.equals("wild-rent") || cardType.equals("rent")) && slotButtonPressed == 0){//player is playing a card to add to their bank.
@@ -242,21 +248,30 @@ public class Game {
             }
 
         }
+        else{
+            if(GPS.getYourCardDeckPressed()==true){
+                drawCard();
+            }
+        }
         //reset check values for buttons pressed.
         GPS.setYourMoneySlotButtonAction(false);
         GPS.setYourPropertySlotPressed(0, 0);
+        GPS.setYourDiscardDeckPressed(false);
+        GPS.setYourCardDeckPressed(false);
     }
     
     /**
-     * Will wait for either a money slot or property slot to be pressed.
+     * Will wait for either a money slot or property slot or discard deck to be pressed.
      * yourPropertySlotPressed will contain number other than 0's for the 2 indexes if a property slot is pressed. The numbers will be that property slots matrix location.
      * @param hand
-     * @return 0 if money slot pressed. 1 if property slot pressed.
+     * @return 0 if money slot pressed. 1 if property slot pressed, 2 if discard deck pressed
      */
     private int waitForSlotButtonPress(List<Card> hand){
         //get button action results set up.
         int[] yourPropertySlotPressed = GPS.getYourPropertySlotPressed(); //will contain 2 ints, index for row and index for column of where property button was pressed.
         boolean yourMoneySlotPressed = GPS.getYourMoneySlotButtonAction(); //will be true if money slot is pressed. has setter and getting in GPS.
+        boolean yourDiscardDeckPressed = GPS.getYourDiscardDeckPressed();
+        boolean yourCardDeckPressed = GPS.getYourCardDeckPressed();
         int tempHandSlotPressed = 0; //used in while loop to see if user clicked different card, without changing value of original handSlotPressed, unless diff card was pressed.
 
         //have thread sleep, needed for while loop to work
@@ -269,11 +284,12 @@ public class Game {
             System.out.println("Something happened while sleeping. e: "+e);
         }
         
-        //loop until user presses either a money slot or property slot, or a different card to play
-        while (yourMoneySlotPressed == false && (yourPropertySlotPressed[0] == 0 && yourPropertySlotPressed[1] == 0)){ //once either money button pressed or a propertyslot button was pressed, will exit loop.
+        //loop until user presses either a money slot or property slot or the discard deck, or a different card to play
+        while (yourMoneySlotPressed == false && (yourPropertySlotPressed[0] == 0 && yourPropertySlotPressed[1] == 0 && yourDiscardDeckPressed == false && yourCardDeckPressed == false)){ //once either money button pressed or a propertyslot button was pressed or discard deck or card deck was pressed, will exit loop.
             yourPropertySlotPressed = GPS.getYourPropertySlotPressed(); //recheck if property slot button was pressed.
             yourMoneySlotPressed = GPS.getYourMoneySlotButtonAction(); //recheck if money slot button was pressed.
             tempHandSlotPressed = GPS.checkHandSlotButtonPressed(); //recheck if player clicked a different card to play.
+            yourDiscardDeckPressed = GPS.getYourDiscardDeckPressed();//recheck if discard deck was pressed
 
             if (tempHandSlotPressed > 0){ //if player did click a different card to play.
                 player.setCardToPlay(hand.get(tempHandSlotPressed-1)); //minus one gives correct index.
@@ -289,6 +305,9 @@ public class Game {
         }
         else if(yourPropertySlotPressed[0] != 0 && yourPropertySlotPressed[1] != 0){
             return 1;
+        }
+        else if(yourDiscardDeckPressed == true){
+            return 2;
         }
         
         return -1;
@@ -362,6 +381,36 @@ public class Game {
         
     }
     
+    /**
+     * Discards selected card
+     * May refactor these in future for bot objects to use these methods as well
+     */
+    private void discardCard(){
+         //capture card to play
+        Card c = player.getCardToPlay();
+        
+        //Add card to discard deck
+        player.discardCard(c, discardDeck);
+        
+        //remove card image from hand in GUI
+        GPS.removeCardImageFromHand(handSlotPressed);
+    }
     
     
+     /**
+     * Adds top card to hand and to GUI
+     * May refactor these in future for bot objects to use these methods as well
+     */
+    private void drawCard(){
+        //capture card to play
+        Card c = gameDeck.getTopCard();
+        
+        //draw card
+        player.drawCard(c);
+        
+        //add card to hand in GUI
+        GPS.addCardImageToHand(c.getImagePath());
+       
+    }
+     
 }
