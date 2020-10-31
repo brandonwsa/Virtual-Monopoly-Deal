@@ -405,20 +405,24 @@ public class Game {
      */
     private void drawCard(){
         //capture card to play
-         List<Card> hand = player.getHand();
-        if(hand.get(11)==null){
-            Card c = gameDeck.getTopCard();
-        
-        //draw card
-        player.drawCard(c);
-        
-        //add card to hand in GUI
-        GPS.addCardImageToHand(c.getImagePath());
+        List<Card> hand = player.getHand();
+        for (Card c : hand){
+            if (c == null){
+                //capture card to draw.
+                Card card = gameDeck.getTopCard();
+                
+                //draw card
+                player.drawCard(card);
+
+                //add card to hand in GUI
+                GPS.addCardImageToHand(card.getImagePath());
+                
+                //returns out of method once added
+                return;
+            }
         }
-        else{
-            System.out.println("Card was not drawn: player hand is full");
-        }
-       
+        //if no free hand slot was found, will reach this sys out stmt
+        System.out.println("Card was not drawn: player hand is full");
     }
      
 }

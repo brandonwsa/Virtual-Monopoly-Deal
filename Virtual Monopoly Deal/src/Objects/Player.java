@@ -99,6 +99,7 @@ public class Player{
         for (Card c : hand){ 
             if (c == null){
                 hand.set(i, card);
+                System.out.println("\nCard drawn: "+card.getName());
                 return;
             }
             i++;
@@ -140,10 +141,7 @@ public class Player{
      * @param c
      */
     public void drawCard(Card c){
-   
-            addToHand(c);
-       
-        
+        addToHand(c);
     }
     
     /**
@@ -152,7 +150,11 @@ public class Player{
      * @param discard
      */
     public void discardCard(Card card, Deck discard){
-        //discards the card the player wants to.
+        
+        //remove the card from the player's hand
+        removeCardFromHand(card);
+        
+        //Add card to discard to discard deck. discards the card the player wants to.
         discard.addCard(card);
         System.out.println(card.getName()+" card was discarded");//included for testing/tracking purposes
     }
