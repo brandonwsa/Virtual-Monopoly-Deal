@@ -16,6 +16,7 @@ public class GamePlayScreen extends javax.swing.JFrame {
                                                                                 //will need to be reset back to all 0's at end of checking which hand slot button was pressed.
                                                                                 //This is a 1x12 matrix array.
     private ArrayList<javax.swing.JButton> handSlots = new ArrayList<javax.swing.JButton>(); //used to house hand slot buttons. Will allow for easier access of handslots using indexes.
+ //   private ArrayList<javax.swing.JButton> yourPropertySlots = new ArrayList<javax.swing.JButton>();//used to house your property slot buttons. Will allow us to iterate through slots better using indexes.
     private boolean yourMoneySlotButtonPressed = false;
     private boolean discardDeckPressed =  false;
     private boolean cardDeckPressed = false;
@@ -23,12 +24,15 @@ public class GamePlayScreen extends javax.swing.JFrame {
  //   private int[][] yourPropertySlots = new int[4][10]; //2D array used to store information on whether or not a specified property slot was pressed or not. If one was pressed, a 1 will be
                                                        //temporarily placed in the correct row column association with the property slot button.
     private int[] yourPropertySlotPressed = {0, 0}; //used to store information about what property slot was pressed. Will contain 2 ints, row index and column index of property
+    private javax.swing.JButton lastPropertyPressed = null; //will be used to know which property was set last. Used to displayImage of selected property slot.
 
     /**
      * Creates new form GamePlayScreen
      */
     public GamePlayScreen() {
         initComponents();
+        
+        
         
         //add handslot buttons to arraylist
         handSlots.add(handSlot_1);
@@ -43,6 +47,14 @@ public class GamePlayScreen extends javax.swing.JFrame {
         handSlots.add(handSlot_10);
         handSlots.add(handSlot_11);
         handSlots.add(handSlot_12);
+        
+        //add propertyslot buttons to arraylist
+   /*     yourPropertySlots.add(yourPropertySlot_1);
+        yourPropertySlots.add(yourPropertySlot_1_2);
+        yourPropertySlots.add(yourPropertySlot_1_3);
+        yourPropertySlots.add(yourPropertySlot_1_4);
+        yourPropertySlots.add(yourPropertySlot_1_5);
+        yourPropertySlots.add(yourPropertySlot_1_6); */
         
         
     }
@@ -79,14 +91,12 @@ public class GamePlayScreen extends javax.swing.JFrame {
         handSlot_10 = new javax.swing.JButton();
         handSlot_11 = new javax.swing.JButton();
         handSlot_12 = new javax.swing.JButton();
-        player3TotalMoney = new javax.swing.JTextField();
         propertiesLabel = new javax.swing.JLabel();
         moneyLabel = new javax.swing.JLabel();
         discardDeckLabel = new javax.swing.JLabel();
         discardDeckButton = new javax.swing.JButton();
         deckButton = new javax.swing.JButton();
         deckLabel = new javax.swing.JLabel();
-        moneyEmblem1 = new javax.swing.JLabel();
         viewMenuButton = new javax.swing.JButton();
         endTurnEarlyButton = new javax.swing.JButton();
         viewHandButton = new javax.swing.JButton();
@@ -104,6 +114,8 @@ public class GamePlayScreen extends javax.swing.JFrame {
         player3PropertySlot_9 = new javax.swing.JButton();
         player3PropertySlot_10 = new javax.swing.JButton();
         player3Label = new javax.swing.JLabel();
+        moneyEmblem1 = new javax.swing.JLabel();
+        player3TotalMoney = new javax.swing.JTextField();
         player2PlayArea = new javax.swing.JPanel();
         player2MoneySlot = new javax.swing.JButton();
         player2PropertySlot_1 = new javax.swing.JButton();
@@ -122,25 +134,74 @@ public class GamePlayScreen extends javax.swing.JFrame {
         player2Label = new javax.swing.JLabel();
         yourPlayArea = new javax.swing.JPanel();
         yourMoneySlot = new javax.swing.JButton();
+        yourPropertySlot_1_6 = new javax.swing.JButton();
+        yourPropertySlot_1_5 = new javax.swing.JButton();
+        yourPropertySlot_1_4 = new javax.swing.JButton();
+        yourPropertySlot_1_3 = new javax.swing.JButton();
+        yourPropertySlot_1_2 = new javax.swing.JButton();
         yourPropertySlot_1 = new javax.swing.JButton();
+        yourPropertySlot_2_6 = new javax.swing.JButton();
+        yourPropertySlot_2_5 = new javax.swing.JButton();
+        yourPropertySlot_2_4 = new javax.swing.JButton();
+        yourPropertySlot_2_3 = new javax.swing.JButton();
+        yourPropertySlot_2_2 = new javax.swing.JButton();
         yourPropertySlot_2 = new javax.swing.JButton();
+        yourPropertySlot_3_6 = new javax.swing.JButton();
+        yourPropertySlot_3_5 = new javax.swing.JButton();
+        yourPropertySlot_3_4 = new javax.swing.JButton();
+        yourPropertySlot_3_3 = new javax.swing.JButton();
+        yourPropertySlot_3_2 = new javax.swing.JButton();
         yourPropertySlot_3 = new javax.swing.JButton();
+        yourPropertySlot_4_6 = new javax.swing.JButton();
+        yourPropertySlot_4_5 = new javax.swing.JButton();
+        yourPropertySlot_4_4 = new javax.swing.JButton();
+        yourPropertySlot_4_3 = new javax.swing.JButton();
+        yourPropertySlot_4_2 = new javax.swing.JButton();
         yourPropertySlot_4 = new javax.swing.JButton();
+        yourPropertySlot_5_6 = new javax.swing.JButton();
+        yourPropertySlot_5_5 = new javax.swing.JButton();
+        yourPropertySlot_5_4 = new javax.swing.JButton();
+        yourPropertySlot_5_3 = new javax.swing.JButton();
+        yourPropertySlot_5_2 = new javax.swing.JButton();
         yourPropertySlot_5 = new javax.swing.JButton();
+        yourPropertySlot_6_6 = new javax.swing.JButton();
+        yourPropertySlot_6_5 = new javax.swing.JButton();
+        yourPropertySlot_6_4 = new javax.swing.JButton();
+        yourPropertySlot_6_3 = new javax.swing.JButton();
+        yourPropertySlot_6_2 = new javax.swing.JButton();
         yourPropertySlot_6 = new javax.swing.JButton();
+        yourPropertySlot_7_6 = new javax.swing.JButton();
+        yourPropertySlot_7_5 = new javax.swing.JButton();
+        yourPropertySlot_7_4 = new javax.swing.JButton();
+        yourPropertySlot_7_3 = new javax.swing.JButton();
+        yourPropertySlot_7_2 = new javax.swing.JButton();
         yourPropertySlot_7 = new javax.swing.JButton();
+        yourPropertySlot_8_6 = new javax.swing.JButton();
+        yourPropertySlot_8_5 = new javax.swing.JButton();
+        yourPropertySlot_8_4 = new javax.swing.JButton();
+        yourPropertySlot_8_3 = new javax.swing.JButton();
+        yourPropertySlot_8_2 = new javax.swing.JButton();
         yourPropertySlot_8 = new javax.swing.JButton();
+        yourPropertySlot_9_6 = new javax.swing.JButton();
+        yourPropertySlot_9_5 = new javax.swing.JButton();
+        yourPropertySlot_9_4 = new javax.swing.JButton();
+        yourPropertySlot_9_3 = new javax.swing.JButton();
+        yourPropertySlot_9_2 = new javax.swing.JButton();
         yourPropertySlot_9 = new javax.swing.JButton();
+        yourPropertySlot_10_6 = new javax.swing.JButton();
+        yourPropertySlot_10_5 = new javax.swing.JButton();
+        yourPropertySlot_10_4 = new javax.swing.JButton();
+        yourPropertySlot_10_3 = new javax.swing.JButton();
+        yourPropertySlot_10_2 = new javax.swing.JButton();
         yourPropertySlot_10 = new javax.swing.JButton();
         yourTotalMoney = new javax.swing.JTextField();
         moneyEmblem2 = new javax.swing.JLabel();
         youLabel = new javax.swing.JLabel();
         toWinnerScreenButton = new javax.swing.JButton();
-        showTestCardsButton = new javax.swing.JButton();
-        showBotActions = new javax.swing.JButton();
         tableBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jLayeredPane1.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jLayeredPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -351,29 +412,20 @@ public class GamePlayScreen extends javax.swing.JFrame {
 
         jLayeredPane1.add(yourHandPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 280, 970, 490));
 
-        player3TotalMoney.setEditable(false);
-        player3TotalMoney.setBackground(null);
-        player3TotalMoney.setFont(new java.awt.Font("Eras Demi ITC", 0, 54)); // NOI18N
-        player3TotalMoney.setForeground(new java.awt.Color(255, 255, 255));
-        player3TotalMoney.setText("0");
-        player3TotalMoney.setBorder(null);
-        player3TotalMoney.setOpaque(false);
-        jLayeredPane1.add(player3TotalMoney, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, 70, -1));
-
         propertiesLabel.setFont(new java.awt.Font("Eras Demi ITC", 0, 24)); // NOI18N
         propertiesLabel.setForeground(new java.awt.Color(255, 255, 255));
         propertiesLabel.setText("Properties:");
-        jLayeredPane1.add(propertiesLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, -1, -1));
+        jLayeredPane1.add(propertiesLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, -1, -1));
 
         moneyLabel.setFont(new java.awt.Font("Eras Demi ITC", 0, 24)); // NOI18N
         moneyLabel.setForeground(new java.awt.Color(255, 255, 255));
         moneyLabel.setText("Money:");
-        jLayeredPane1.add(moneyLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, -1, -1));
+        jLayeredPane1.add(moneyLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, -1, -1));
 
         discardDeckLabel.setFont(new java.awt.Font("Eras Demi ITC", 0, 24)); // NOI18N
         discardDeckLabel.setForeground(new java.awt.Color(255, 255, 255));
         discardDeckLabel.setText("Discard Deck:");
-        jLayeredPane1.add(discardDeckLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 10, -1, -1));
+        jLayeredPane1.add(discardDeckLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 0, -1, -1));
 
         discardDeckButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
         discardDeckButton.setBorder(null);
@@ -383,7 +435,7 @@ public class GamePlayScreen extends javax.swing.JFrame {
                 discardDeckButtonActionPerformed(evt);
             }
         });
-        jLayeredPane1.add(discardDeckButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 40, -1, -1));
+        jLayeredPane1.add(discardDeckButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 30, -1, -1));
 
         deckButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back_of_card.png"))); // NOI18N
         deckButton.setBorder(null);
@@ -393,15 +445,12 @@ public class GamePlayScreen extends javax.swing.JFrame {
                 deckButtonActionPerformed(evt);
             }
         });
-        jLayeredPane1.add(deckButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 40, -1, -1));
+        jLayeredPane1.add(deckButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 30, -1, -1));
 
         deckLabel.setFont(new java.awt.Font("Eras Demi ITC", 0, 24)); // NOI18N
         deckLabel.setForeground(new java.awt.Color(255, 255, 255));
         deckLabel.setText("Deck:");
-        jLayeredPane1.add(deckLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, -1, -1));
-
-        moneyEmblem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/money emblem red.png"))); // NOI18N
-        jLayeredPane1.add(moneyEmblem1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 70, -1));
+        jLayeredPane1.add(deckLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 0, -1, -1));
 
         viewMenuButton.setBackground(new java.awt.Color(153, 0, 0));
         viewMenuButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -518,7 +567,19 @@ public class GamePlayScreen extends javax.swing.JFrame {
         player3Label.setText("Player3:");
         player3PlayArea.add(player3Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
 
-        jLayeredPane1.add(player3PlayArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 1910, 250));
+        moneyEmblem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/money emblem red.png"))); // NOI18N
+        player3PlayArea.add(moneyEmblem1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 70, -1));
+
+        player3TotalMoney.setEditable(false);
+        player3TotalMoney.setBackground(null);
+        player3TotalMoney.setFont(new java.awt.Font("Eras Demi ITC", 0, 54)); // NOI18N
+        player3TotalMoney.setForeground(new java.awt.Color(255, 255, 255));
+        player3TotalMoney.setText("0");
+        player3TotalMoney.setBorder(null);
+        player3TotalMoney.setOpaque(false);
+        player3PlayArea.add(player3TotalMoney, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 70, -1));
+
+        jLayeredPane1.add(player3PlayArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 1910, 250));
 
         player2PlayArea.setBackground(new java.awt.Color(0, 0, 0));
         player2PlayArea.setOpaque(false);
@@ -610,7 +671,7 @@ public class GamePlayScreen extends javax.swing.JFrame {
         player2Label.setText("Player2:");
         player2PlayArea.add(player2Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
 
-        jLayeredPane1.add(player2PlayArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 540, 1910, 250));
+        jLayeredPane1.add(player2PlayArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, 1910, 250));
 
         yourPlayArea.setBackground(new java.awt.Color(0, 0, 0));
         yourPlayArea.setOpaque(false);
@@ -626,6 +687,56 @@ public class GamePlayScreen extends javax.swing.JFrame {
         });
         yourPlayArea.add(yourMoneySlot, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
 
+        yourPropertySlot_1_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_1_6.setBorder(null);
+        yourPropertySlot_1_6.setContentAreaFilled(false);
+        yourPropertySlot_1_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_1_6ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_1_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, -1, -1));
+
+        yourPropertySlot_1_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_1_5.setBorder(null);
+        yourPropertySlot_1_5.setContentAreaFilled(false);
+        yourPropertySlot_1_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_1_5ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_1_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, -1, -1));
+
+        yourPropertySlot_1_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_1_4.setBorder(null);
+        yourPropertySlot_1_4.setContentAreaFilled(false);
+        yourPropertySlot_1_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_1_4ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_1_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, -1, -1));
+
+        yourPropertySlot_1_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_1_3.setBorder(null);
+        yourPropertySlot_1_3.setContentAreaFilled(false);
+        yourPropertySlot_1_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_1_3ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_1_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, -1, -1));
+
+        yourPropertySlot_1_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_1_2.setBorder(null);
+        yourPropertySlot_1_2.setContentAreaFilled(false);
+        yourPropertySlot_1_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_1_2ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_1_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, -1, -1));
+
         yourPropertySlot_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_property_slot.png"))); // NOI18N
         yourPropertySlot_1.setBorder(null);
         yourPropertySlot_1.setContentAreaFilled(false);
@@ -636,10 +747,115 @@ public class GamePlayScreen extends javax.swing.JFrame {
         });
         yourPlayArea.add(yourPropertySlot_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, -1, -1));
 
+        yourPropertySlot_2_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_2_6.setBorder(null);
+        yourPropertySlot_2_6.setContentAreaFilled(false);
+        yourPropertySlot_2_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_2_6ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_2_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, -1, -1));
+
+        yourPropertySlot_2_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_2_5.setBorder(null);
+        yourPropertySlot_2_5.setContentAreaFilled(false);
+        yourPropertySlot_2_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_2_5ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_2_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 90, -1, -1));
+
+        yourPropertySlot_2_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_2_4.setBorder(null);
+        yourPropertySlot_2_4.setContentAreaFilled(false);
+        yourPropertySlot_2_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_2_4ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_2_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, -1, -1));
+
+        yourPropertySlot_2_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_2_3.setBorder(null);
+        yourPropertySlot_2_3.setContentAreaFilled(false);
+        yourPropertySlot_2_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_2_3ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_2_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 50, -1, -1));
+
+        yourPropertySlot_2_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_2_2.setBorder(null);
+        yourPropertySlot_2_2.setContentAreaFilled(false);
+        yourPropertySlot_2_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_2_2ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_2_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, -1, -1));
+
         yourPropertySlot_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_property_slot.png"))); // NOI18N
         yourPropertySlot_2.setBorder(null);
         yourPropertySlot_2.setContentAreaFilled(false);
+        yourPropertySlot_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_2ActionPerformed(evt);
+            }
+        });
         yourPlayArea.add(yourPropertySlot_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 10, -1, -1));
+
+        yourPropertySlot_3_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_3_6.setBorder(null);
+        yourPropertySlot_3_6.setContentAreaFilled(false);
+        yourPropertySlot_3_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_3_6ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_3_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 110, -1, -1));
+
+        yourPropertySlot_3_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_3_5.setBorder(null);
+        yourPropertySlot_3_5.setContentAreaFilled(false);
+        yourPropertySlot_3_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_3_5ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_3_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 90, -1, -1));
+
+        yourPropertySlot_3_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_3_4.setBorder(null);
+        yourPropertySlot_3_4.setContentAreaFilled(false);
+        yourPropertySlot_3_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_3_4ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_3_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 70, -1, -1));
+
+        yourPropertySlot_3_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_3_3.setBorder(null);
+        yourPropertySlot_3_3.setContentAreaFilled(false);
+        yourPropertySlot_3_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_3_3ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_3_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 50, -1, -1));
+
+        yourPropertySlot_3_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_3_2.setBorder(null);
+        yourPropertySlot_3_2.setContentAreaFilled(false);
+        yourPropertySlot_3_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_3_2ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_3_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 30, -1, -1));
 
         yourPropertySlot_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_property_slot.png"))); // NOI18N
         yourPropertySlot_3.setBorder(null);
@@ -651,39 +867,424 @@ public class GamePlayScreen extends javax.swing.JFrame {
         });
         yourPlayArea.add(yourPropertySlot_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, -1, -1));
 
+        yourPropertySlot_4_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_4_6.setBorder(null);
+        yourPropertySlot_4_6.setContentAreaFilled(false);
+        yourPropertySlot_4_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_4_6ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_4_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 110, -1, -1));
+
+        yourPropertySlot_4_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_4_5.setBorder(null);
+        yourPropertySlot_4_5.setContentAreaFilled(false);
+        yourPropertySlot_4_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_4_5ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_4_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 90, -1, -1));
+
+        yourPropertySlot_4_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_4_4.setBorder(null);
+        yourPropertySlot_4_4.setContentAreaFilled(false);
+        yourPropertySlot_4_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_4_4ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_4_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 70, -1, -1));
+
+        yourPropertySlot_4_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_4_3.setBorder(null);
+        yourPropertySlot_4_3.setContentAreaFilled(false);
+        yourPropertySlot_4_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_4_3ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_4_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 50, -1, -1));
+
+        yourPropertySlot_4_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_4_2.setBorder(null);
+        yourPropertySlot_4_2.setContentAreaFilled(false);
+        yourPropertySlot_4_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_4_2ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_4_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 30, -1, -1));
+
         yourPropertySlot_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_property_slot.png"))); // NOI18N
         yourPropertySlot_4.setBorder(null);
         yourPropertySlot_4.setContentAreaFilled(false);
+        yourPropertySlot_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_4ActionPerformed(evt);
+            }
+        });
         yourPlayArea.add(yourPropertySlot_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 10, -1, -1));
+
+        yourPropertySlot_5_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_5_6.setBorder(null);
+        yourPropertySlot_5_6.setContentAreaFilled(false);
+        yourPropertySlot_5_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_5_6ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_5_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 110, -1, -1));
+
+        yourPropertySlot_5_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_5_5.setBorder(null);
+        yourPropertySlot_5_5.setContentAreaFilled(false);
+        yourPropertySlot_5_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_5_5ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_5_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 90, -1, -1));
+
+        yourPropertySlot_5_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_5_4.setBorder(null);
+        yourPropertySlot_5_4.setContentAreaFilled(false);
+        yourPropertySlot_5_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_5_4ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_5_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 70, -1, -1));
+
+        yourPropertySlot_5_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_5_3.setBorder(null);
+        yourPropertySlot_5_3.setContentAreaFilled(false);
+        yourPropertySlot_5_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_5_3ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_5_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 50, -1, -1));
+
+        yourPropertySlot_5_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_5_2.setBorder(null);
+        yourPropertySlot_5_2.setContentAreaFilled(false);
+        yourPropertySlot_5_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_5_2ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_5_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 30, -1, -1));
 
         yourPropertySlot_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_property_slot.png"))); // NOI18N
         yourPropertySlot_5.setBorder(null);
         yourPropertySlot_5.setContentAreaFilled(false);
+        yourPropertySlot_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_5ActionPerformed(evt);
+            }
+        });
         yourPlayArea.add(yourPropertySlot_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 10, -1, -1));
+
+        yourPropertySlot_6_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_6_6.setBorder(null);
+        yourPropertySlot_6_6.setContentAreaFilled(false);
+        yourPropertySlot_6_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_6_6ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_6_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 110, -1, -1));
+
+        yourPropertySlot_6_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_6_5.setBorder(null);
+        yourPropertySlot_6_5.setContentAreaFilled(false);
+        yourPropertySlot_6_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_6_5ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_6_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 90, -1, -1));
+
+        yourPropertySlot_6_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_6_4.setBorder(null);
+        yourPropertySlot_6_4.setContentAreaFilled(false);
+        yourPropertySlot_6_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_6_4ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_6_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 70, -1, -1));
+
+        yourPropertySlot_6_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_6_3.setBorder(null);
+        yourPropertySlot_6_3.setContentAreaFilled(false);
+        yourPropertySlot_6_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_6_3ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_6_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 50, -1, -1));
+
+        yourPropertySlot_6_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_6_2.setBorder(null);
+        yourPropertySlot_6_2.setContentAreaFilled(false);
+        yourPropertySlot_6_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_6_2ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_6_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 30, -1, -1));
 
         yourPropertySlot_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_property_slot.png"))); // NOI18N
         yourPropertySlot_6.setBorder(null);
         yourPropertySlot_6.setContentAreaFilled(false);
+        yourPropertySlot_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_6ActionPerformed(evt);
+            }
+        });
         yourPlayArea.add(yourPropertySlot_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 10, -1, -1));
+
+        yourPropertySlot_7_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_7_6.setBorder(null);
+        yourPropertySlot_7_6.setContentAreaFilled(false);
+        yourPropertySlot_7_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_7_6ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_7_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 110, -1, -1));
+
+        yourPropertySlot_7_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_7_5.setBorder(null);
+        yourPropertySlot_7_5.setContentAreaFilled(false);
+        yourPropertySlot_7_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_7_5ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_7_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 90, -1, -1));
+
+        yourPropertySlot_7_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_7_4.setBorder(null);
+        yourPropertySlot_7_4.setContentAreaFilled(false);
+        yourPropertySlot_7_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_7_4ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_7_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 70, -1, -1));
+
+        yourPropertySlot_7_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_7_3.setBorder(null);
+        yourPropertySlot_7_3.setContentAreaFilled(false);
+        yourPropertySlot_7_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_7_3ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_7_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 50, -1, -1));
+
+        yourPropertySlot_7_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_7_2.setBorder(null);
+        yourPropertySlot_7_2.setContentAreaFilled(false);
+        yourPropertySlot_7_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_7_2ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_7_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 30, -1, -1));
 
         yourPropertySlot_7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_property_slot.png"))); // NOI18N
         yourPropertySlot_7.setBorder(null);
         yourPropertySlot_7.setContentAreaFilled(false);
+        yourPropertySlot_7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_7ActionPerformed(evt);
+            }
+        });
         yourPlayArea.add(yourPropertySlot_7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 10, -1, -1));
+
+        yourPropertySlot_8_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_8_6.setBorder(null);
+        yourPropertySlot_8_6.setContentAreaFilled(false);
+        yourPropertySlot_8_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_8_6ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_8_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 110, -1, -1));
+
+        yourPropertySlot_8_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_8_5.setBorder(null);
+        yourPropertySlot_8_5.setContentAreaFilled(false);
+        yourPropertySlot_8_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_8_5ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_8_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 90, -1, -1));
+
+        yourPropertySlot_8_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_8_4.setBorder(null);
+        yourPropertySlot_8_4.setContentAreaFilled(false);
+        yourPropertySlot_8_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_8_4ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_8_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 70, -1, -1));
+
+        yourPropertySlot_8_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_8_3.setBorder(null);
+        yourPropertySlot_8_3.setContentAreaFilled(false);
+        yourPropertySlot_8_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_8_3ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_8_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 50, -1, -1));
+
+        yourPropertySlot_8_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_8_2.setBorder(null);
+        yourPropertySlot_8_2.setContentAreaFilled(false);
+        yourPropertySlot_8_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_8_2ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_8_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 30, -1, -1));
 
         yourPropertySlot_8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_property_slot.png"))); // NOI18N
         yourPropertySlot_8.setBorder(null);
         yourPropertySlot_8.setContentAreaFilled(false);
+        yourPropertySlot_8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_8ActionPerformed(evt);
+            }
+        });
         yourPlayArea.add(yourPropertySlot_8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 10, -1, -1));
+
+        yourPropertySlot_9_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_9_6.setBorder(null);
+        yourPropertySlot_9_6.setContentAreaFilled(false);
+        yourPropertySlot_9_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_9_6ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_9_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 110, -1, -1));
+
+        yourPropertySlot_9_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_9_5.setBorder(null);
+        yourPropertySlot_9_5.setContentAreaFilled(false);
+        yourPropertySlot_9_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_9_5ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_9_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 90, -1, -1));
+
+        yourPropertySlot_9_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_9_4.setBorder(null);
+        yourPropertySlot_9_4.setContentAreaFilled(false);
+        yourPropertySlot_9_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_9_4ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_9_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 70, -1, -1));
+
+        yourPropertySlot_9_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_9_3.setBorder(null);
+        yourPropertySlot_9_3.setContentAreaFilled(false);
+        yourPropertySlot_9_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_9_3ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_9_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 50, -1, -1));
+
+        yourPropertySlot_9_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_9_2.setBorder(null);
+        yourPropertySlot_9_2.setContentAreaFilled(false);
+        yourPropertySlot_9_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_9_2ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_9_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 30, -1, -1));
 
         yourPropertySlot_9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_property_slot.png"))); // NOI18N
         yourPropertySlot_9.setBorder(null);
         yourPropertySlot_9.setContentAreaFilled(false);
+        yourPropertySlot_9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_9ActionPerformed(evt);
+            }
+        });
         yourPlayArea.add(yourPropertySlot_9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 10, -1, -1));
+
+        yourPropertySlot_10_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_10_6.setBorder(null);
+        yourPropertySlot_10_6.setContentAreaFilled(false);
+        yourPropertySlot_10_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_10_6ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_10_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1750, 110, -1, -1));
+
+        yourPropertySlot_10_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_10_5.setBorder(null);
+        yourPropertySlot_10_5.setContentAreaFilled(false);
+        yourPropertySlot_10_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_10_5ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_10_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1750, 90, -1, -1));
+
+        yourPropertySlot_10_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_10_4.setBorder(null);
+        yourPropertySlot_10_4.setContentAreaFilled(false);
+        yourPropertySlot_10_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_10_4ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_10_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1750, 70, -1, -1));
+
+        yourPropertySlot_10_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_10_3.setBorder(null);
+        yourPropertySlot_10_3.setContentAreaFilled(false);
+        yourPropertySlot_10_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_10_3ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_10_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1750, 50, -1, -1));
+
+        yourPropertySlot_10_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        yourPropertySlot_10_2.setBorder(null);
+        yourPropertySlot_10_2.setContentAreaFilled(false);
+        yourPropertySlot_10_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_10_2ActionPerformed(evt);
+            }
+        });
+        yourPlayArea.add(yourPropertySlot_10_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1750, 30, -1, -1));
 
         yourPropertySlot_10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_property_slot.png"))); // NOI18N
         yourPropertySlot_10.setBorder(null);
         yourPropertySlot_10.setContentAreaFilled(false);
+        yourPropertySlot_10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yourPropertySlot_10ActionPerformed(evt);
+            }
+        });
         yourPlayArea.add(yourPropertySlot_10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1750, 10, -1, -1));
 
         yourTotalMoney.setEditable(false);
@@ -709,7 +1310,7 @@ public class GamePlayScreen extends javax.swing.JFrame {
         youLabel.setText(PlayScreen.playerName);
         yourPlayArea.add(youLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
 
-        jLayeredPane1.add(yourPlayArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 790, 1910, 250));
+        jLayeredPane1.add(yourPlayArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 790, 1910, 310));
 
         toWinnerScreenButton.setText("winner screen");
         toWinnerScreenButton.addActionListener(new java.awt.event.ActionListener() {
@@ -718,22 +1319,6 @@ public class GamePlayScreen extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(toWinnerScreenButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 10, -1, -1));
-
-        showTestCardsButton.setText("show test cards");
-        showTestCardsButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                showTestCardsButtonActionPerformed(evt);
-            }
-        });
-        jLayeredPane1.add(showTestCardsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1510, 10, -1, -1));
-
-        showBotActions.setText("Show Bot Actions");
-        showBotActions.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                showBotActionsActionPerformed(evt);
-            }
-        });
-        jLayeredPane1.add(showBotActions, new org.netbeans.lib.awtextra.AbsoluteConstraints(1740, 10, -1, -1));
 
         tableBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/table background.png"))); // NOI18N
         tableBackground.setText("jLabel1");
@@ -860,10 +1445,6 @@ public class GamePlayScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_player3MoneySlotActionPerformed
 
-    private void showTestCardsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showTestCardsButtonActionPerformed
-
-    }//GEN-LAST:event_showTestCardsButtonActionPerformed
-
     private void discardDeckButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_discardDeckButtonActionPerformed
         discardDeckPressed = true;
     }//GEN-LAST:event_discardDeckButtonActionPerformed
@@ -879,26 +1460,312 @@ public class GamePlayScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_deckButtonActionPerformed
 
     private void yourPropertySlot_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_3ActionPerformed
-   
- 
+        setYourPropertySlotPressed(3, 1);
+        lastPropertyPressed = yourPropertySlot_3;
     }//GEN-LAST:event_yourPropertySlot_3ActionPerformed
 
     private void yourMoneySlotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourMoneySlotActionPerformed
         yourMoneySlotButtonPressed = true;
     }//GEN-LAST:event_yourMoneySlotActionPerformed
 
-    private void showBotActionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showBotActionsActionPerformed
-        //shows player 2 taking a turn
-
-    }//GEN-LAST:event_showBotActionsActionPerformed
-
     private void yourPropertySlot_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_1ActionPerformed
         setYourPropertySlotPressed(1, 1);
+        lastPropertyPressed = yourPropertySlot_1;
     }//GEN-LAST:event_yourPropertySlot_1ActionPerformed
 
     private void yourTotalMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourTotalMoneyActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_yourTotalMoneyActionPerformed
+
+    private void yourPropertySlot_1_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_1_2ActionPerformed
+        setYourPropertySlotPressed(1, 2);
+        lastPropertyPressed = yourPropertySlot_1_2;
+    }//GEN-LAST:event_yourPropertySlot_1_2ActionPerformed
+
+    private void yourPropertySlot_1_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_1_3ActionPerformed
+        setYourPropertySlotPressed(1, 3);
+        lastPropertyPressed = yourPropertySlot_1_3;
+    }//GEN-LAST:event_yourPropertySlot_1_3ActionPerformed
+
+    private void yourPropertySlot_1_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_1_4ActionPerformed
+        setYourPropertySlotPressed(1, 4);
+        lastPropertyPressed = yourPropertySlot_1_4;
+    }//GEN-LAST:event_yourPropertySlot_1_4ActionPerformed
+
+    private void yourPropertySlot_1_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_1_5ActionPerformed
+        setYourPropertySlotPressed(1, 5);
+        lastPropertyPressed = yourPropertySlot_1_5;
+    }//GEN-LAST:event_yourPropertySlot_1_5ActionPerformed
+
+    private void yourPropertySlot_1_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_1_6ActionPerformed
+        setYourPropertySlotPressed(1, 6);
+        lastPropertyPressed = yourPropertySlot_1_6;
+    }//GEN-LAST:event_yourPropertySlot_1_6ActionPerformed
+
+    private void yourPropertySlot_2_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_2_6ActionPerformed
+        setYourPropertySlotPressed(2, 6);
+        lastPropertyPressed = yourPropertySlot_2_6;
+    }//GEN-LAST:event_yourPropertySlot_2_6ActionPerformed
+
+    private void yourPropertySlot_2_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_2_5ActionPerformed
+        setYourPropertySlotPressed(2, 5);
+        lastPropertyPressed = yourPropertySlot_2_5;
+    }//GEN-LAST:event_yourPropertySlot_2_5ActionPerformed
+
+    private void yourPropertySlot_2_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_2_4ActionPerformed
+        setYourPropertySlotPressed(2, 4);
+        lastPropertyPressed = yourPropertySlot_2_4;
+    }//GEN-LAST:event_yourPropertySlot_2_4ActionPerformed
+
+    private void yourPropertySlot_2_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_2_3ActionPerformed
+        setYourPropertySlotPressed(2, 3);
+        lastPropertyPressed = yourPropertySlot_2_3;
+    }//GEN-LAST:event_yourPropertySlot_2_3ActionPerformed
+
+    private void yourPropertySlot_2_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_2_2ActionPerformed
+        setYourPropertySlotPressed(2, 2);
+        lastPropertyPressed = yourPropertySlot_2_2;
+    }//GEN-LAST:event_yourPropertySlot_2_2ActionPerformed
+
+    private void yourPropertySlot_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_2ActionPerformed
+        setYourPropertySlotPressed(2, 1);
+        lastPropertyPressed = yourPropertySlot_2;
+    }//GEN-LAST:event_yourPropertySlot_2ActionPerformed
+
+    private void yourPropertySlot_3_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_3_6ActionPerformed
+        setYourPropertySlotPressed(3, 6);
+        lastPropertyPressed = yourPropertySlot_3_6;
+    }//GEN-LAST:event_yourPropertySlot_3_6ActionPerformed
+
+    private void yourPropertySlot_3_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_3_5ActionPerformed
+        setYourPropertySlotPressed(3, 5);
+        lastPropertyPressed = yourPropertySlot_3_5;
+    }//GEN-LAST:event_yourPropertySlot_3_5ActionPerformed
+
+    private void yourPropertySlot_3_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_3_4ActionPerformed
+        setYourPropertySlotPressed(3, 4);
+        lastPropertyPressed = yourPropertySlot_3_4;
+    }//GEN-LAST:event_yourPropertySlot_3_4ActionPerformed
+
+    private void yourPropertySlot_3_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_3_3ActionPerformed
+        setYourPropertySlotPressed(3, 3);
+        lastPropertyPressed = yourPropertySlot_3_3;
+    }//GEN-LAST:event_yourPropertySlot_3_3ActionPerformed
+
+    private void yourPropertySlot_3_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_3_2ActionPerformed
+        setYourPropertySlotPressed(3, 2);
+        lastPropertyPressed = yourPropertySlot_3_2;
+    }//GEN-LAST:event_yourPropertySlot_3_2ActionPerformed
+
+    private void yourPropertySlot_4_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_4_6ActionPerformed
+        setYourPropertySlotPressed(4, 6);
+        lastPropertyPressed = yourPropertySlot_4_6;
+    }//GEN-LAST:event_yourPropertySlot_4_6ActionPerformed
+
+    private void yourPropertySlot_4_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_4_5ActionPerformed
+        setYourPropertySlotPressed(4, 5);
+        lastPropertyPressed = yourPropertySlot_4_5;
+    }//GEN-LAST:event_yourPropertySlot_4_5ActionPerformed
+
+    private void yourPropertySlot_4_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_4_4ActionPerformed
+        setYourPropertySlotPressed(4, 4);
+        lastPropertyPressed = yourPropertySlot_4_4;
+    }//GEN-LAST:event_yourPropertySlot_4_4ActionPerformed
+
+    private void yourPropertySlot_4_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_4_3ActionPerformed
+        setYourPropertySlotPressed(4, 3);
+        lastPropertyPressed = yourPropertySlot_4_3;
+    }//GEN-LAST:event_yourPropertySlot_4_3ActionPerformed
+
+    private void yourPropertySlot_4_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_4_2ActionPerformed
+        setYourPropertySlotPressed(4, 2);
+        lastPropertyPressed = yourPropertySlot_4_2;
+    }//GEN-LAST:event_yourPropertySlot_4_2ActionPerformed
+
+    private void yourPropertySlot_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_4ActionPerformed
+        setYourPropertySlotPressed(4, 1);
+        lastPropertyPressed = yourPropertySlot_4;
+    }//GEN-LAST:event_yourPropertySlot_4ActionPerformed
+
+    private void yourPropertySlot_5_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_5_6ActionPerformed
+        setYourPropertySlotPressed(5, 6);
+        lastPropertyPressed = yourPropertySlot_5_6;
+    }//GEN-LAST:event_yourPropertySlot_5_6ActionPerformed
+
+    private void yourPropertySlot_5_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_5_5ActionPerformed
+        setYourPropertySlotPressed(5, 5);
+        lastPropertyPressed = yourPropertySlot_5_5;
+    }//GEN-LAST:event_yourPropertySlot_5_5ActionPerformed
+
+    private void yourPropertySlot_5_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_5_4ActionPerformed
+        setYourPropertySlotPressed(5, 4);
+        lastPropertyPressed = yourPropertySlot_5_4;
+    }//GEN-LAST:event_yourPropertySlot_5_4ActionPerformed
+
+    private void yourPropertySlot_5_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_5_3ActionPerformed
+        setYourPropertySlotPressed(5, 3);
+        lastPropertyPressed = yourPropertySlot_5_3;
+    }//GEN-LAST:event_yourPropertySlot_5_3ActionPerformed
+
+    private void yourPropertySlot_5_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_5_2ActionPerformed
+        setYourPropertySlotPressed(5, 2);
+        lastPropertyPressed = yourPropertySlot_5_2;
+    }//GEN-LAST:event_yourPropertySlot_5_2ActionPerformed
+
+    private void yourPropertySlot_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_5ActionPerformed
+        setYourPropertySlotPressed(5, 1);
+        lastPropertyPressed = yourPropertySlot_5;
+    }//GEN-LAST:event_yourPropertySlot_5ActionPerformed
+
+    private void yourPropertySlot_6_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_6_6ActionPerformed
+        setYourPropertySlotPressed(6, 6);
+        lastPropertyPressed = yourPropertySlot_6_6;
+    }//GEN-LAST:event_yourPropertySlot_6_6ActionPerformed
+
+    private void yourPropertySlot_6_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_6_5ActionPerformed
+        setYourPropertySlotPressed(6, 5);
+        lastPropertyPressed = yourPropertySlot_6_5;
+    }//GEN-LAST:event_yourPropertySlot_6_5ActionPerformed
+
+    private void yourPropertySlot_6_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_6_4ActionPerformed
+        setYourPropertySlotPressed(6, 4);
+        lastPropertyPressed = yourPropertySlot_6_4;
+    }//GEN-LAST:event_yourPropertySlot_6_4ActionPerformed
+
+    private void yourPropertySlot_6_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_6_3ActionPerformed
+        setYourPropertySlotPressed(6, 3);
+        lastPropertyPressed = yourPropertySlot_6_3;
+    }//GEN-LAST:event_yourPropertySlot_6_3ActionPerformed
+
+    private void yourPropertySlot_6_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_6_2ActionPerformed
+        setYourPropertySlotPressed(6, 2);
+        lastPropertyPressed = yourPropertySlot_6_2;
+    }//GEN-LAST:event_yourPropertySlot_6_2ActionPerformed
+
+    private void yourPropertySlot_7_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_7_6ActionPerformed
+        setYourPropertySlotPressed(7, 6);
+        lastPropertyPressed = yourPropertySlot_7_6;
+    }//GEN-LAST:event_yourPropertySlot_7_6ActionPerformed
+
+    private void yourPropertySlot_7_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_7_5ActionPerformed
+        setYourPropertySlotPressed(7, 5);
+        lastPropertyPressed = yourPropertySlot_7_5;
+    }//GEN-LAST:event_yourPropertySlot_7_5ActionPerformed
+
+    private void yourPropertySlot_7_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_7_4ActionPerformed
+        setYourPropertySlotPressed(7, 4);
+        lastPropertyPressed = yourPropertySlot_7_4;
+    }//GEN-LAST:event_yourPropertySlot_7_4ActionPerformed
+
+    private void yourPropertySlot_7_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_7_3ActionPerformed
+        setYourPropertySlotPressed(7, 3);
+        lastPropertyPressed = yourPropertySlot_7_3;
+    }//GEN-LAST:event_yourPropertySlot_7_3ActionPerformed
+
+    private void yourPropertySlot_7_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_7_2ActionPerformed
+        setYourPropertySlotPressed(7, 2);
+        lastPropertyPressed = yourPropertySlot_7_2;
+    }//GEN-LAST:event_yourPropertySlot_7_2ActionPerformed
+
+    private void yourPropertySlot_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_6ActionPerformed
+        setYourPropertySlotPressed(6, 1);
+        lastPropertyPressed = yourPropertySlot_6;
+    }//GEN-LAST:event_yourPropertySlot_6ActionPerformed
+
+    private void yourPropertySlot_7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_7ActionPerformed
+        setYourPropertySlotPressed(7, 1);
+        lastPropertyPressed = yourPropertySlot_7;
+    }//GEN-LAST:event_yourPropertySlot_7ActionPerformed
+
+    private void yourPropertySlot_8_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_8_6ActionPerformed
+        setYourPropertySlotPressed(8, 6);
+        lastPropertyPressed = yourPropertySlot_8_6;
+    }//GEN-LAST:event_yourPropertySlot_8_6ActionPerformed
+
+    private void yourPropertySlot_8_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_8_5ActionPerformed
+        setYourPropertySlotPressed(8, 5);
+        lastPropertyPressed = yourPropertySlot_8_5;
+    }//GEN-LAST:event_yourPropertySlot_8_5ActionPerformed
+
+    private void yourPropertySlot_8_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_8_4ActionPerformed
+        setYourPropertySlotPressed(8, 4);
+        lastPropertyPressed = yourPropertySlot_8_4;
+    }//GEN-LAST:event_yourPropertySlot_8_4ActionPerformed
+
+    private void yourPropertySlot_8_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_8_3ActionPerformed
+        setYourPropertySlotPressed(8, 3);
+        lastPropertyPressed = yourPropertySlot_8_3;
+    }//GEN-LAST:event_yourPropertySlot_8_3ActionPerformed
+
+    private void yourPropertySlot_8_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_8_2ActionPerformed
+        setYourPropertySlotPressed(8, 2);
+        lastPropertyPressed = yourPropertySlot_8_2;
+    }//GEN-LAST:event_yourPropertySlot_8_2ActionPerformed
+
+    private void yourPropertySlot_9_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_9_6ActionPerformed
+        setYourPropertySlotPressed(9, 6);
+        lastPropertyPressed = yourPropertySlot_9_6;
+    }//GEN-LAST:event_yourPropertySlot_9_6ActionPerformed
+
+    private void yourPropertySlot_9_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_9_5ActionPerformed
+        setYourPropertySlotPressed(9, 5);
+        lastPropertyPressed = yourPropertySlot_9_5;
+    }//GEN-LAST:event_yourPropertySlot_9_5ActionPerformed
+
+    private void yourPropertySlot_9_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_9_4ActionPerformed
+        setYourPropertySlotPressed(9, 4);
+        lastPropertyPressed = yourPropertySlot_9_4;
+    }//GEN-LAST:event_yourPropertySlot_9_4ActionPerformed
+
+    private void yourPropertySlot_9_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_9_3ActionPerformed
+        setYourPropertySlotPressed(9, 3);
+        lastPropertyPressed = yourPropertySlot_9_3;
+    }//GEN-LAST:event_yourPropertySlot_9_3ActionPerformed
+
+    private void yourPropertySlot_9_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_9_2ActionPerformed
+        setYourPropertySlotPressed(9, 2);
+        lastPropertyPressed = yourPropertySlot_9_2;
+    }//GEN-LAST:event_yourPropertySlot_9_2ActionPerformed
+
+    private void yourPropertySlot_10_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_10_6ActionPerformed
+        setYourPropertySlotPressed(10, 6);
+        lastPropertyPressed = yourPropertySlot_10_6;
+    }//GEN-LAST:event_yourPropertySlot_10_6ActionPerformed
+
+    private void yourPropertySlot_10_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_10_5ActionPerformed
+        setYourPropertySlotPressed(10, 5);
+        lastPropertyPressed = yourPropertySlot_10_5;
+    }//GEN-LAST:event_yourPropertySlot_10_5ActionPerformed
+
+    private void yourPropertySlot_10_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_10_4ActionPerformed
+        setYourPropertySlotPressed(10, 4);
+        lastPropertyPressed = yourPropertySlot_10_4;
+    }//GEN-LAST:event_yourPropertySlot_10_4ActionPerformed
+
+    private void yourPropertySlot_10_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_10_3ActionPerformed
+        setYourPropertySlotPressed(10, 3);
+        lastPropertyPressed = yourPropertySlot_10_3;
+    }//GEN-LAST:event_yourPropertySlot_10_3ActionPerformed
+
+    private void yourPropertySlot_10_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_10_2ActionPerformed
+        setYourPropertySlotPressed(10, 2);
+        lastPropertyPressed = yourPropertySlot_10_2;
+    }//GEN-LAST:event_yourPropertySlot_10_2ActionPerformed
+
+    private void yourPropertySlot_8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_8ActionPerformed
+        setYourPropertySlotPressed(8, 1);
+        lastPropertyPressed = yourPropertySlot_8;
+    }//GEN-LAST:event_yourPropertySlot_8ActionPerformed
+
+    private void yourPropertySlot_9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_9ActionPerformed
+        setYourPropertySlotPressed(9, 1);
+        lastPropertyPressed = yourPropertySlot_9;
+    }//GEN-LAST:event_yourPropertySlot_9ActionPerformed
+
+    private void yourPropertySlot_10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yourPropertySlot_10ActionPerformed
+        setYourPropertySlotPressed(10, 1);
+        lastPropertyPressed = yourPropertySlot_10;
+    }//GEN-LAST:event_yourPropertySlot_10ActionPerformed
 
     /**
      * Set player starting hand visually in GUI.
@@ -1029,15 +1896,12 @@ public class GamePlayScreen extends javax.swing.JFrame {
     }
     
     /**
-     * Displays a property card in property slot given the image path
+     * Displays a property card in property slot given the image path. Looks at last property button pressed.
+     * to know where to put the image.
      * @param imagePath 
      */
     public void displayPlayedPropertyCard(String imagePath){
-        //will need to do all this if statements for each matrix index of property slots for player
-        if (yourPropertySlotPressed[0] == 1 && yourPropertySlotPressed[1] == 1){
-            yourPropertySlot_1.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagePath)));
-        }
-        
+        lastPropertyPressed.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagePath)));  
     }
     
     /**
@@ -1279,8 +2143,6 @@ public class GamePlayScreen extends javax.swing.JFrame {
     private javax.swing.JTextField player3TotalMoney;
     private javax.swing.JLabel propertiesLabel;
     private javax.swing.JButton resumeButton;
-    private javax.swing.JButton showBotActions;
-    private javax.swing.JButton showTestCardsButton;
     private javax.swing.JLabel tableBackground;
     private javax.swing.JButton toWinnerScreenButton;
     private javax.swing.JButton viewHandButton;
@@ -1292,14 +2154,64 @@ public class GamePlayScreen extends javax.swing.JFrame {
     private javax.swing.JPanel yourPlayArea;
     private javax.swing.JButton yourPropertySlot_1;
     private javax.swing.JButton yourPropertySlot_10;
+    private javax.swing.JButton yourPropertySlot_10_2;
+    private javax.swing.JButton yourPropertySlot_10_3;
+    private javax.swing.JButton yourPropertySlot_10_4;
+    private javax.swing.JButton yourPropertySlot_10_5;
+    private javax.swing.JButton yourPropertySlot_10_6;
+    private javax.swing.JButton yourPropertySlot_1_2;
+    private javax.swing.JButton yourPropertySlot_1_3;
+    private javax.swing.JButton yourPropertySlot_1_4;
+    private javax.swing.JButton yourPropertySlot_1_5;
+    private javax.swing.JButton yourPropertySlot_1_6;
     private javax.swing.JButton yourPropertySlot_2;
+    private javax.swing.JButton yourPropertySlot_2_2;
+    private javax.swing.JButton yourPropertySlot_2_3;
+    private javax.swing.JButton yourPropertySlot_2_4;
+    private javax.swing.JButton yourPropertySlot_2_5;
+    private javax.swing.JButton yourPropertySlot_2_6;
     private javax.swing.JButton yourPropertySlot_3;
+    private javax.swing.JButton yourPropertySlot_3_2;
+    private javax.swing.JButton yourPropertySlot_3_3;
+    private javax.swing.JButton yourPropertySlot_3_4;
+    private javax.swing.JButton yourPropertySlot_3_5;
+    private javax.swing.JButton yourPropertySlot_3_6;
     private javax.swing.JButton yourPropertySlot_4;
+    private javax.swing.JButton yourPropertySlot_4_2;
+    private javax.swing.JButton yourPropertySlot_4_3;
+    private javax.swing.JButton yourPropertySlot_4_4;
+    private javax.swing.JButton yourPropertySlot_4_5;
+    private javax.swing.JButton yourPropertySlot_4_6;
     private javax.swing.JButton yourPropertySlot_5;
+    private javax.swing.JButton yourPropertySlot_5_2;
+    private javax.swing.JButton yourPropertySlot_5_3;
+    private javax.swing.JButton yourPropertySlot_5_4;
+    private javax.swing.JButton yourPropertySlot_5_5;
+    private javax.swing.JButton yourPropertySlot_5_6;
     private javax.swing.JButton yourPropertySlot_6;
+    private javax.swing.JButton yourPropertySlot_6_2;
+    private javax.swing.JButton yourPropertySlot_6_3;
+    private javax.swing.JButton yourPropertySlot_6_4;
+    private javax.swing.JButton yourPropertySlot_6_5;
+    private javax.swing.JButton yourPropertySlot_6_6;
     private javax.swing.JButton yourPropertySlot_7;
+    private javax.swing.JButton yourPropertySlot_7_2;
+    private javax.swing.JButton yourPropertySlot_7_3;
+    private javax.swing.JButton yourPropertySlot_7_4;
+    private javax.swing.JButton yourPropertySlot_7_5;
+    private javax.swing.JButton yourPropertySlot_7_6;
     private javax.swing.JButton yourPropertySlot_8;
+    private javax.swing.JButton yourPropertySlot_8_2;
+    private javax.swing.JButton yourPropertySlot_8_3;
+    private javax.swing.JButton yourPropertySlot_8_4;
+    private javax.swing.JButton yourPropertySlot_8_5;
+    private javax.swing.JButton yourPropertySlot_8_6;
     private javax.swing.JButton yourPropertySlot_9;
+    private javax.swing.JButton yourPropertySlot_9_2;
+    private javax.swing.JButton yourPropertySlot_9_3;
+    private javax.swing.JButton yourPropertySlot_9_4;
+    private javax.swing.JButton yourPropertySlot_9_5;
+    private javax.swing.JButton yourPropertySlot_9_6;
     private javax.swing.JTextField yourTotalMoney;
     // End of variables declaration//GEN-END:variables
 }
