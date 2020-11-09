@@ -103,31 +103,130 @@ public class GamePlayScreen extends javax.swing.JFrame {
         hideHandButton = new javax.swing.JButton();
         player3PlayArea = new javax.swing.JPanel();
         player3MoneySlot = new javax.swing.JButton();
+        player3PropertySlot_1_6 = new javax.swing.JButton();
+        player3PropertySlot_1_5 = new javax.swing.JButton();
+        player3PropertySlot_1_4 = new javax.swing.JButton();
+        player3PropertySlot_1_3 = new javax.swing.JButton();
+        player3PropertySlot_1_2 = new javax.swing.JButton();
         player3PropertySlot_1 = new javax.swing.JButton();
+        player3PropertySlot_2_6 = new javax.swing.JButton();
+        player3PropertySlot_2_5 = new javax.swing.JButton();
+        player3PropertySlot_2_4 = new javax.swing.JButton();
+        player3PropertySlot_2_3 = new javax.swing.JButton();
+        player3PropertySlot_2_2 = new javax.swing.JButton();
         player3PropertySlot_2 = new javax.swing.JButton();
-        player3PropertySlot_3 = new javax.swing.JButton();
+        player3PropertySlot_3_6 = new javax.swing.JButton();
+        player3PropertySlot_3_5 = new javax.swing.JButton();
+        player3PropertySlot_3_4 = new javax.swing.JButton();
+        player3PropertySlot_3_3 = new javax.swing.JButton();
+        player3PropertySlot_3_2 = new javax.swing.JButton();
+        player3PropertySlot_4_6 = new javax.swing.JButton();
+        player3PropertySlot_4_5 = new javax.swing.JButton();
+        player3PropertySlot_4_4 = new javax.swing.JButton();
+        player3PropertySlot_4_3 = new javax.swing.JButton();
+        player3PropertySlot_4_2 = new javax.swing.JButton();
         player3PropertySlot_4 = new javax.swing.JButton();
+        player3PropertySlot_3 = new javax.swing.JButton();
+        player3PropertySlot_5_6 = new javax.swing.JButton();
+        player3PropertySlot_5_5 = new javax.swing.JButton();
+        player3PropertySlot_5_4 = new javax.swing.JButton();
+        player3PropertySlot_5_3 = new javax.swing.JButton();
+        player3PropertySlot_5_2 = new javax.swing.JButton();
         player3PropertySlot_5 = new javax.swing.JButton();
+        player3PropertySlot_6_6 = new javax.swing.JButton();
+        player3PropertySlot_6_5 = new javax.swing.JButton();
+        player3PropertySlot_6_4 = new javax.swing.JButton();
+        player3PropertySlot_6_3 = new javax.swing.JButton();
+        player3PropertySlot_6_2 = new javax.swing.JButton();
         player3PropertySlot_6 = new javax.swing.JButton();
+        player3PropertySlot_7_6 = new javax.swing.JButton();
+        player3PropertySlot_7_5 = new javax.swing.JButton();
+        player3PropertySlot_7_4 = new javax.swing.JButton();
+        player3PropertySlot_7_3 = new javax.swing.JButton();
+        player3PropertySlot_7_2 = new javax.swing.JButton();
         player3PropertySlot_7 = new javax.swing.JButton();
+        player3PropertySlot_8_6 = new javax.swing.JButton();
+        player3PropertySlot_8_5 = new javax.swing.JButton();
+        player3PropertySlot_8_4 = new javax.swing.JButton();
+        player3PropertySlot_8_3 = new javax.swing.JButton();
+        player3PropertySlot_8_2 = new javax.swing.JButton();
         player3PropertySlot_8 = new javax.swing.JButton();
+        player3PropertySlot_9_6 = new javax.swing.JButton();
+        player3PropertySlot_9_5 = new javax.swing.JButton();
+        player3PropertySlot_9_4 = new javax.swing.JButton();
+        player3PropertySlot_9_3 = new javax.swing.JButton();
+        player3PropertySlot_9_2 = new javax.swing.JButton();
         player3PropertySlot_9 = new javax.swing.JButton();
+        player3PropertySlot_10_6 = new javax.swing.JButton();
+        player3PropertySlot_10_5 = new javax.swing.JButton();
+        player3PropertySlot_10_4 = new javax.swing.JButton();
+        player3PropertySlot_10_3 = new javax.swing.JButton();
+        player3PropertySlot_10_2 = new javax.swing.JButton();
         player3PropertySlot_10 = new javax.swing.JButton();
         player3Label = new javax.swing.JLabel();
         moneyEmblem1 = new javax.swing.JLabel();
         player3TotalMoney = new javax.swing.JTextField();
         player2PlayArea = new javax.swing.JPanel();
         player2MoneySlot = new javax.swing.JButton();
+        player2PropertySlot_1_6 = new javax.swing.JButton();
+        player2PropertySlot_1_5 = new javax.swing.JButton();
+        player2PropertySlot_1_4 = new javax.swing.JButton();
+        player2PropertySlot_1_3 = new javax.swing.JButton();
+        player2PropertySlot_1_2 = new javax.swing.JButton();
         player2PropertySlot_1 = new javax.swing.JButton();
+        player2PropertySlot_2_6 = new javax.swing.JButton();
+        player2PropertySlot_2_5 = new javax.swing.JButton();
+        player2PropertySlot_2_4 = new javax.swing.JButton();
+        player2PropertySlot_2_3 = new javax.swing.JButton();
+        player2PropertySlot_2_2 = new javax.swing.JButton();
         player2PropertySlot_2 = new javax.swing.JButton();
+        player2PropertySlot_3_6 = new javax.swing.JButton();
+        player2PropertySlot_3_5 = new javax.swing.JButton();
+        player2PropertySlot_3_4 = new javax.swing.JButton();
+        player2PropertySlot_3_3 = new javax.swing.JButton();
+        player2PropertySlot_3_2 = new javax.swing.JButton();
         player2PropertySlot_3 = new javax.swing.JButton();
+        player2PropertySlot_4_6 = new javax.swing.JButton();
+        player2PropertySlot_4_5 = new javax.swing.JButton();
+        player2PropertySlot_4_4 = new javax.swing.JButton();
+        player2PropertySlot_4_3 = new javax.swing.JButton();
         player2PropertySlot_4_2 = new javax.swing.JButton();
         player2PropertySlot_4 = new javax.swing.JButton();
+        player2PropertySlot_5_6 = new javax.swing.JButton();
+        player2PropertySlot_5_5 = new javax.swing.JButton();
+        player2PropertySlot_5_4 = new javax.swing.JButton();
+        player2PropertySlot_5_3 = new javax.swing.JButton();
+        player2PropertySlot_5_2 = new javax.swing.JButton();
         player2PropertySlot_5 = new javax.swing.JButton();
+        player2PropertySlot_6_6 = new javax.swing.JButton();
+        player2PropertySlot_6_5 = new javax.swing.JButton();
+        player2PropertySlot_6_4 = new javax.swing.JButton();
+        player2PropertySlot_6_3 = new javax.swing.JButton();
+        player2PropertySlot_6_2 = new javax.swing.JButton();
         player2PropertySlot_6 = new javax.swing.JButton();
+        player2PropertySlot_7_6 = new javax.swing.JButton();
+        player2PropertySlot_7_5 = new javax.swing.JButton();
+        player2PropertySlot_7_4 = new javax.swing.JButton();
+        player2PropertySlot_7_3 = new javax.swing.JButton();
+        player2PropertySlot_7_2 = new javax.swing.JButton();
         player2PropertySlot_7 = new javax.swing.JButton();
+        player2PropertySlot_8_6 = new javax.swing.JButton();
+        player2PropertySlot_8_5 = new javax.swing.JButton();
+        player2PropertySlot_8_4 = new javax.swing.JButton();
+        player2PropertySlot_8_3 = new javax.swing.JButton();
+        player2PropertySlot_8_2 = new javax.swing.JButton();
         player2PropertySlot_8 = new javax.swing.JButton();
+        player2PropertySlot_9_6 = new javax.swing.JButton();
+        player2PropertySlot_9_5 = new javax.swing.JButton();
+        player2PropertySlot_9_4 = new javax.swing.JButton();
+        player2PropertySlot_9_3 = new javax.swing.JButton();
+        player2PropertySlot_9_2 = new javax.swing.JButton();
         player2PropertySlot_9 = new javax.swing.JButton();
+        player2PropertySlot_10_6 = new javax.swing.JButton();
+        player2PropertySlot_10_5 = new javax.swing.JButton();
+        player2PropertySlot_10_4 = new javax.swing.JButton();
+        player2PropertySlot_10_3 = new javax.swing.JButton();
+        player2PropertySlot_10_2 = new javax.swing.JButton();
         player2PropertySlot_10 = new javax.swing.JButton();
         moneyEmblem = new javax.swing.JLabel();
         player2TotalMoney = new javax.swing.JTextField();
@@ -512,50 +611,550 @@ public class GamePlayScreen extends javax.swing.JFrame {
         });
         player3PlayArea.add(player3MoneySlot, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
 
+        player3PropertySlot_1_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_1_6.setBorder(null);
+        player3PropertySlot_1_6.setContentAreaFilled(false);
+        player3PropertySlot_1_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_1_6ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_1_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, -1, -1));
+
+        player3PropertySlot_1_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_1_5.setBorder(null);
+        player3PropertySlot_1_5.setContentAreaFilled(false);
+        player3PropertySlot_1_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_1_5ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_1_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, -1, -1));
+
+        player3PropertySlot_1_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_1_4.setBorder(null);
+        player3PropertySlot_1_4.setContentAreaFilled(false);
+        player3PropertySlot_1_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_1_4ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_1_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, -1, -1));
+
+        player3PropertySlot_1_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_1_3.setBorder(null);
+        player3PropertySlot_1_3.setContentAreaFilled(false);
+        player3PropertySlot_1_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_1_3ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_1_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, -1, -1));
+
+        player3PropertySlot_1_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_1_2.setBorder(null);
+        player3PropertySlot_1_2.setContentAreaFilled(false);
+        player3PropertySlot_1_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_1_2ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_1_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, -1, -1));
+
         player3PropertySlot_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
         player3PropertySlot_1.setBorder(null);
         player3PropertySlot_1.setContentAreaFilled(false);
         player3PlayArea.add(player3PropertySlot_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, -1, -1));
+
+        player3PropertySlot_2_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_2_6.setBorder(null);
+        player3PropertySlot_2_6.setContentAreaFilled(false);
+        player3PropertySlot_2_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_2_6ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_2_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, -1, -1));
+
+        player3PropertySlot_2_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_2_5.setBorder(null);
+        player3PropertySlot_2_5.setContentAreaFilled(false);
+        player3PropertySlot_2_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_2_5ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_2_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 90, -1, -1));
+
+        player3PropertySlot_2_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_2_4.setBorder(null);
+        player3PropertySlot_2_4.setContentAreaFilled(false);
+        player3PropertySlot_2_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_2_4ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_2_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, -1, -1));
+
+        player3PropertySlot_2_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_2_3.setBorder(null);
+        player3PropertySlot_2_3.setContentAreaFilled(false);
+        player3PropertySlot_2_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_2_3ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_2_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 50, -1, -1));
+
+        player3PropertySlot_2_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_2_2.setBorder(null);
+        player3PropertySlot_2_2.setContentAreaFilled(false);
+        player3PropertySlot_2_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_2_2ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_2_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, -1, -1));
 
         player3PropertySlot_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
         player3PropertySlot_2.setBorder(null);
         player3PropertySlot_2.setContentAreaFilled(false);
         player3PlayArea.add(player3PropertySlot_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 10, -1, -1));
 
-        player3PropertySlot_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
-        player3PropertySlot_3.setBorder(null);
-        player3PropertySlot_3.setContentAreaFilled(false);
-        player3PlayArea.add(player3PropertySlot_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, -1, -1));
+        player3PropertySlot_3_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_3_6.setBorder(null);
+        player3PropertySlot_3_6.setContentAreaFilled(false);
+        player3PropertySlot_3_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_3_6ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_3_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 110, -1, -1));
+
+        player3PropertySlot_3_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_3_5.setBorder(null);
+        player3PropertySlot_3_5.setContentAreaFilled(false);
+        player3PropertySlot_3_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_3_5ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_3_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 90, -1, -1));
+
+        player3PropertySlot_3_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_3_4.setBorder(null);
+        player3PropertySlot_3_4.setContentAreaFilled(false);
+        player3PropertySlot_3_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_3_4ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_3_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 70, -1, -1));
+
+        player3PropertySlot_3_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_3_3.setBorder(null);
+        player3PropertySlot_3_3.setContentAreaFilled(false);
+        player3PropertySlot_3_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_3_3ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_3_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 50, -1, -1));
+
+        player3PropertySlot_3_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_3_2.setBorder(null);
+        player3PropertySlot_3_2.setContentAreaFilled(false);
+        player3PropertySlot_3_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_3_2ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_3_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 30, -1, -1));
+
+        player3PropertySlot_4_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_4_6.setBorder(null);
+        player3PropertySlot_4_6.setContentAreaFilled(false);
+        player3PropertySlot_4_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_4_6ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_4_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 110, -1, -1));
+
+        player3PropertySlot_4_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_4_5.setBorder(null);
+        player3PropertySlot_4_5.setContentAreaFilled(false);
+        player3PropertySlot_4_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_4_5ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_4_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 90, -1, -1));
+
+        player3PropertySlot_4_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_4_4.setBorder(null);
+        player3PropertySlot_4_4.setContentAreaFilled(false);
+        player3PropertySlot_4_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_4_4ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_4_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 70, -1, -1));
+
+        player3PropertySlot_4_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_4_3.setBorder(null);
+        player3PropertySlot_4_3.setContentAreaFilled(false);
+        player3PropertySlot_4_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_4_3ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_4_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 50, -1, -1));
+
+        player3PropertySlot_4_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_4_2.setBorder(null);
+        player3PropertySlot_4_2.setContentAreaFilled(false);
+        player3PropertySlot_4_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_4_2ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_4_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 30, -1, -1));
 
         player3PropertySlot_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
         player3PropertySlot_4.setBorder(null);
         player3PropertySlot_4.setContentAreaFilled(false);
         player3PlayArea.add(player3PropertySlot_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 10, -1, -1));
 
+        player3PropertySlot_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_3.setBorder(null);
+        player3PropertySlot_3.setContentAreaFilled(false);
+        player3PlayArea.add(player3PropertySlot_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, -1, -1));
+
+        player3PropertySlot_5_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_5_6.setBorder(null);
+        player3PropertySlot_5_6.setContentAreaFilled(false);
+        player3PropertySlot_5_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_5_6ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_5_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 110, -1, -1));
+
+        player3PropertySlot_5_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_5_5.setBorder(null);
+        player3PropertySlot_5_5.setContentAreaFilled(false);
+        player3PropertySlot_5_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_5_5ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_5_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 90, -1, -1));
+
+        player3PropertySlot_5_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_5_4.setBorder(null);
+        player3PropertySlot_5_4.setContentAreaFilled(false);
+        player3PropertySlot_5_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_5_4ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_5_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 70, -1, -1));
+
+        player3PropertySlot_5_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_5_3.setBorder(null);
+        player3PropertySlot_5_3.setContentAreaFilled(false);
+        player3PropertySlot_5_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_5_3ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_5_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 50, -1, -1));
+
+        player3PropertySlot_5_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_5_2.setBorder(null);
+        player3PropertySlot_5_2.setContentAreaFilled(false);
+        player3PropertySlot_5_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_5_2ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_5_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 30, -1, -1));
+
         player3PropertySlot_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
         player3PropertySlot_5.setBorder(null);
         player3PropertySlot_5.setContentAreaFilled(false);
         player3PlayArea.add(player3PropertySlot_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 10, -1, -1));
+
+        player3PropertySlot_6_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_6_6.setBorder(null);
+        player3PropertySlot_6_6.setContentAreaFilled(false);
+        player3PropertySlot_6_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_6_6ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_6_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 110, -1, -1));
+
+        player3PropertySlot_6_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_6_5.setBorder(null);
+        player3PropertySlot_6_5.setContentAreaFilled(false);
+        player3PropertySlot_6_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_6_5ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_6_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 90, -1, -1));
+
+        player3PropertySlot_6_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_6_4.setBorder(null);
+        player3PropertySlot_6_4.setContentAreaFilled(false);
+        player3PropertySlot_6_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_6_4ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_6_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 70, -1, -1));
+
+        player3PropertySlot_6_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_6_3.setBorder(null);
+        player3PropertySlot_6_3.setContentAreaFilled(false);
+        player3PropertySlot_6_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_6_3ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_6_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 50, -1, -1));
+
+        player3PropertySlot_6_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_6_2.setBorder(null);
+        player3PropertySlot_6_2.setContentAreaFilled(false);
+        player3PropertySlot_6_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_6_2ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_6_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 30, -1, -1));
 
         player3PropertySlot_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
         player3PropertySlot_6.setBorder(null);
         player3PropertySlot_6.setContentAreaFilled(false);
         player3PlayArea.add(player3PropertySlot_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 10, -1, -1));
 
+        player3PropertySlot_7_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_7_6.setBorder(null);
+        player3PropertySlot_7_6.setContentAreaFilled(false);
+        player3PropertySlot_7_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_7_6ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_7_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 110, -1, -1));
+
+        player3PropertySlot_7_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_7_5.setBorder(null);
+        player3PropertySlot_7_5.setContentAreaFilled(false);
+        player3PropertySlot_7_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_7_5ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_7_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 90, -1, -1));
+
+        player3PropertySlot_7_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_7_4.setBorder(null);
+        player3PropertySlot_7_4.setContentAreaFilled(false);
+        player3PropertySlot_7_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_7_4ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_7_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 70, -1, -1));
+
+        player3PropertySlot_7_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_7_3.setBorder(null);
+        player3PropertySlot_7_3.setContentAreaFilled(false);
+        player3PropertySlot_7_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_7_3ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_7_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 50, -1, -1));
+
+        player3PropertySlot_7_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_7_2.setBorder(null);
+        player3PropertySlot_7_2.setContentAreaFilled(false);
+        player3PropertySlot_7_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_7_2ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_7_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 30, -1, -1));
+
         player3PropertySlot_7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
         player3PropertySlot_7.setBorder(null);
         player3PropertySlot_7.setContentAreaFilled(false);
         player3PlayArea.add(player3PropertySlot_7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 10, -1, -1));
+
+        player3PropertySlot_8_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_8_6.setBorder(null);
+        player3PropertySlot_8_6.setContentAreaFilled(false);
+        player3PropertySlot_8_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_8_6ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_8_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 110, -1, -1));
+
+        player3PropertySlot_8_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_8_5.setBorder(null);
+        player3PropertySlot_8_5.setContentAreaFilled(false);
+        player3PropertySlot_8_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_8_5ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_8_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 90, -1, -1));
+
+        player3PropertySlot_8_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_8_4.setBorder(null);
+        player3PropertySlot_8_4.setContentAreaFilled(false);
+        player3PropertySlot_8_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_8_4ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_8_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 70, -1, -1));
+
+        player3PropertySlot_8_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_8_3.setBorder(null);
+        player3PropertySlot_8_3.setContentAreaFilled(false);
+        player3PropertySlot_8_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_8_3ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_8_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 50, -1, -1));
+
+        player3PropertySlot_8_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_8_2.setBorder(null);
+        player3PropertySlot_8_2.setContentAreaFilled(false);
+        player3PropertySlot_8_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_8_2ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_8_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 30, -1, -1));
 
         player3PropertySlot_8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
         player3PropertySlot_8.setBorder(null);
         player3PropertySlot_8.setContentAreaFilled(false);
         player3PlayArea.add(player3PropertySlot_8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 10, -1, -1));
 
+        player3PropertySlot_9_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_9_6.setBorder(null);
+        player3PropertySlot_9_6.setContentAreaFilled(false);
+        player3PropertySlot_9_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_9_6ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_9_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 110, -1, -1));
+
+        player3PropertySlot_9_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_9_5.setBorder(null);
+        player3PropertySlot_9_5.setContentAreaFilled(false);
+        player3PropertySlot_9_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_9_5ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_9_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 90, -1, -1));
+
+        player3PropertySlot_9_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_9_4.setBorder(null);
+        player3PropertySlot_9_4.setContentAreaFilled(false);
+        player3PropertySlot_9_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_9_4ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_9_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 70, -1, -1));
+
+        player3PropertySlot_9_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_9_3.setBorder(null);
+        player3PropertySlot_9_3.setContentAreaFilled(false);
+        player3PropertySlot_9_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_9_3ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_9_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 50, -1, -1));
+
+        player3PropertySlot_9_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_9_2.setBorder(null);
+        player3PropertySlot_9_2.setContentAreaFilled(false);
+        player3PropertySlot_9_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_9_2ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_9_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 30, -1, -1));
+
         player3PropertySlot_9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
         player3PropertySlot_9.setBorder(null);
         player3PropertySlot_9.setContentAreaFilled(false);
         player3PlayArea.add(player3PropertySlot_9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 10, -1, -1));
+
+        player3PropertySlot_10_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_10_6.setBorder(null);
+        player3PropertySlot_10_6.setContentAreaFilled(false);
+        player3PropertySlot_10_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_10_6ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_10_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1750, 110, -1, -1));
+
+        player3PropertySlot_10_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_10_5.setBorder(null);
+        player3PropertySlot_10_5.setContentAreaFilled(false);
+        player3PropertySlot_10_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_10_5ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_10_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1750, 90, -1, -1));
+
+        player3PropertySlot_10_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_10_4.setBorder(null);
+        player3PropertySlot_10_4.setContentAreaFilled(false);
+        player3PropertySlot_10_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_10_4ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_10_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1750, 70, -1, -1));
+
+        player3PropertySlot_10_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_10_3.setBorder(null);
+        player3PropertySlot_10_3.setContentAreaFilled(false);
+        player3PropertySlot_10_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_10_3ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_10_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1750, 50, -1, -1));
+
+        player3PropertySlot_10_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player3PropertySlot_10_2.setBorder(null);
+        player3PropertySlot_10_2.setContentAreaFilled(false);
+        player3PropertySlot_10_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PropertySlot_10_2ActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PropertySlot_10_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1750, 30, -1, -1));
 
         player3PropertySlot_10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
         player3PropertySlot_10.setBorder(null);
@@ -579,7 +1178,7 @@ public class GamePlayScreen extends javax.swing.JFrame {
         player3TotalMoney.setOpaque(false);
         player3PlayArea.add(player3TotalMoney, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 70, -1));
 
-        jLayeredPane1.add(player3PlayArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 1910, 250));
+        jLayeredPane1.add(player3PlayArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 1910, 260));
 
         player2PlayArea.setBackground(new java.awt.Color(0, 0, 0));
         player2PlayArea.setOpaque(false);
@@ -595,54 +1194,550 @@ public class GamePlayScreen extends javax.swing.JFrame {
         });
         player2PlayArea.add(player2MoneySlot, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
 
+        player2PropertySlot_1_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_1_6.setBorder(null);
+        player2PropertySlot_1_6.setContentAreaFilled(false);
+        player2PropertySlot_1_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_1_6ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_1_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, -1, -1));
+
+        player2PropertySlot_1_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_1_5.setBorder(null);
+        player2PropertySlot_1_5.setContentAreaFilled(false);
+        player2PropertySlot_1_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_1_5ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_1_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, -1, -1));
+
+        player2PropertySlot_1_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_1_4.setBorder(null);
+        player2PropertySlot_1_4.setContentAreaFilled(false);
+        player2PropertySlot_1_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_1_4ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_1_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, -1, -1));
+
+        player2PropertySlot_1_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_1_3.setBorder(null);
+        player2PropertySlot_1_3.setContentAreaFilled(false);
+        player2PropertySlot_1_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_1_3ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_1_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, -1, -1));
+
+        player2PropertySlot_1_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_1_2.setBorder(null);
+        player2PropertySlot_1_2.setContentAreaFilled(false);
+        player2PropertySlot_1_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_1_2ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_1_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, -1, -1));
+
         player2PropertySlot_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
         player2PropertySlot_1.setBorder(null);
         player2PropertySlot_1.setContentAreaFilled(false);
         player2PlayArea.add(player2PropertySlot_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, -1, -1));
+
+        player2PropertySlot_2_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_2_6.setBorder(null);
+        player2PropertySlot_2_6.setContentAreaFilled(false);
+        player2PropertySlot_2_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_2_6ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_2_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, -1, -1));
+
+        player2PropertySlot_2_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_2_5.setBorder(null);
+        player2PropertySlot_2_5.setContentAreaFilled(false);
+        player2PropertySlot_2_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_2_5ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_2_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 90, -1, -1));
+
+        player2PropertySlot_2_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_2_4.setBorder(null);
+        player2PropertySlot_2_4.setContentAreaFilled(false);
+        player2PropertySlot_2_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_2_4ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_2_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, -1, -1));
+
+        player2PropertySlot_2_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_2_3.setBorder(null);
+        player2PropertySlot_2_3.setContentAreaFilled(false);
+        player2PropertySlot_2_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_2_3ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_2_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 50, -1, -1));
+
+        player2PropertySlot_2_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_2_2.setBorder(null);
+        player2PropertySlot_2_2.setContentAreaFilled(false);
+        player2PropertySlot_2_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_2_2ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_2_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, -1, -1));
 
         player2PropertySlot_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
         player2PropertySlot_2.setBorder(null);
         player2PropertySlot_2.setContentAreaFilled(false);
         player2PlayArea.add(player2PropertySlot_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 10, -1, -1));
 
+        player2PropertySlot_3_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_3_6.setBorder(null);
+        player2PropertySlot_3_6.setContentAreaFilled(false);
+        player2PropertySlot_3_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_3_6ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_3_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 110, -1, -1));
+
+        player2PropertySlot_3_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_3_5.setBorder(null);
+        player2PropertySlot_3_5.setContentAreaFilled(false);
+        player2PropertySlot_3_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_3_5ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_3_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 90, -1, -1));
+
+        player2PropertySlot_3_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_3_4.setBorder(null);
+        player2PropertySlot_3_4.setContentAreaFilled(false);
+        player2PropertySlot_3_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_3_4ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_3_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 70, -1, -1));
+
+        player2PropertySlot_3_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_3_3.setBorder(null);
+        player2PropertySlot_3_3.setContentAreaFilled(false);
+        player2PropertySlot_3_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_3_3ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_3_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 50, -1, -1));
+
+        player2PropertySlot_3_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_3_2.setBorder(null);
+        player2PropertySlot_3_2.setContentAreaFilled(false);
+        player2PropertySlot_3_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_3_2ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_3_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 30, -1, -1));
+
         player2PropertySlot_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
         player2PropertySlot_3.setBorder(null);
         player2PropertySlot_3.setContentAreaFilled(false);
         player2PlayArea.add(player2PropertySlot_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, -1, -1));
 
+        player2PropertySlot_4_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_4_6.setBorder(null);
+        player2PropertySlot_4_6.setContentAreaFilled(false);
+        player2PropertySlot_4_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_4_6ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_4_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 110, -1, -1));
+
+        player2PropertySlot_4_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_4_5.setBorder(null);
+        player2PropertySlot_4_5.setContentAreaFilled(false);
+        player2PropertySlot_4_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_4_5ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_4_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 90, -1, -1));
+
+        player2PropertySlot_4_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_4_4.setBorder(null);
+        player2PropertySlot_4_4.setContentAreaFilled(false);
+        player2PropertySlot_4_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_4_4ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_4_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 70, -1, -1));
+
+        player2PropertySlot_4_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_4_3.setBorder(null);
+        player2PropertySlot_4_3.setContentAreaFilled(false);
+        player2PropertySlot_4_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_4_3ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_4_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 50, -1, -1));
+
+        player2PropertySlot_4_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
         player2PropertySlot_4_2.setBorder(null);
         player2PropertySlot_4_2.setContentAreaFilled(false);
-        player2PlayArea.add(player2PropertySlot_4_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 40, 150, 200));
+        player2PropertySlot_4_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_4_2ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_4_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 30, -1, -1));
 
         player2PropertySlot_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
         player2PropertySlot_4.setBorder(null);
         player2PropertySlot_4.setContentAreaFilled(false);
         player2PlayArea.add(player2PropertySlot_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 10, -1, -1));
 
+        player2PropertySlot_5_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_5_6.setBorder(null);
+        player2PropertySlot_5_6.setContentAreaFilled(false);
+        player2PropertySlot_5_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_5_6ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_5_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 110, -1, -1));
+
+        player2PropertySlot_5_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_5_5.setBorder(null);
+        player2PropertySlot_5_5.setContentAreaFilled(false);
+        player2PropertySlot_5_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_5_5ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_5_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 90, -1, -1));
+
+        player2PropertySlot_5_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_5_4.setBorder(null);
+        player2PropertySlot_5_4.setContentAreaFilled(false);
+        player2PropertySlot_5_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_5_4ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_5_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 70, -1, -1));
+
+        player2PropertySlot_5_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_5_3.setBorder(null);
+        player2PropertySlot_5_3.setContentAreaFilled(false);
+        player2PropertySlot_5_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_5_3ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_5_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 50, -1, -1));
+
+        player2PropertySlot_5_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_5_2.setBorder(null);
+        player2PropertySlot_5_2.setContentAreaFilled(false);
+        player2PropertySlot_5_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_5_2ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_5_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 30, -1, -1));
+
         player2PropertySlot_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
         player2PropertySlot_5.setBorder(null);
         player2PropertySlot_5.setContentAreaFilled(false);
         player2PlayArea.add(player2PropertySlot_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 10, -1, -1));
+
+        player2PropertySlot_6_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_6_6.setBorder(null);
+        player2PropertySlot_6_6.setContentAreaFilled(false);
+        player2PropertySlot_6_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_6_6ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_6_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 110, -1, -1));
+
+        player2PropertySlot_6_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_6_5.setBorder(null);
+        player2PropertySlot_6_5.setContentAreaFilled(false);
+        player2PropertySlot_6_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_6_5ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_6_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 90, -1, -1));
+
+        player2PropertySlot_6_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_6_4.setBorder(null);
+        player2PropertySlot_6_4.setContentAreaFilled(false);
+        player2PropertySlot_6_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_6_4ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_6_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 70, -1, -1));
+
+        player2PropertySlot_6_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_6_3.setBorder(null);
+        player2PropertySlot_6_3.setContentAreaFilled(false);
+        player2PropertySlot_6_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_6_3ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_6_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 50, -1, -1));
+
+        player2PropertySlot_6_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_6_2.setBorder(null);
+        player2PropertySlot_6_2.setContentAreaFilled(false);
+        player2PropertySlot_6_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_6_2ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_6_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 30, -1, -1));
 
         player2PropertySlot_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
         player2PropertySlot_6.setBorder(null);
         player2PropertySlot_6.setContentAreaFilled(false);
         player2PlayArea.add(player2PropertySlot_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 10, -1, -1));
 
+        player2PropertySlot_7_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_7_6.setBorder(null);
+        player2PropertySlot_7_6.setContentAreaFilled(false);
+        player2PropertySlot_7_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_7_6ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_7_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 110, -1, -1));
+
+        player2PropertySlot_7_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_7_5.setBorder(null);
+        player2PropertySlot_7_5.setContentAreaFilled(false);
+        player2PropertySlot_7_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_7_5ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_7_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 90, -1, -1));
+
+        player2PropertySlot_7_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_7_4.setBorder(null);
+        player2PropertySlot_7_4.setContentAreaFilled(false);
+        player2PropertySlot_7_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_7_4ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_7_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 70, -1, -1));
+
+        player2PropertySlot_7_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_7_3.setBorder(null);
+        player2PropertySlot_7_3.setContentAreaFilled(false);
+        player2PropertySlot_7_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_7_3ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_7_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 50, -1, -1));
+
+        player2PropertySlot_7_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_7_2.setBorder(null);
+        player2PropertySlot_7_2.setContentAreaFilled(false);
+        player2PropertySlot_7_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_7_2ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_7_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 30, -1, -1));
+
         player2PropertySlot_7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
         player2PropertySlot_7.setBorder(null);
         player2PropertySlot_7.setContentAreaFilled(false);
         player2PlayArea.add(player2PropertySlot_7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 10, -1, -1));
+
+        player2PropertySlot_8_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_8_6.setBorder(null);
+        player2PropertySlot_8_6.setContentAreaFilled(false);
+        player2PropertySlot_8_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_8_6ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_8_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 110, -1, -1));
+
+        player2PropertySlot_8_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_8_5.setBorder(null);
+        player2PropertySlot_8_5.setContentAreaFilled(false);
+        player2PropertySlot_8_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_8_5ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_8_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 90, -1, -1));
+
+        player2PropertySlot_8_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_8_4.setBorder(null);
+        player2PropertySlot_8_4.setContentAreaFilled(false);
+        player2PropertySlot_8_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_8_4ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_8_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 70, -1, -1));
+
+        player2PropertySlot_8_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_8_3.setBorder(null);
+        player2PropertySlot_8_3.setContentAreaFilled(false);
+        player2PropertySlot_8_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_8_3ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_8_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 50, -1, -1));
+
+        player2PropertySlot_8_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_8_2.setBorder(null);
+        player2PropertySlot_8_2.setContentAreaFilled(false);
+        player2PropertySlot_8_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_8_2ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_8_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 30, -1, -1));
 
         player2PropertySlot_8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
         player2PropertySlot_8.setBorder(null);
         player2PropertySlot_8.setContentAreaFilled(false);
         player2PlayArea.add(player2PropertySlot_8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 10, -1, -1));
 
+        player2PropertySlot_9_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_9_6.setBorder(null);
+        player2PropertySlot_9_6.setContentAreaFilled(false);
+        player2PropertySlot_9_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_9_6ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_9_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 110, -1, -1));
+
+        player2PropertySlot_9_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_9_5.setBorder(null);
+        player2PropertySlot_9_5.setContentAreaFilled(false);
+        player2PropertySlot_9_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_9_5ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_9_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 90, -1, -1));
+
+        player2PropertySlot_9_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_9_4.setBorder(null);
+        player2PropertySlot_9_4.setContentAreaFilled(false);
+        player2PropertySlot_9_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_9_4ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_9_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 70, -1, -1));
+
+        player2PropertySlot_9_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_9_3.setBorder(null);
+        player2PropertySlot_9_3.setContentAreaFilled(false);
+        player2PropertySlot_9_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_9_3ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_9_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 50, -1, -1));
+
+        player2PropertySlot_9_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_9_2.setBorder(null);
+        player2PropertySlot_9_2.setContentAreaFilled(false);
+        player2PropertySlot_9_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_9_2ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_9_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 30, -1, -1));
+
         player2PropertySlot_9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
         player2PropertySlot_9.setBorder(null);
         player2PropertySlot_9.setContentAreaFilled(false);
         player2PlayArea.add(player2PropertySlot_9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 10, -1, -1));
+
+        player2PropertySlot_10_6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_10_6.setBorder(null);
+        player2PropertySlot_10_6.setContentAreaFilled(false);
+        player2PropertySlot_10_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_10_6ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_10_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1750, 110, -1, -1));
+
+        player2PropertySlot_10_5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_10_5.setBorder(null);
+        player2PropertySlot_10_5.setContentAreaFilled(false);
+        player2PropertySlot_10_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_10_5ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_10_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1750, 90, -1, -1));
+
+        player2PropertySlot_10_4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_10_4.setBorder(null);
+        player2PropertySlot_10_4.setContentAreaFilled(false);
+        player2PropertySlot_10_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_10_4ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_10_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1750, 70, -1, -1));
+
+        player2PropertySlot_10_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_10_3.setBorder(null);
+        player2PropertySlot_10_3.setContentAreaFilled(false);
+        player2PropertySlot_10_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_10_3ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_10_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1750, 50, -1, -1));
+
+        player2PropertySlot_10_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
+        player2PropertySlot_10_2.setBorder(null);
+        player2PropertySlot_10_2.setContentAreaFilled(false);
+        player2PropertySlot_10_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PropertySlot_10_2ActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PropertySlot_10_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1750, 30, -1, -1));
 
         player2PropertySlot_10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
         player2PropertySlot_10.setBorder(null);
@@ -671,7 +1766,7 @@ public class GamePlayScreen extends javax.swing.JFrame {
         player2Label.setText("Player2:");
         player2PlayArea.add(player2Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
 
-        jLayeredPane1.add(player2PlayArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, 1910, 250));
+        jLayeredPane1.add(player2PlayArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, 1910, 260));
 
         yourPlayArea.setBackground(new java.awt.Color(0, 0, 0));
         yourPlayArea.setOpaque(false);
@@ -1767,6 +2862,406 @@ public class GamePlayScreen extends javax.swing.JFrame {
         lastPropertyPressed = yourPropertySlot_10;
     }//GEN-LAST:event_yourPropertySlot_10ActionPerformed
 
+    private void player2PropertySlot_1_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_1_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_1_2ActionPerformed
+
+    private void player2PropertySlot_1_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_1_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_1_3ActionPerformed
+
+    private void player2PropertySlot_1_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_1_4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_1_4ActionPerformed
+
+    private void player2PropertySlot_1_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_1_5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_1_5ActionPerformed
+
+    private void player2PropertySlot_1_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_1_6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_1_6ActionPerformed
+
+    private void player2PropertySlot_2_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_2_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_2_2ActionPerformed
+
+    private void player2PropertySlot_2_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_2_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_2_3ActionPerformed
+
+    private void player2PropertySlot_2_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_2_4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_2_4ActionPerformed
+
+    private void player2PropertySlot_2_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_2_5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_2_5ActionPerformed
+
+    private void player2PropertySlot_2_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_2_6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_2_6ActionPerformed
+
+    private void player2PropertySlot_3_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_3_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_3_2ActionPerformed
+
+    private void player2PropertySlot_3_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_3_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_3_3ActionPerformed
+
+    private void player2PropertySlot_3_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_3_4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_3_4ActionPerformed
+
+    private void player2PropertySlot_3_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_3_5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_3_5ActionPerformed
+
+    private void player2PropertySlot_3_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_3_6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_3_6ActionPerformed
+
+    private void player2PropertySlot_4_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_4_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_4_2ActionPerformed
+
+    private void player2PropertySlot_4_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_4_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_4_3ActionPerformed
+
+    private void player2PropertySlot_4_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_4_4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_4_4ActionPerformed
+
+    private void player2PropertySlot_4_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_4_5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_4_5ActionPerformed
+
+    private void player2PropertySlot_4_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_4_6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_4_6ActionPerformed
+
+    private void player2PropertySlot_5_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_5_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_5_2ActionPerformed
+
+    private void player2PropertySlot_5_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_5_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_5_3ActionPerformed
+
+    private void player2PropertySlot_5_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_5_4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_5_4ActionPerformed
+
+    private void player2PropertySlot_5_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_5_5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_5_5ActionPerformed
+
+    private void player2PropertySlot_5_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_5_6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_5_6ActionPerformed
+
+    private void player2PropertySlot_6_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_6_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_6_2ActionPerformed
+
+    private void player2PropertySlot_6_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_6_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_6_3ActionPerformed
+
+    private void player2PropertySlot_6_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_6_4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_6_4ActionPerformed
+
+    private void player2PropertySlot_6_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_6_5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_6_5ActionPerformed
+
+    private void player2PropertySlot_6_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_6_6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_6_6ActionPerformed
+
+    private void player2PropertySlot_7_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_7_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_7_2ActionPerformed
+
+    private void player2PropertySlot_7_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_7_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_7_3ActionPerformed
+
+    private void player2PropertySlot_7_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_7_4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_7_4ActionPerformed
+
+    private void player2PropertySlot_7_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_7_5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_7_5ActionPerformed
+
+    private void player2PropertySlot_7_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_7_6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_7_6ActionPerformed
+
+    private void player2PropertySlot_8_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_8_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_8_2ActionPerformed
+
+    private void player2PropertySlot_8_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_8_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_8_3ActionPerformed
+
+    private void player2PropertySlot_8_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_8_4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_8_4ActionPerformed
+
+    private void player2PropertySlot_8_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_8_5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_8_5ActionPerformed
+
+    private void player2PropertySlot_8_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_8_6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_8_6ActionPerformed
+
+    private void player2PropertySlot_9_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_9_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_9_2ActionPerformed
+
+    private void player2PropertySlot_9_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_9_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_9_3ActionPerformed
+
+    private void player2PropertySlot_9_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_9_4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_9_4ActionPerformed
+
+    private void player2PropertySlot_9_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_9_5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_9_5ActionPerformed
+
+    private void player2PropertySlot_9_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_9_6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_9_6ActionPerformed
+
+    private void player2PropertySlot_10_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_10_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_10_2ActionPerformed
+
+    private void player2PropertySlot_10_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_10_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_10_3ActionPerformed
+
+    private void player2PropertySlot_10_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_10_4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_10_4ActionPerformed
+
+    private void player2PropertySlot_10_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_10_5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_10_5ActionPerformed
+
+    private void player2PropertySlot_10_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PropertySlot_10_6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player2PropertySlot_10_6ActionPerformed
+
+    private void player3PropertySlot_2_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_2_6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_2_6ActionPerformed
+
+    private void player3PropertySlot_1_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_1_4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_1_4ActionPerformed
+
+    private void player3PropertySlot_2_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_2_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_2_2ActionPerformed
+
+    private void player3PropertySlot_1_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_1_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_1_3ActionPerformed
+
+    private void player3PropertySlot_2_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_2_5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_2_5ActionPerformed
+
+    private void player3PropertySlot_2_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_2_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_2_3ActionPerformed
+
+    private void player3PropertySlot_2_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_2_4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_2_4ActionPerformed
+
+    private void player3PropertySlot_1_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_1_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_1_2ActionPerformed
+
+    private void player3PropertySlot_1_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_1_5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_1_5ActionPerformed
+
+    private void player3PropertySlot_3_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_3_6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_3_6ActionPerformed
+
+    private void player3PropertySlot_1_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_1_6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_1_6ActionPerformed
+
+    private void player3PropertySlot_3_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_3_5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_3_5ActionPerformed
+
+    private void player3PropertySlot_3_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_3_4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_3_4ActionPerformed
+
+    private void player3PropertySlot_3_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_3_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_3_3ActionPerformed
+
+    private void player3PropertySlot_3_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_3_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_3_2ActionPerformed
+
+    private void player3PropertySlot_4_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_4_6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_4_6ActionPerformed
+
+    private void player3PropertySlot_4_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_4_5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_4_5ActionPerformed
+
+    private void player3PropertySlot_4_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_4_4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_4_4ActionPerformed
+
+    private void player3PropertySlot_4_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_4_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_4_3ActionPerformed
+
+    private void player3PropertySlot_4_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_4_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_4_2ActionPerformed
+
+    private void player3PropertySlot_5_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_5_6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_5_6ActionPerformed
+
+    private void player3PropertySlot_5_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_5_5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_5_5ActionPerformed
+
+    private void player3PropertySlot_5_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_5_4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_5_4ActionPerformed
+
+    private void player3PropertySlot_5_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_5_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_5_3ActionPerformed
+
+    private void player3PropertySlot_5_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_5_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_5_2ActionPerformed
+
+    private void player3PropertySlot_6_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_6_6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_6_6ActionPerformed
+
+    private void player3PropertySlot_6_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_6_5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_6_5ActionPerformed
+
+    private void player3PropertySlot_6_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_6_4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_6_4ActionPerformed
+
+    private void player3PropertySlot_6_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_6_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_6_3ActionPerformed
+
+    private void player3PropertySlot_6_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_6_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_6_2ActionPerformed
+
+    private void player3PropertySlot_7_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_7_6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_7_6ActionPerformed
+
+    private void player3PropertySlot_7_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_7_5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_7_5ActionPerformed
+
+    private void player3PropertySlot_7_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_7_4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_7_4ActionPerformed
+
+    private void player3PropertySlot_7_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_7_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_7_3ActionPerformed
+
+    private void player3PropertySlot_7_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_7_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_7_2ActionPerformed
+
+    private void player3PropertySlot_8_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_8_6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_8_6ActionPerformed
+
+    private void player3PropertySlot_8_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_8_5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_8_5ActionPerformed
+
+    private void player3PropertySlot_8_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_8_4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_8_4ActionPerformed
+
+    private void player3PropertySlot_8_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_8_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_8_3ActionPerformed
+
+    private void player3PropertySlot_8_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_8_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_8_2ActionPerformed
+
+    private void player3PropertySlot_9_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_9_6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_9_6ActionPerformed
+
+    private void player3PropertySlot_9_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_9_5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_9_5ActionPerformed
+
+    private void player3PropertySlot_9_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_9_4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_9_4ActionPerformed
+
+    private void player3PropertySlot_9_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_9_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_9_3ActionPerformed
+
+    private void player3PropertySlot_9_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_9_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_9_2ActionPerformed
+
+    private void player3PropertySlot_10_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_10_6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_10_6ActionPerformed
+
+    private void player3PropertySlot_10_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_10_5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_10_5ActionPerformed
+
+    private void player3PropertySlot_10_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_10_4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_10_4ActionPerformed
+
+    private void player3PropertySlot_10_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_10_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_10_3ActionPerformed
+
+    private void player3PropertySlot_10_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PropertySlot_10_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player3PropertySlot_10_2ActionPerformed
+
     /**
      * Set player starting hand visually in GUI.
      * @param cardImagePaths 
@@ -2117,29 +3612,128 @@ public class GamePlayScreen extends javax.swing.JFrame {
     private javax.swing.JPanel player2PlayArea;
     private javax.swing.JButton player2PropertySlot_1;
     private javax.swing.JButton player2PropertySlot_10;
+    private javax.swing.JButton player2PropertySlot_10_2;
+    private javax.swing.JButton player2PropertySlot_10_3;
+    private javax.swing.JButton player2PropertySlot_10_4;
+    private javax.swing.JButton player2PropertySlot_10_5;
+    private javax.swing.JButton player2PropertySlot_10_6;
+    private javax.swing.JButton player2PropertySlot_1_2;
+    private javax.swing.JButton player2PropertySlot_1_3;
+    private javax.swing.JButton player2PropertySlot_1_4;
+    private javax.swing.JButton player2PropertySlot_1_5;
+    private javax.swing.JButton player2PropertySlot_1_6;
     private javax.swing.JButton player2PropertySlot_2;
+    private javax.swing.JButton player2PropertySlot_2_2;
+    private javax.swing.JButton player2PropertySlot_2_3;
+    private javax.swing.JButton player2PropertySlot_2_4;
+    private javax.swing.JButton player2PropertySlot_2_5;
+    private javax.swing.JButton player2PropertySlot_2_6;
     private javax.swing.JButton player2PropertySlot_3;
+    private javax.swing.JButton player2PropertySlot_3_2;
+    private javax.swing.JButton player2PropertySlot_3_3;
+    private javax.swing.JButton player2PropertySlot_3_4;
+    private javax.swing.JButton player2PropertySlot_3_5;
+    private javax.swing.JButton player2PropertySlot_3_6;
     private javax.swing.JButton player2PropertySlot_4;
     private javax.swing.JButton player2PropertySlot_4_2;
+    private javax.swing.JButton player2PropertySlot_4_3;
+    private javax.swing.JButton player2PropertySlot_4_4;
+    private javax.swing.JButton player2PropertySlot_4_5;
+    private javax.swing.JButton player2PropertySlot_4_6;
     private javax.swing.JButton player2PropertySlot_5;
+    private javax.swing.JButton player2PropertySlot_5_2;
+    private javax.swing.JButton player2PropertySlot_5_3;
+    private javax.swing.JButton player2PropertySlot_5_4;
+    private javax.swing.JButton player2PropertySlot_5_5;
+    private javax.swing.JButton player2PropertySlot_5_6;
     private javax.swing.JButton player2PropertySlot_6;
+    private javax.swing.JButton player2PropertySlot_6_2;
+    private javax.swing.JButton player2PropertySlot_6_3;
+    private javax.swing.JButton player2PropertySlot_6_4;
+    private javax.swing.JButton player2PropertySlot_6_5;
+    private javax.swing.JButton player2PropertySlot_6_6;
     private javax.swing.JButton player2PropertySlot_7;
+    private javax.swing.JButton player2PropertySlot_7_2;
+    private javax.swing.JButton player2PropertySlot_7_3;
+    private javax.swing.JButton player2PropertySlot_7_4;
+    private javax.swing.JButton player2PropertySlot_7_5;
+    private javax.swing.JButton player2PropertySlot_7_6;
     private javax.swing.JButton player2PropertySlot_8;
+    private javax.swing.JButton player2PropertySlot_8_2;
+    private javax.swing.JButton player2PropertySlot_8_3;
+    private javax.swing.JButton player2PropertySlot_8_4;
+    private javax.swing.JButton player2PropertySlot_8_5;
+    private javax.swing.JButton player2PropertySlot_8_6;
     private javax.swing.JButton player2PropertySlot_9;
+    private javax.swing.JButton player2PropertySlot_9_2;
+    private javax.swing.JButton player2PropertySlot_9_3;
+    private javax.swing.JButton player2PropertySlot_9_4;
+    private javax.swing.JButton player2PropertySlot_9_5;
+    private javax.swing.JButton player2PropertySlot_9_6;
     private javax.swing.JTextField player2TotalMoney;
     private javax.swing.JLabel player3Label;
     private javax.swing.JButton player3MoneySlot;
     private javax.swing.JPanel player3PlayArea;
     private javax.swing.JButton player3PropertySlot_1;
     private javax.swing.JButton player3PropertySlot_10;
+    private javax.swing.JButton player3PropertySlot_10_2;
+    private javax.swing.JButton player3PropertySlot_10_3;
+    private javax.swing.JButton player3PropertySlot_10_4;
+    private javax.swing.JButton player3PropertySlot_10_5;
+    private javax.swing.JButton player3PropertySlot_10_6;
+    private javax.swing.JButton player3PropertySlot_1_2;
+    private javax.swing.JButton player3PropertySlot_1_3;
+    private javax.swing.JButton player3PropertySlot_1_4;
+    private javax.swing.JButton player3PropertySlot_1_5;
+    private javax.swing.JButton player3PropertySlot_1_6;
     private javax.swing.JButton player3PropertySlot_2;
+    private javax.swing.JButton player3PropertySlot_2_2;
+    private javax.swing.JButton player3PropertySlot_2_3;
+    private javax.swing.JButton player3PropertySlot_2_4;
+    private javax.swing.JButton player3PropertySlot_2_5;
+    private javax.swing.JButton player3PropertySlot_2_6;
     private javax.swing.JButton player3PropertySlot_3;
+    private javax.swing.JButton player3PropertySlot_3_2;
+    private javax.swing.JButton player3PropertySlot_3_3;
+    private javax.swing.JButton player3PropertySlot_3_4;
+    private javax.swing.JButton player3PropertySlot_3_5;
+    private javax.swing.JButton player3PropertySlot_3_6;
     private javax.swing.JButton player3PropertySlot_4;
+    private javax.swing.JButton player3PropertySlot_4_2;
+    private javax.swing.JButton player3PropertySlot_4_3;
+    private javax.swing.JButton player3PropertySlot_4_4;
+    private javax.swing.JButton player3PropertySlot_4_5;
+    private javax.swing.JButton player3PropertySlot_4_6;
     private javax.swing.JButton player3PropertySlot_5;
+    private javax.swing.JButton player3PropertySlot_5_2;
+    private javax.swing.JButton player3PropertySlot_5_3;
+    private javax.swing.JButton player3PropertySlot_5_4;
+    private javax.swing.JButton player3PropertySlot_5_5;
+    private javax.swing.JButton player3PropertySlot_5_6;
     private javax.swing.JButton player3PropertySlot_6;
+    private javax.swing.JButton player3PropertySlot_6_2;
+    private javax.swing.JButton player3PropertySlot_6_3;
+    private javax.swing.JButton player3PropertySlot_6_4;
+    private javax.swing.JButton player3PropertySlot_6_5;
+    private javax.swing.JButton player3PropertySlot_6_6;
     private javax.swing.JButton player3PropertySlot_7;
+    private javax.swing.JButton player3PropertySlot_7_2;
+    private javax.swing.JButton player3PropertySlot_7_3;
+    private javax.swing.JButton player3PropertySlot_7_4;
+    private javax.swing.JButton player3PropertySlot_7_5;
+    private javax.swing.JButton player3PropertySlot_7_6;
     private javax.swing.JButton player3PropertySlot_8;
+    private javax.swing.JButton player3PropertySlot_8_2;
+    private javax.swing.JButton player3PropertySlot_8_3;
+    private javax.swing.JButton player3PropertySlot_8_4;
+    private javax.swing.JButton player3PropertySlot_8_5;
+    private javax.swing.JButton player3PropertySlot_8_6;
     private javax.swing.JButton player3PropertySlot_9;
+    private javax.swing.JButton player3PropertySlot_9_2;
+    private javax.swing.JButton player3PropertySlot_9_3;
+    private javax.swing.JButton player3PropertySlot_9_4;
+    private javax.swing.JButton player3PropertySlot_9_5;
+    private javax.swing.JButton player3PropertySlot_9_6;
     private javax.swing.JTextField player3TotalMoney;
     private javax.swing.JLabel propertiesLabel;
     private javax.swing.JButton resumeButton;
