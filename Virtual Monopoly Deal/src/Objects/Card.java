@@ -23,16 +23,18 @@ public class Card{
         "orange-and-pink-rent-card1 (Custom)", "orange-and-pink-rent-card2 (Custom)", "orange-and-pink-wildcard-card1 (Custom)", "orange-and-pink-wildcard-card2 (Custom)", "orange-property-card1 (Custom)", 
         "orange-property-card2 (Custom)", "orange-property-card3 (Custom)", "pass-go-action-card1 (Custom)", "pass-go-action-card10 (Custom)", "pass-go-action-card2 (Custom)", 
         "pass-go-action-card3 (Custom)", "pass-go-action-card4 (Custom)", "pass-go-action-card5 (Custom)", "pass-go-action-card6 (Custom)", "pass-go-action-card7 (Custom)", "pass-go-action-card8 (Custom)", 
-        "pass-go-action-card9 (Custom)", "pink-property-card1 (Custom)", "pink-property-card2 (Custom)", "pink-property-card3 (Custom)", "railraod-and-green-wildcard-card (Custom)", 
-        "railraod-and-light-blue-wildcard-card (Custom)", "railroad-and-utility-rent-card1 (Custom)", 
+        "pass-go-action-card9 (Custom)", "pink-property-card1 (Custom)", "pink-property-card2 (Custom)", "pink-property-card3 (Custom)", "railroad-and-green-wildcard-card (Custom)", 
+        "railroad-and-light-blue-wildcard-card (Custom)", "railroad-and-utility-rent-card1 (Custom)", 
         "railroad-and-utility-rent-card2 (Custom)", "railroad-and-utility-wildcard-card (Custom)", "railroad-property-card1 (Custom)", "railroad-property-card2 (Custom)", "railroad-property-card3 (Custom)", 
         "railroad-property-card4 (Custom)", "red-and-yellow-rent-card1 (Custom)", "red-and-yellow-rent-card2 (Custom)", "red-and-yellow-wildcard-card1 (Custom)", "red-and-yellow-wildcard-card2 (Custom)", 
         "red-property-card1 (Custom)", "red-property-card2 (Custom)", "red-property-card3 (Custom)", "sly-deal-action-card1 (Custom)", "sly-deal-action-card2 (Custom)", "sly-deal-action-card3 (Custom)", 
         "utility-property-card1 (Custom)", "utility-property-card2 (Custom)", "yellow-property-card1 (Custom)", "yellow-property-card2 (Custom)", "yellow-property-card3 (Custom)"}; //used to house image name of cards
     private final String[] cardTypes = {"money", "property", "rent", "wild-rent", "wildcard", "action"}; //used to house the types of cards a card can be.
                                                                                                         //wildcard is wild property card.
-    private String color_1;
-    private String color_2;
+
+      private String propertyColor = "";
+//    private String color_1;
+//    private String color_2;
     
     /**
      * Constructor
@@ -53,6 +55,20 @@ public class Card{
         //sets card image path
         imagePath = "/images/MonopolyCards/"+name+".png";
         
+        //if property card or wildcard, make it's color
+        if (type.equals("property")){
+            String n = name;
+            String[] splittedName = n.split("-property", 2);
+            propertyColor = splittedName[0];
+        } //if wildcard (wild property card), make it's color
+        else if (type.equals("wildcard")){
+            String n = name;
+            String[] splittedName = n.split("-wildcard", 2);
+            propertyColor = splittedName[0];
+        }
+        
+        
+        
     }
     
     
@@ -72,13 +88,17 @@ public class Card{
         return value;
     }
     
-    public String getColor_1(){
-        return color_1;
+    public String getPropertyColor(){
+        return propertyColor;
     }
     
-    public String getColor_2(){
+/*    public String getColor_1(){
+        return color_1;
+    } */
+    
+ /*   public String getColor_2(){
         return color_2;
-    }
+    } */
     
     public int getCardNameArraySize(){
         return cardNames.length;

@@ -212,32 +212,32 @@ public class Game {
                 if (player.getCardToPlay() != null){ //has to recheck for null card incase player chose different card after picking first one.
                     System.out.println("type of slot pressed: "+slotButtonPressed);
                    
-                        try{
-                            //check card type to play.
-                            String cardType = player.getCardToPlay().getType().toLowerCase();
-                            
-                          
-                            if(slotButtonPressed==2){
-                                 discardCard();
-                            }
-                            else if ((cardType.equals("property") || cardType.equals("wildcard")) && slotButtonPressed == 1){ //slotButtonPressed == 1 means that a property slot was pressed.
-                                playPropertyCard();
-                            }
-                            else if ((cardType.equals("money") || cardType.equals("action") || cardType.equals("wild-rent") || cardType.equals("rent")) && slotButtonPressed == 0){//player is playing a card to add to their bank.
-                                playMoneyCard();
-                            }
-                            else if (cardType.equals("rent")){
-                                playRentCard();
-                            }
-                            else if (cardType.equals("wild-rent")){
-                                playWildRentCard();
-                            }
-                            else if (cardType.equals("action")){
-                                playActionCard();
-                            }
-                            else{ //no valid actions made
-                                player.setCardToPlay(null);
-                            }
+                    try{
+                        //check card type to play.
+                        String cardType = player.getCardToPlay().getType().toLowerCase();
+
+
+                        if(slotButtonPressed==2){
+                             discardCard();
+                        }
+                        else if ((cardType.equals("property") || cardType.equals("wildcard")) && slotButtonPressed == 1){ //slotButtonPressed == 1 means that a property slot was pressed.
+                            playPropertyCard();
+                        }
+                        else if ((cardType.equals("money") || cardType.equals("action") || cardType.equals("wild-rent") || cardType.equals("rent")) && slotButtonPressed == 0){//player is playing a card to add to their bank.
+                            playMoneyCard();
+                        }
+                        else if (cardType.equals("rent")){
+                            playRentCard();
+                        }
+                        else if (cardType.equals("wild-rent")){
+                            playWildRentCard();
+                        }
+                        else if (cardType.equals("action")){
+                            playActionCard();
+                        }
+                        else{ //no valid actions made
+                            player.setCardToPlay(null);
+                        }
 
                     }
                     catch(Exception e){
@@ -324,16 +324,23 @@ public class Game {
         
         //play property card
         int[] yourPropertySlotPressed = GPS.getYourPropertySlotPressed(); //int array of where the property is located in the matrix of player's properties.
-        player.playPropertyCard(yourPropertySlotPressed);
+        boolean ableToPlay = player.playPropertyCard(yourPropertySlotPressed);
 
-        //display card in GUI
-        GPS.displayPlayedPropertyCard(c.getImagePath());
+        System.out.println("ableToPlay = "+ableToPlay);
+        
+        if (ableToPlay == true){
+            //display card in GUI
+            GPS.displayPlayedPropertyCard(c.getImagePath());
+            
+            //remove card image from hand in GUI
+            GPS.removeCardImageFromHand(handSlotPressed);
+        }
+        
         
         //reset back to no property slot as we are done
         GPS.setYourPropertySlotPressed(0, 0);
         
-        //remove card image from hand in GUI
-        GPS.removeCardImageFromHand(handSlotPressed);
+        
     }
     
     /**
@@ -378,7 +385,38 @@ public class Game {
      * May refactor these in future for bot objects to use these methods as well
      */
     private void playActionCard(){
+        //capture card to play
+        Card c = player.getCardToPlay();
         
+        //if action card is house or hotel card
+        if (c.getName().toLowerCase().contains("house") || c.getName().toLowerCase().contains("hotel")){
+            playHouseOrHotelCard(c);
+        }
+        
+    }
+    
+    /**
+     * Plays house or hotel card
+     * @param c 
+     */
+    private void playHouseOrHotelCard(Card c){
+        //play house or hotel card
+        int[] yourPropertySlotPressed = GPS.getYourPropertySlotPressed(); //int array of where the property is located in the matrix of player's properties.
+        boolean ableToPlay = player.playHouseOrHotelCard(yourPropertySlotPressed);
+
+        System.out.println("ableToPlay = "+ableToPlay);
+
+        if (ableToPlay == true){
+            //display card in GUI
+            GPS.displayPlayedPropertyCard(c.getImagePath());
+
+            //remove card image from hand in GUI
+            GPS.removeCardImageFromHand(handSlotPressed);
+        }
+
+
+        //reset back to no property slot as we are done
+        GPS.setYourPropertySlotPressed(0, 0);
     }
     
     /**

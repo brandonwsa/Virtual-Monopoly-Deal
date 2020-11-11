@@ -13,9 +13,10 @@ public class Player{
     protected Card cardToPlay;
     protected List<Card> hand; //wont do anything until first card is added to hand.
     protected List<Card> money; //wont do anything until first money is added. //if this list is null, money = 0 in game.
-    protected List<Card>/*<PropertySlot>*/ properties; //wont do anything until first property is added.
+//    protected List<Card>/*<PropertySlot>*/ properties; //wont do anything until first property is added.
     protected List<Card> discardDeck;//where the cards will be discarded..... do we need this? 
     //might be good to have an totalMoney, will add up all the money the player has. Property slot may be a 2d array
+    protected List<PropertySlot> properties; //will be an arraylist that holds propertySlot object
     
     /**
      * Initiates object.
@@ -33,7 +34,7 @@ public class Player{
         totalMoney = 0;
         hand = new ArrayList<Card>();
         money = new ArrayList<Card>();
-        properties = new ArrayList<Card>();
+        properties = new ArrayList<PropertySlot>();
         
         //make hand and fill it with null values as place holders.
         //When adding cards to the hand, null will be replaced with the card.
@@ -41,6 +42,13 @@ public class Player{
             hand.add(null);
         }
    //     lastCardPlayed = new Card(); //commented out to prevent class from having an error.
+   
+        //make property slots and add them to the properties arraylist.
+        for (int i=0; i<10; i++){
+            PropertySlot ps = new PropertySlot(i+1); //passes in property slot number
+            properties.add(ps);
+        }
+   
     }
     
     public List getHand(){
@@ -55,6 +63,7 @@ public class Player{
         return money;
     }
     
+    //unused
     public List getProperties(){
         return properties;
     }
@@ -111,8 +120,40 @@ public class Player{
         totalMoney += card.getValue();
     }
     
-    protected void addProperty(Card card){
-        properties.add(card);
+    /**
+     * Adds property card to propertySlot object based on passed in propertySlotColumn number
+     * @param card
+     * @param propertySlotColumn 
+     */
+    protected void addProperty(Card card, int propertySlotColumn){
+        
+        properties.get(propertySlotColumn-1).addPropertyCard(card); //minus 1 for correct index
+        System.out.println("Property added to prop "+properties.get(propertySlotColumn-1));
+        System.out.println("Slot "+properties.get(propertySlotColumn-1).getPropertySlotNumber()+" color is: "+properties.get(propertySlotColumn-1).getPropertyColor());
+        properties.get(propertySlotColumn-1).printProperties();
+        
+    }
+    
+    /**
+     * Adds a house to your properties
+     * @param card
+     * @param propertySlotColumn 
+     */
+    protected void addHouse(Card card, int propertySlotColumn){
+        properties.get(propertySlotColumn-1).addHouseCard(card); //minus 1 for correct index
+        System.out.println("House added to prop "+properties.get(propertySlotColumn-1));
+        properties.get(propertySlotColumn-1).printProperties();
+    }
+    
+    /**
+     * Adds a hotel to your properties
+     * @param card
+     * @param propertySlotColumn 
+     */
+    protected void addHotel(Card card, int propertySlotColumn){
+        properties.get(propertySlotColumn-1).addHotelCard(card); //minus 1 for correct index
+        System.out.println("Hotel added to prop "+properties.get(propertySlotColumn-1));
+        properties.get(propertySlotColumn-1).printProperties();
     }
     
     public void addCompletedProperty(){
@@ -173,19 +214,134 @@ public class Player{
     /**
      * Plays a property card by adding it to player's properties and removing it from player's hand
      * @param propertySlot 
+     * @return true if added. false if not able to add.
      */
-    public void playPropertyCard(int[] propertySlot){
+    public boolean playPropertyCard(int[] propertySlot){
         Card c = getCardToPlay();
+        int propertySlotColumn = propertySlot[0];
+        PropertySlot propSlot = properties.get(propertySlotColumn-1); //property slot to add card to
+        
+        System.out.println("Trying to add "+c.getName()); //for testing
+        System.out.println("Property color is: "+c.getPropertyColor()); //for testing
+        
+        if (c.getType().toLowerCase().equals("property") || c.getType().toLowerCase().equals("wildcard")){
+            if (propSlot.canAddPropertyCard() == true){
+                if (propSlot.isEmpty() == true){
+                    addProperty(c, propertySlotColumn);
+                    //remove card from player's hand.
+                    removeCardFromHand(c);
+                    
+                    //check if property slot is completed. Will increase completedProperties if so.
+                    _checkCompletedProperties(propSlot);
+                    
+                    return true;
+                }
+                else if (propSlot.getPropertyColor().toLowerCase().equals("multicolor")){
+                    addProperty(c, propertySlotColumn);
+                    //set new color for propSlot since wildcard is now deactivated
+                    propSlot.setPropertyColor(c.getPropertyColor());
+                    //remove card from player's hand.
+                    removeCardFromHand(c);
+                    
+                    //check if property slot is completed. Will increase completedProperties if so.
+                    _checkCompletedProperties(propSlot);
+                    return true;
+                } 
+                //check for appropiate matching color between played card and propSlot color
+                else if (c.getPropertyColor().toLowerCase().contains(propSlot.getPropertyColor())){
+                    addProperty(c, propertySlotColumn);
+                    //remove card from player's hand.
+                    removeCardFromHand(c);
+                    
+                    //check if property slot is completed. Will increase completedProperties if so.
+                    _checkCompletedProperties(propSlot);
+                    return true;
+                } 
+                //check if the first card placed in property slot was a 2 color wildcard
+                else if (propSlot.getPropertyColor().toLowerCase().contains(c.getPropertyColor())){
+                    addProperty(c, propertySlotColumn);
+                    //set new color for propSlot since 2 color wildcard is now deactivated, if it was the first property placed.
+                    propSlot.setPropertyColor(c.getPropertyColor());
+                    //remove card from player's hand.
+                    removeCardFromHand(c);
+                    
+                    //check if property slot is completed. Will increase completedProperties if so.
+                    _checkCompletedProperties(propSlot);
+                    return true;
+                }
+                //if adding multicolor wildcard after a property is already placed
+                else if (c.getPropertyColor().toLowerCase().equals("multicolor")){
+                    addProperty(c, propertySlotColumn);
+                    //remove card from player's hand.
+                    removeCardFromHand(c);
+                    
+                    //check if property slot is completed. Will increase completedProperties if so.
+                    _checkCompletedProperties(propSlot);
+                    return true;
+                }
+                else{
+                    System.out.println("Can't place property card. Invalid card");
+                }
+            }
+            else{
+                System.out.println("Can't add card, property slot is full.");
+            }
+        }
+        else{
+            System.out.println("Not a property or wildcard");
+        }
+        
+        return false;
+        
+   /*     Card c = getCardToPlay();
+        int propertySlotColumn = propertySlot[0]; //column of properties property is being added to.
         
         System.out.println(c.getName()); //for testing
         
         System.out.println("Property added to slot: "+propertySlot[0]+" "+propertySlot[1]); //for testing
+        System.out.println("Property color is: "+c.getPropertyColor());
         
         //add card to player's properties
-        addProperty(c);
+        addProperty(c, propertySlotColumn);
         
         //remove card from player's hand.
-        removeCardFromHand(c);
+        removeCardFromHand(c); */
+    }
+    
+    
+    public boolean playHouseOrHotelCard(int[] propertySlot){
+        Card c = getCardToPlay();
+        int propertySlotColumn = propertySlot[0];
+        PropertySlot propSlot = properties.get(propertySlotColumn-1); //property slot to add card to
+        
+        System.out.println("Trying to add "+c.getName()); //for testing
+        System.out.println("Property isCompleted: "+propSlot.getIsCompleted()); //for testing
+        
+        //check to make sure not railroad or utility
+        if (!c.getPropertyColor().equals("railroad") && !c.getPropertyColor().equals("utility")){
+            //play house card
+            if (propSlot.canAddHouse() == true && !c.getName().contains("hotel")){
+                addHouse(c, propertySlotColumn);
+                //remove card from player's hand.
+                removeCardFromHand(c);
+
+                return true;
+            }
+            //play hotel card
+            else if (propSlot.canAddHotel() == true){
+                addHotel(c, propertySlotColumn);
+                //remove card from player's hand.
+                removeCardFromHand(c);
+
+                return true;
+            }
+        }
+        else {
+            System.out.println("Can't add house or hotel to "+c.getPropertyColor());
+        }
+        
+         
+        return false;    
     }
     
     
@@ -200,6 +356,17 @@ public class Player{
         
         //remove card from player's hand.
         removeCardFromHand(c);
+    }
+    
+    /**
+     * Checks if any properties are completed
+     * @param propSlot 
+     */
+    protected void _checkCompletedProperties(PropertySlot propSlot){
+        if (propSlot.getIsCompleted() == true){
+            completedProperties++;
+        }
+            
     }
     
     public void printHand(){
