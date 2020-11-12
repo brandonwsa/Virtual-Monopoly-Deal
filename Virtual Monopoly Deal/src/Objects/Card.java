@@ -7,7 +7,7 @@ public class Card{
     private String type;
     private String imagePath;
     private int value;
-    private final int[] values = {0, 1, 2, 3, 4, 5, 10}; //used to house value of cards.
+//    private final int[] values = {0, 1, 2, 3, 4, 5, 10}; //used to house value of cards.
     private final String[] cardNames = {"$10M-money-card (Custom)", "$1M-money-card1 (Custom)", "$1M-money-card2 (Custom)", "$1M-money-card3 (Custom)", "$1M-money-card4 (Custom)", 
         "$1M-money-card5 (Custom)", "$1M-money-card6 (Custom)", "$2M-money-card1 (Custom)", "$2M-money-card2 (Custom)", "$2M-money-card3 (Custom)", "$2M-money-card4 (Custom)", "$2M-money-card5 (Custom)", 
         "$3M-money-card1 (Custom)", "$3M-money-card2 (Custom)", "$3M-money-card3 (Custom)", "$4M-money-card1 (Custom) (Custom)", "$4M-money-card1 (Custom)", "$4M-money-card2 (Custom)", 
@@ -39,11 +39,9 @@ public class Card{
     /**
      * Constructor
      * @param cardName int value of card name from String[]
-     * @param cardValue int value of card value from values[]
      */
-    public Card(int cardName, int cardValue){
+    public Card(int cardName){
         name = cardNames[cardName]; //need to configure this method or create constructor to initialize values in card object 
-        value = values[cardValue];
         
         //set card type. Will iterate through all the card types and find out with card is what type based on the card's name.
         for (int i=0; i<cardTypes.length; i++){
@@ -55,17 +53,53 @@ public class Card{
         //sets card image path
         imagePath = "/images/MonopolyCards/"+name+".png";
         
-        //if property card or wildcard, make it's color
+        //if property card, wildcard, or rent card make it's color
         if (type.equals("property")){
             String n = name;
             String[] splittedName = n.split("-property", 2);
             propertyColor = splittedName[0];
-        } //if wildcard (wild property card), make it's color
+        } 
+        //if wildcard (wild property card), make it's color
         else if (type.equals("wildcard")){
             String n = name;
             String[] splittedName = n.split("-wildcard", 2);
             propertyColor = splittedName[0];
+        } 
+        //if wild-rent card
+        else if (type.equals("wild-rent")){
+            propertyColor = "all-color";
+        } 
+        //if rent card
+        else if (type.equals("rent")){
+            String n = name;
+            String[] splittedName = n.split("-rent", 2);
+            propertyColor = splittedName[0];
         }
+        
+        
+        //make card's value
+        if (name.contains("$10M")){
+            value = 10;
+        }
+        else if (name.contains("$5M") || name.contains("deal-breaker")){
+            value = 5;
+        }
+        else if (name.contains("$4M") || name.contains("dark-blue-and-green-wildcard") || name.contains("dark-blue-property") || name.contains("green-property") || name.contains("hotel") || name.contains("just-say-no") || name.contains("railroad-and-green-wildcard") || name.contains("railroad-and-light-blue-wildcard")){
+            value = 4;
+        }
+        else if (name.contains("$3M") || name.contains("wild-rent") || name.contains("debt-collector") || name.contains("force-deal") || name.contains("house") || name.contains("red-and-yellow-wildcard") || name.contains("red-property") || name.contains("yellow-property") || name.contains("sly-deal")){
+            value = 3;
+        }
+        else if (name.contains("$2M") || name.contains("orange-and-pink-wildcard") || name.contains("orange-property") || name.contains("pink-property") || name.contains("railroad-and-utility-wildcard") || name.contains("utility-property") || name.contains("railroad-property") || name.contains("birthday")){
+            value = 2;
+        }
+        else if (name.contains("$1M") || name.contains("rent") || name.contains("pass-go") || name.contains("light-blue-and-brown-wildcard") || name.contains("light-blue-property")){
+            value = 1;
+        }
+        else {
+            value = 0;
+        }
+       
         
         
         

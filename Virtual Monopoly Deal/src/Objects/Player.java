@@ -228,6 +228,10 @@ public class Player{
             if (propSlot.canAddPropertyCard() == true){
                 if (propSlot.isEmpty() == true){
                     addProperty(c, propertySlotColumn);
+                    
+                    //adjust rent amount
+                    propSlot.setRentAmount();
+                    
                     //remove card from player's hand.
                     removeCardFromHand(c);
                     
@@ -240,6 +244,10 @@ public class Player{
                     addProperty(c, propertySlotColumn);
                     //set new color for propSlot since wildcard is now deactivated
                     propSlot.setPropertyColor(c.getPropertyColor());
+                    
+                    //adjust rent amount
+                    propSlot.setRentAmount();
+                    
                     //remove card from player's hand.
                     removeCardFromHand(c);
                     
@@ -250,6 +258,10 @@ public class Player{
                 //check for appropiate matching color between played card and propSlot color
                 else if (c.getPropertyColor().toLowerCase().contains(propSlot.getPropertyColor())){
                     addProperty(c, propertySlotColumn);
+                    
+                    //adjust rent amount
+                    propSlot.setRentAmount();
+                    
                     //remove card from player's hand.
                     removeCardFromHand(c);
                     
@@ -262,6 +274,10 @@ public class Player{
                     addProperty(c, propertySlotColumn);
                     //set new color for propSlot since 2 color wildcard is now deactivated, if it was the first property placed.
                     propSlot.setPropertyColor(c.getPropertyColor());
+                    
+                    //adjust rent amount
+                    propSlot.setRentAmount();
+                    
                     //remove card from player's hand.
                     removeCardFromHand(c);
                     
@@ -272,6 +288,10 @@ public class Player{
                 //if adding multicolor wildcard after a property is already placed
                 else if (c.getPropertyColor().toLowerCase().equals("multicolor")){
                     addProperty(c, propertySlotColumn);
+                    
+                    //adjust rent amount
+                    propSlot.setRentAmount();
+                    
                     //remove card from player's hand.
                     removeCardFromHand(c);
                     
@@ -322,6 +342,10 @@ public class Player{
             //play house card
             if (propSlot.canAddHouse() == true && !c.getName().contains("hotel")){
                 addHouse(c, propertySlotColumn);
+                
+                //adjust rent amount
+                propSlot.setRentAmount();
+                
                 //remove card from player's hand.
                 removeCardFromHand(c);
 
@@ -330,6 +354,10 @@ public class Player{
             //play hotel card
             else if (propSlot.canAddHotel() == true){
                 addHotel(c, propertySlotColumn);
+                
+                //adjust rent amount
+                propSlot.setRentAmount();
+                
                 //remove card from player's hand.
                 removeCardFromHand(c);
 

@@ -57,7 +57,6 @@ public class PropertySlot{
         //set property color if first card
         if (propertyColor == null){
             setPropertyColor(c.getPropertyColor());
-             
         }
         
         //if added property completes the set
@@ -116,6 +115,180 @@ public class PropertySlot{
         System.out.println("PropertySlot num"+propertySlotNumber+" color is now "+color);
     }
     
+    /**
+     * Sets the rent amount for the property slot based on color of properties and how many there are.
+     */
+    public void setRentAmount(){
+        
+        int totalProperties = propertiesInSlot.size();
+        
+        switch (propertyColor) {
+            case "brown":
+                if (totalProperties == 1){
+                    rentAmount = 1;
+                }
+                else if (totalProperties == 2){
+                    rentAmount = 2;
+                }
+                break;
+            case "dark-blue-and-green":
+                if (totalProperties == 1){
+                    rentAmount = 3;
+                }
+                break;
+            case "dark-blue":
+                if (totalProperties == 1){
+                    rentAmount = 3;
+                }
+                else if (totalProperties == 2){
+                    rentAmount = 8;
+                }
+                break;
+            case "green":
+                if (totalProperties == 1){
+                    rentAmount = 2;
+                }
+                else if (totalProperties == 2){
+                    rentAmount = 4;
+                }
+                else if (totalProperties == 3){
+                    rentAmount = 7;
+                }
+                break;
+            case "light-blue-and-brown":
+                if (totalProperties == 1){
+                    rentAmount = 1;
+                }
+                else if (totalProperties == 2){
+                    rentAmount = 2;
+                }
+                break;
+            case "light-blue":
+                if (totalProperties == 1){
+                    rentAmount = 1;
+                }
+                else if (totalProperties == 2){
+                    rentAmount = 2;
+                }
+                else if (totalProperties == 3){
+                    rentAmount = 3;
+                }
+                break;
+            case "orange-and-pink":
+                if (totalProperties == 1){
+                    rentAmount = 1;
+                }
+                break;
+            case "orange":
+                if (totalProperties == 1){
+                    rentAmount = 1;
+                }
+                else if (totalProperties == 2){
+                    rentAmount = 3;
+                }
+                else if (totalProperties == 3){
+                    rentAmount = 5;
+                }
+                break;
+            case "pink":
+                if (totalProperties == 1){
+                    rentAmount = 1;
+                }
+                else if (totalProperties == 2){
+                    rentAmount = 2;
+                }
+                else if (totalProperties == 3){
+                    rentAmount = 4;
+                }
+                break;
+            case "railroad-and-green":
+                if (totalProperties == 1){
+                    rentAmount = 2;
+                }
+                break;
+            case "railroad-and-light-blue":
+                if (totalProperties == 1){
+                    rentAmount = 1;
+                }
+                break;
+            case "railroad-and-utility":
+                if (totalProperties == 1){
+                    rentAmount = 1;
+                }
+                break;
+            case "railroad":
+                if (totalProperties == 1){
+                    rentAmount = 1;
+                }
+                else if (totalProperties == 2){
+                    rentAmount = 2;
+                }
+                else if (totalProperties == 3){
+                    rentAmount = 3;
+                }
+                else if (totalProperties == 4){
+                    rentAmount = 4;
+                }
+                break;
+            case "red-and-yellow":
+                if (totalProperties == 1){
+                    rentAmount = 2;
+                }
+                break;
+            case "red":
+                if (totalProperties == 1){
+                    rentAmount = 2;
+                }
+                else if (totalProperties == 2){
+                    rentAmount = 3;
+                }
+                else if (totalProperties == 3){
+                    rentAmount = 6;
+                }
+                break;
+            case "utility":
+                if (totalProperties == 1){
+                    rentAmount = 1;
+                }
+                else if (totalProperties == 2){
+                    rentAmount = 2;
+                }
+                break;
+            case "yellow":
+                if (totalProperties == 1){
+                    rentAmount = 2;
+                }
+                else if (totalProperties == 2){
+                    rentAmount = 4;
+                }
+                else if (totalProperties == 3){
+                    rentAmount = 6;
+                }
+                break;
+            default:
+                System.out.println("Unable to get rent amount. Rent now 0");
+                rentAmount = 0;
+                break;
+        }
+        
+        //if proeprty slot has a hotel
+        if (hasHotel == true){
+            rentAmount += 4;
+            System.out.println("Rent amount for Slot "+propertySlotNumber+" is: "+rentAmount); //for testing
+            return; //returns out so doesnt re-add house amount.
+        }
+        
+        //if property slot has a house
+        if (hasHouse == true){
+            rentAmount += 3;
+        }
+        
+        
+        
+        System.out.println("Rent amount for Slot "+propertySlotNumber+" is: "+rentAmount); //for testing
+        
+    }
+    
     
     /**
      * Lets us know whether or not another property can be added.
@@ -147,7 +320,7 @@ public class PropertySlot{
      * @return true if can be added, false if not.
      */
     public boolean canAddHotel(){
-        if (isCompleted == true && hasHouse == true){
+        if (isCompleted == true && hasHouse == true && hasHotel == false){
             return true;
         }
         
