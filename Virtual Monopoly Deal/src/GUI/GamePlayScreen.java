@@ -3539,6 +3539,10 @@ public class GamePlayScreen extends javax.swing.JFrame {
         discardDeckButton.setIcon(new javax.swing.ImageIcon(getClass().getResource(img)));
        
     }
+    
+    public void hideHandMenu(){
+         yourHandPanel.setVisible(false);
+    }
         
     
     /**
