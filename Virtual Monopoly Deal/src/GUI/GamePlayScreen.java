@@ -20,6 +20,7 @@ public class GamePlayScreen extends javax.swing.JFrame {
     private boolean yourMoneySlotButtonPressed = false;
     private boolean discardDeckPressed =  false;
     private boolean cardDeckPressed = false;
+    private boolean endTurnEarlyPressed = false;
     //shouldnt need this 2D array anymore, but keeping in case we do.
  //   private int[][] yourPropertySlots = new int[4][10]; //2D array used to store information on whether or not a specified property slot was pressed or not. If one was pressed, a 1 will be
                                                        //temporarily placed in the correct row column association with the property slot button.
@@ -569,6 +570,11 @@ public class GamePlayScreen extends javax.swing.JFrame {
         endTurnEarlyButton.setText("End Turn Early");
         endTurnEarlyButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         endTurnEarlyButton.setPreferredSize(new java.awt.Dimension(160, 50));
+        endTurnEarlyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                endTurnEarlyButtonActionPerformed(evt);
+            }
+        });
         jLayeredPane1.add(endTurnEarlyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 110, -1, -1));
 
         viewHandButton.setBackground(new java.awt.Color(153, 0, 0));
@@ -3262,6 +3268,10 @@ public class GamePlayScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_player3PropertySlot_10_2ActionPerformed
 
+    private void endTurnEarlyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endTurnEarlyButtonActionPerformed
+        endTurnEarlyPressed = true;
+    }//GEN-LAST:event_endTurnEarlyButtonActionPerformed
+
     /**
      * Set player starting hand visually in GUI.
      * @param cardImagePaths 
@@ -3324,6 +3334,10 @@ public class GamePlayScreen extends javax.swing.JFrame {
         cardDeckPressed = value;
     }
     
+    public void setEndTurnEarlyPressed(boolean value){
+        endTurnEarlyPressed = value;
+    }
+    
     
     /**
      * Checks to see which hand slot button was pressed.
@@ -3370,6 +3384,14 @@ public class GamePlayScreen extends javax.swing.JFrame {
      */
     public boolean getYourCardDeckPressed(){
         return cardDeckPressed;
+    }
+    
+     /**
+     * Tells you if the end turn early button has been selected
+     * @return true if selected, false if not selected
+     */
+    public boolean getEndTurnEarlyPressed(){
+        return endTurnEarlyPressed;
     }
     
 
