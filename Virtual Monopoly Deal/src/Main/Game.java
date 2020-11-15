@@ -2,7 +2,7 @@
  * This class will house the game logic needed to play the game.
  * 
  */
-//TESTING MY BRANCH OUT
+//TESTING MY BRANCH OUT :)
 package Main;
 
 import java.util.List;
@@ -237,7 +237,19 @@ public class Game {
             return;
         }
         
+        //checking for draw card button pressed
+        if(GPS.getYourCardDeckPressed()==true){ //will remove in future so player cant keep drawing cards. For testing now
+            drawCard();
+            return;
+        }
+        //checking to see if end turn early was pressed 
+        if(GPS.getEndTurnEarlyPressed()==true){
+            endTurnEarly();
+             return;
+        }
+          
         //see if hand slot button was pressed.
+       
         handSlotPressed = GPS.checkHandSlotButtonPressed();
         if (handSlotPressed > 0){
             System.out.println("\n Handslot pressed: "+handSlotPressed); //for testing
@@ -300,11 +312,17 @@ public class Game {
                 }
             }
         }
-        else{
-            if(GPS.getYourCardDeckPressed()==true){ //will remove in future so player cant keep drawing cards. For testing now
-                drawCard();
-            }
-        }
+        //checking for draw card button pressed
+                 if(GPS.getYourCardDeckPressed()==true){ //will remove in future so player cant keep drawing cards. For testing now
+                    drawCard();
+                    return;
+                }
+        //checking to see if end turn early was pressed 
+                 if(GPS.getEndTurnEarlyPressed()==true){
+                     endTurnEarly();
+                     return;
+                }
+        
         
         if(playCount >=3){
             //switch Players 
@@ -332,6 +350,7 @@ public class Game {
         GPS.setYourPropertySlotPressed(0, 0);
         GPS.setYourDiscardDeckPressed(false);
         GPS.setYourCardDeckPressed(false);
+        GPS.setEndTurnEarlyPressed(false);
     }
     
     /**
@@ -345,7 +364,6 @@ public class Game {
         int[] yourPropertySlotPressed = GPS.getYourPropertySlotPressed(); //will contain 2 ints, index for row and index for column of where property button was pressed.
         boolean yourMoneySlotPressed = GPS.getYourMoneySlotButtonAction(); //will be true if money slot is pressed. has setter and getting in GPS.
         boolean yourDiscardDeckPressed = GPS.getYourDiscardDeckPressed();
-        boolean yourCardDeckPressed = GPS.getYourCardDeckPressed();
         int tempHandSlotPressed = 0; //used in while loop to see if user clicked different card, without changing value of original handSlotPressed, unless diff card was pressed.
 
         //have thread sleep, needed for while loop to work
@@ -359,7 +377,7 @@ public class Game {
         }
         
         //loop until user presses either a money slot or property slot or the discard deck, or a different card to play
-        while (yourMoneySlotPressed == false && (yourPropertySlotPressed[0] == 0 && yourPropertySlotPressed[1] == 0 && yourDiscardDeckPressed == false && yourCardDeckPressed == false)){ //once either money button pressed or a propertyslot button was pressed or discard deck or card deck was pressed, will exit loop.
+        while (yourMoneySlotPressed == false && (yourPropertySlotPressed[0] == 0 && yourPropertySlotPressed[1] == 0 && yourDiscardDeckPressed == false)){ //once either money button pressed or a propertyslot button was pressed or discard deck or card deck was pressed, will exit loop.
             yourPropertySlotPressed = GPS.getYourPropertySlotPressed(); //recheck if property slot button was pressed.
             yourMoneySlotPressed = GPS.getYourMoneySlotButtonAction(); //recheck if money slot button was pressed.
             tempHandSlotPressed = GPS.checkHandSlotButtonPressed(); //recheck if player clicked a different card to play.
@@ -543,6 +561,11 @@ public class Game {
         }
         //if no free hand slot was found, will reach this sys out stmt
         System.out.println("Card was not drawn: player hand is full");
+    }
+
+    private void endTurnEarly() {
+        playCount = 3;
+        System.out.println("Ending turn early...");
     }
      
 }
