@@ -30,6 +30,7 @@ public class Game {
     private Deck gameDeck;
     private Deck discardDeck; //used to house the cards that are discarded.
     private GamePlayScreen GPS;
+    private int difficultyLevel;
     private int handSlotPressed;
     private boolean playerTurn;//used to track who's turn it is
     private int playCount;//used to track the amount of plays within a turn
@@ -42,6 +43,7 @@ public class Game {
     public Game(GamePlayScreen gamePlayScreen){
         GPS = gamePlayScreen;
         numberOfPlayers = 0;
+        difficultyLevel = 0;
         inPreGameState = true;
         discardDeck = new Deck();
         handSlotPressed = 0;
@@ -58,6 +60,7 @@ public class Game {
         //get game setup info, player name, player count.
         while(inPreGameState == true){
             checkNumberOfPlayers();//gets player count.
+            checkDifficultyLevel();
             checkPlayerName();//gets player name.   
         }
         
@@ -121,6 +124,17 @@ public class Game {
     private void checkNumberOfPlayers(){
         if(PlayScreen.toGamePlayScreen == false){
                 numberOfPlayers = PlayScreen.numberOfPlayers;
+             //   System.out.println(); //for some reason, this println statement is needed here inorder for the loop this method is in to exit properly when it's suppose to........
+        }
+        else{ //pre game state is over, set to false.
+            inPreGameState = false;
+        }
+        
+    }
+    
+     private void checkDifficultyLevel(){
+        if(PlayScreen.toGamePlayScreen == false){
+                difficultyLevel = PlayScreen.difficultyLevel;
              //   System.out.println(); //for some reason, this println statement is needed here inorder for the loop this method is in to exit properly when it's suppose to........
         }
         else{ //pre game state is over, set to false.

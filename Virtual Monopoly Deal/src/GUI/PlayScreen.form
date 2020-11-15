@@ -51,7 +51,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="390" y="890" width="800" height="100"/>
+          <AbsoluteConstraints x="120" y="860" width="670" height="70"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -66,43 +66,85 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="1130" y="750" width="460" height="90"/>
+          <AbsoluteConstraints x="120" y="920" width="680" height="70"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="threePlayers">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/images/threeplayer.jpg"/>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/images/threeplayerchosen.jpg"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="48" style="0"/>
         </Property>
+        <Property name="text" type="java.lang.String" value="THREE"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="threePlayersActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="780" y="530" width="340" height="110"/>
+          <AbsoluteConstraints x="510" y="530" width="340" height="110"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JButton" name="hardButton">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="48" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="HARD"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="hardButtonActionPerformed"/>
+      </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="1080" y="530" width="340" height="110"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JButton" name="easyButton">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="48" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="EASY"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="easyButtonActionPerformed"/>
+      </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="1080" y="380" width="340" height="110"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="twoPlayers">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/images/twoplayer.jpg"/>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/images/twoplayerchosen.jpg"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="48" style="0"/>
         </Property>
+        <Property name="text" type="java.lang.String" value="TWO"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="twoPlayersActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="780" y="390" width="340" height="110"/>
+          <AbsoluteConstraints x="510" y="380" width="340" height="110"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -145,7 +187,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/images/optionsbackground.png"/>
+          <Image iconType="3" name="/images/optionsBackgroundWithDifficulty.png"/>
         </Property>
       </Properties>
       <Constraints>

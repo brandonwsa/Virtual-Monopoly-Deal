@@ -22,6 +22,7 @@ public class GamePlayScreen extends javax.swing.JFrame {
     private boolean cardDeckPressed = false;
     private boolean endTurnEarlyPressed = false;
     private int numberOfPlayers =0;
+    private int difficultyLevel; 
     //shouldnt need this 2D array anymore, but keeping in case we do.
  //   private int[][] yourPropertySlots = new int[4][10]; //2D array used to store information on whether or not a specified property slot was pressed or not. If one was pressed, a 1 will be
                                                        //temporarily placed in the correct row column association with the property slot button.
@@ -3576,6 +3577,10 @@ public class GamePlayScreen extends javax.swing.JFrame {
     
     public void setNumberOfPlayers(int numPlayers){
         numberOfPlayers = numPlayers;
+    }
+    
+    public void setDifficultyLevel(int level){
+        difficultyLevel = level;
     }
     
     /**
