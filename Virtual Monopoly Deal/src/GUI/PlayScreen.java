@@ -14,6 +14,7 @@ package GUI;
 public class PlayScreen extends javax.swing.JFrame {
     
     public static int numberOfPlayers;
+    public static int difficultyLevel;
     public static boolean toGamePlayScreen;
     public static String playerName;
     private GamePlayScreen GPS;
@@ -22,7 +23,8 @@ public class PlayScreen extends javax.swing.JFrame {
      * Creates new form OptionsScreen
      */
     public PlayScreen() {
-        numberOfPlayers = 0;
+        numberOfPlayers = 2;
+        difficultyLevel = 1;
         toGamePlayScreen = false;
         initComponents();
     }
@@ -40,6 +42,8 @@ public class PlayScreen extends javax.swing.JFrame {
         selectedPlayerOptions = new javax.swing.JLabel();
         selectedGameModeOption = new javax.swing.JLabel();
         threePlayers = new javax.swing.JButton();
+        hardButton = new javax.swing.JButton();
+        easyButton = new javax.swing.JButton();
         twoPlayers = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
         goButton = new javax.swing.JButton();
@@ -58,29 +62,53 @@ public class PlayScreen extends javax.swing.JFrame {
 
         selectedPlayerOptions.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         selectedPlayerOptions.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(selectedPlayerOptions, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 890, 800, 100));
+        getContentPane().add(selectedPlayerOptions, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 860, 670, 70));
 
         selectedGameModeOption.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         selectedGameModeOption.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(selectedGameModeOption, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 750, 460, 90));
+        getContentPane().add(selectedGameModeOption, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 920, 680, 70));
 
-        threePlayers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/threeplayer.jpg"))); // NOI18N
-        threePlayers.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/threeplayerchosen.jpg"))); // NOI18N
+        threePlayers.setBackground(new java.awt.Color(255, 255, 255));
+        threePlayers.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        threePlayers.setText("THREE");
         threePlayers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 threePlayersActionPerformed(evt);
             }
         });
-        getContentPane().add(threePlayers, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 530, 340, 110));
+        getContentPane().add(threePlayers, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 530, 340, 110));
 
-        twoPlayers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/twoplayer.jpg"))); // NOI18N
-        twoPlayers.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/twoplayerchosen.jpg"))); // NOI18N
+        hardButton.setBackground(new java.awt.Color(255, 255, 255));
+        hardButton.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        hardButton.setText("HARD");
+        hardButton.setToolTipText("");
+        hardButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hardButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(hardButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 530, 340, 110));
+
+        easyButton.setBackground(new java.awt.Color(255, 255, 255));
+        easyButton.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        easyButton.setText("EASY");
+        easyButton.setToolTipText("");
+        easyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                easyButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(easyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 380, 340, 110));
+
+        twoPlayers.setBackground(new java.awt.Color(255, 255, 255));
+        twoPlayers.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        twoPlayers.setText("TWO");
         twoPlayers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 twoPlayersActionPerformed(evt);
             }
         });
-        getContentPane().add(twoPlayers, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 390, 340, 110));
+        getContentPane().add(twoPlayers, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 380, 340, 110));
 
         backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/backbutton.jpg"))); // NOI18N
         backButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/backbuttonrollover.jpg"))); // NOI18N
@@ -100,7 +128,7 @@ public class PlayScreen extends javax.swing.JFrame {
         });
         getContentPane().add(goButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1610, 890, 200, 80));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/optionsbackground.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/optionsBackgroundWithDifficulty.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -121,28 +149,40 @@ public class PlayScreen extends javax.swing.JFrame {
         playerName = jTextField1.getText();
         
         GPS = Main.Main.GPS;
-         GPS.setNumberOfPlayers(numberOfPlayers);
+        GPS.setNumberOfPlayers(numberOfPlayers);
+        GPS.setDifficultyLevel(difficultyLevel);
         GPS.setVisible(true);
         toGamePlayScreen = true;
         dispose();//closes the jframe
     }//GEN-LAST:event_goButtonActionPerformed
 
     private void threePlayersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_threePlayersActionPerformed
-        threePlayers.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/threeplayerchosen.jpg"))); // NOI18N
+        //threePlayers.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/threeplayerchosen.jpg"))); // NOI18N
         selectedPlayerOptions.setText("You selected to play with three players");
         numberOfPlayers = 3;
     }//GEN-LAST:event_threePlayersActionPerformed
 
-    private void twoPlayersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twoPlayersActionPerformed
-        selectedPlayerOptions.setText("You selected to play with two players");
-        numberOfPlayers = 2;
-    }//GEN-LAST:event_twoPlayersActionPerformed
+    private void easyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_easyButtonActionPerformed
+        selectedGameModeOption.setText("You selected game level: Easy");
+        difficultyLevel = 1;
+    }//GEN-LAST:event_easyButtonActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
       //      playerName = jTextField1.getText();
       //      System.out.println(playerName);
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void twoPlayersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twoPlayersActionPerformed
+        //twoPlayers.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/twoplayerchosen.jpg"))); // NOI18N
+        selectedPlayerOptions.setText("You selected to play with two players");
+        numberOfPlayers = 2;
+    }//GEN-LAST:event_twoPlayersActionPerformed
+
+    private void hardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hardButtonActionPerformed
+         selectedGameModeOption.setText("You selected game level: Hard");
+        difficultyLevel = 2;
+    }//GEN-LAST:event_hardButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,7 +223,9 @@ public class PlayScreen extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
+    private javax.swing.JButton easyButton;
     private javax.swing.JButton goButton;
+    private javax.swing.JButton hardButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel selectedGameModeOption;
