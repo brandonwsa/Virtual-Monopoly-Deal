@@ -23,8 +23,8 @@ public class PlayScreen extends javax.swing.JFrame {
      * Creates new form OptionsScreen
      */
     public PlayScreen() {
-        numberOfPlayers = 2;
-        difficultyLevel = 1;
+        numberOfPlayers = 0;
+        difficultyLevel = 0;
         toGamePlayScreen = false;
         initComponents();
     }
