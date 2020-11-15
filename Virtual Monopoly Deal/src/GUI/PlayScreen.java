@@ -121,6 +121,7 @@ public class PlayScreen extends javax.swing.JFrame {
         playerName = jTextField1.getText();
         
         GPS = Main.Main.GPS;
+         GPS.setNumberOfPlayers(numberOfPlayers);
         GPS.setVisible(true);
         toGamePlayScreen = true;
         dispose();//closes the jframe

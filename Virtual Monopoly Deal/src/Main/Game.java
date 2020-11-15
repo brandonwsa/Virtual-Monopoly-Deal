@@ -178,6 +178,9 @@ public class Game {
                     bot_2.addToHand(gameDeck.getTopCard());
                 }
             }
+            else{
+                GPS.hideThirdPlayer();
+            }
         }
         else{ //if numberOfPlayers was some how not > 0 after player selected amount of players. Will happen if player hits "Go" while not selecting number of players from PlayScreen.java
             System.out.println("Error when making player and bots. NumberOfPlayers = "+numberOfPlayers);
@@ -567,5 +570,5 @@ public class Game {
         playCount = 3;
         System.out.println("Ending turn early...");
     }
-     
+   
 }
