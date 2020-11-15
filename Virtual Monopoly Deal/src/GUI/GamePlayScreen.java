@@ -21,6 +21,7 @@ public class GamePlayScreen extends javax.swing.JFrame {
     private boolean discardDeckPressed =  false;
     private boolean cardDeckPressed = false;
     private boolean endTurnEarlyPressed = false;
+    private int numberOfPlayers =0;
     //shouldnt need this 2D array anymore, but keeping in case we do.
  //   private int[][] yourPropertySlots = new int[4][10]; //2D array used to store information on whether or not a specified property slot was pressed or not. If one was pressed, a 1 will be
                                                        //temporarily placed in the correct row column association with the property slot button.
@@ -32,8 +33,6 @@ public class GamePlayScreen extends javax.swing.JFrame {
      */
     public GamePlayScreen() {
         initComponents();
-        
-        
         
         //add handslot buttons to arraylist
         handSlots.add(handSlot_1);
@@ -93,9 +92,9 @@ public class GamePlayScreen extends javax.swing.JFrame {
         handSlot_11 = new javax.swing.JButton();
         handSlot_12 = new javax.swing.JButton();
         propertiesLabel = new javax.swing.JLabel();
+        discardDeckButton = new javax.swing.JButton();
         moneyLabel = new javax.swing.JLabel();
         discardDeckLabel = new javax.swing.JLabel();
-        discardDeckButton = new javax.swing.JButton();
         deckButton = new javax.swing.JButton();
         deckLabel = new javax.swing.JLabel();
         viewMenuButton = new javax.swing.JButton();
@@ -517,16 +516,6 @@ public class GamePlayScreen extends javax.swing.JFrame {
         propertiesLabel.setText("Properties:");
         jLayeredPane1.add(propertiesLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, -1, -1));
 
-        moneyLabel.setFont(new java.awt.Font("Eras Demi ITC", 0, 24)); // NOI18N
-        moneyLabel.setForeground(new java.awt.Color(255, 255, 255));
-        moneyLabel.setText("Money:");
-        jLayeredPane1.add(moneyLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, -1, -1));
-
-        discardDeckLabel.setFont(new java.awt.Font("Eras Demi ITC", 0, 24)); // NOI18N
-        discardDeckLabel.setForeground(new java.awt.Color(255, 255, 255));
-        discardDeckLabel.setText("Discard Deck:");
-        jLayeredPane1.add(discardDeckLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 0, -1, -1));
-
         discardDeckButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/empty_slot.png"))); // NOI18N
         discardDeckButton.setBorder(null);
         discardDeckButton.setContentAreaFilled(false);
@@ -536,6 +525,16 @@ public class GamePlayScreen extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(discardDeckButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 30, -1, -1));
+
+        moneyLabel.setFont(new java.awt.Font("Eras Demi ITC", 0, 24)); // NOI18N
+        moneyLabel.setForeground(new java.awt.Color(255, 255, 255));
+        moneyLabel.setText("Money:");
+        jLayeredPane1.add(moneyLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, -1, -1));
+
+        discardDeckLabel.setFont(new java.awt.Font("Eras Demi ITC", 0, 24)); // NOI18N
+        discardDeckLabel.setForeground(new java.awt.Color(255, 255, 255));
+        discardDeckLabel.setText("Discard Deck:");
+        jLayeredPane1.add(discardDeckLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 0, -1, -1));
 
         deckButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back_of_card.png"))); // NOI18N
         deckButton.setBorder(null);
@@ -3565,7 +3564,19 @@ public class GamePlayScreen extends javax.swing.JFrame {
     public void hideHandMenu(){
          yourHandPanel.setVisible(false);
     }
-        
+    
+    
+    public void hideThirdPlayer(){
+       
+        player3PlayArea.setVisible(false);
+        moneyLabel.setVisible(false);
+        propertiesLabel.setVisible(false);
+        tableBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/table background Two Players.png")));
+    }
+    
+    public void setNumberOfPlayers(int numPlayers){
+        numberOfPlayers = numPlayers;
+    }
     
     /**
      * @param args the command line arguments
