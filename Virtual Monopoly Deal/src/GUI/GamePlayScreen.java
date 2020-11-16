@@ -4,6 +4,7 @@
 package GUI;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
@@ -28,6 +29,8 @@ public class GamePlayScreen extends javax.swing.JFrame {
                                                        //temporarily placed in the correct row column association with the property slot button.
     private int[] yourPropertySlotPressed = {0, 0}; //used to store information about what property slot was pressed. Will contain 2 ints, row index and column index of property
     private javax.swing.JButton lastPropertyPressed = null; //will be used to know which property was set last. Used to displayImage of selected property slot.
+    private HashMap<String, javax.swing.JButton> player2Properties = new HashMap<>(); //used to store player 2 property buttons
+    private HashMap<String, javax.swing.JButton> player3Properties = new HashMap<>(); //used to store player 2 property buttons
 
     /**
      * Creates new form GamePlayScreen
@@ -49,14 +52,129 @@ public class GamePlayScreen extends javax.swing.JFrame {
         handSlots.add(handSlot_11);
         handSlots.add(handSlot_12);
         
-        //add propertyslot buttons to arraylist
-   /*     yourPropertySlots.add(yourPropertySlot_1);
-        yourPropertySlots.add(yourPropertySlot_1_2);
-        yourPropertySlots.add(yourPropertySlot_1_3);
-        yourPropertySlots.add(yourPropertySlot_1_4);
-        yourPropertySlots.add(yourPropertySlot_1_5);
-        yourPropertySlots.add(yourPropertySlot_1_6); */
-        
+        //add propertyslot buttons to hashmap for player 2. Key is based off property slot column and row in string form
+        player2Properties.put("11", player2PropertySlot_1);
+        player2Properties.put("12", player2PropertySlot_1_2);
+        player2Properties.put("13", player2PropertySlot_1_3);
+        player2Properties.put("14", player2PropertySlot_1_4);
+        player2Properties.put("15", player2PropertySlot_1_5);
+        player2Properties.put("16", player2PropertySlot_1_6);
+        player2Properties.put("21", player2PropertySlot_2);
+        player2Properties.put("22", player2PropertySlot_2_2);
+        player2Properties.put("23", player2PropertySlot_2_3);
+        player2Properties.put("24", player2PropertySlot_2_4);
+        player2Properties.put("25", player2PropertySlot_2_5);
+        player2Properties.put("26", player2PropertySlot_2_6);
+        player2Properties.put("31", player2PropertySlot_3);
+        player2Properties.put("32", player2PropertySlot_3_2);
+        player2Properties.put("33", player2PropertySlot_3_3);
+        player2Properties.put("34", player2PropertySlot_3_4);
+        player2Properties.put("35", player2PropertySlot_3_5);
+        player2Properties.put("36", player2PropertySlot_3_6);
+        player2Properties.put("41", player2PropertySlot_4);
+        player2Properties.put("42", player2PropertySlot_4_2);
+        player2Properties.put("43", player2PropertySlot_4_3);
+        player2Properties.put("44", player2PropertySlot_4_4);
+        player2Properties.put("45", player2PropertySlot_4_5);
+        player2Properties.put("46", player2PropertySlot_4_6);
+        player2Properties.put("51", player2PropertySlot_5);
+        player2Properties.put("52", player2PropertySlot_5_2);
+        player2Properties.put("53", player2PropertySlot_5_3);
+        player2Properties.put("54", player2PropertySlot_5_4);
+        player2Properties.put("55", player2PropertySlot_5_5);
+        player2Properties.put("56", player2PropertySlot_5_6);
+        player2Properties.put("61", player2PropertySlot_6);
+        player2Properties.put("62", player2PropertySlot_6_2);
+        player2Properties.put("63", player2PropertySlot_6_3);
+        player2Properties.put("64", player2PropertySlot_6_4);
+        player2Properties.put("65", player2PropertySlot_6_5);
+        player2Properties.put("66", player2PropertySlot_6_6);
+        player2Properties.put("71", player2PropertySlot_7);
+        player2Properties.put("72", player2PropertySlot_7_2);
+        player2Properties.put("73", player2PropertySlot_7_3);
+        player2Properties.put("74", player2PropertySlot_7_4);
+        player2Properties.put("75", player2PropertySlot_7_5);
+        player2Properties.put("76", player2PropertySlot_7_6);
+        player2Properties.put("81", player2PropertySlot_8);
+        player2Properties.put("82", player2PropertySlot_8_2);
+        player2Properties.put("83", player2PropertySlot_8_3);
+        player2Properties.put("84", player2PropertySlot_8_4);
+        player2Properties.put("85", player2PropertySlot_8_5);
+        player2Properties.put("86", player2PropertySlot_8_6);
+        player2Properties.put("91", player2PropertySlot_9);
+        player2Properties.put("92", player2PropertySlot_9_2);
+        player2Properties.put("93", player2PropertySlot_9_3);
+        player2Properties.put("94", player2PropertySlot_9_4);
+        player2Properties.put("95", player2PropertySlot_9_5);
+        player2Properties.put("96", player2PropertySlot_9_6);
+        player2Properties.put("101", player2PropertySlot_10);
+        player2Properties.put("102", player2PropertySlot_10_2);
+        player2Properties.put("103", player2PropertySlot_10_3);
+        player2Properties.put("104", player2PropertySlot_10_4);
+        player2Properties.put("105", player2PropertySlot_10_5);
+        player2Properties.put("106", player2PropertySlot_10_6);
+
+        //add propertyslot buttons to hashmap for player 2. Key is based off property slot column and row in string form
+        player3Properties.put("11", player3PropertySlot_1);
+        player3Properties.put("12", player3PropertySlot_1_2);
+        player3Properties.put("13", player3PropertySlot_1_3);
+        player3Properties.put("14", player3PropertySlot_1_4);
+        player3Properties.put("15", player3PropertySlot_1_5);
+        player3Properties.put("16", player3PropertySlot_1_6);
+        player3Properties.put("21", player3PropertySlot_2);
+        player3Properties.put("22", player3PropertySlot_2_2);
+        player3Properties.put("23", player3PropertySlot_2_3);
+        player3Properties.put("24", player3PropertySlot_2_4);
+        player3Properties.put("25", player3PropertySlot_2_5);
+        player3Properties.put("26", player3PropertySlot_2_6);
+        player3Properties.put("31", player3PropertySlot_3);
+        player3Properties.put("32", player3PropertySlot_3_2);
+        player3Properties.put("33", player3PropertySlot_3_3);
+        player3Properties.put("34", player3PropertySlot_3_4);
+        player3Properties.put("35", player3PropertySlot_3_5);
+        player3Properties.put("36", player3PropertySlot_3_6);
+        player3Properties.put("41", player3PropertySlot_4);
+        player3Properties.put("42", player3PropertySlot_4_2);
+        player3Properties.put("43", player3PropertySlot_4_3);
+        player3Properties.put("44", player3PropertySlot_4_4);
+        player3Properties.put("45", player3PropertySlot_4_5);
+        player3Properties.put("46", player3PropertySlot_4_6);
+        player3Properties.put("51", player3PropertySlot_5);
+        player3Properties.put("52", player3PropertySlot_5_2);
+        player3Properties.put("53", player3PropertySlot_5_3);
+        player3Properties.put("54", player3PropertySlot_5_4);
+        player3Properties.put("55", player3PropertySlot_5_5);
+        player3Properties.put("56", player3PropertySlot_5_6);
+        player3Properties.put("61", player3PropertySlot_6);
+        player3Properties.put("62", player3PropertySlot_6_2);
+        player3Properties.put("63", player3PropertySlot_6_3);
+        player3Properties.put("64", player3PropertySlot_6_4);
+        player3Properties.put("65", player3PropertySlot_6_5);
+        player3Properties.put("66", player3PropertySlot_6_6);
+        player3Properties.put("71", player3PropertySlot_7);
+        player3Properties.put("72", player3PropertySlot_7_2);
+        player3Properties.put("73", player3PropertySlot_7_3);
+        player3Properties.put("74", player3PropertySlot_7_4);
+        player3Properties.put("75", player3PropertySlot_7_5);
+        player3Properties.put("76", player3PropertySlot_7_6);
+        player3Properties.put("81", player3PropertySlot_8);
+        player3Properties.put("82", player3PropertySlot_8_2);
+        player3Properties.put("83", player3PropertySlot_8_3);
+        player3Properties.put("84", player3PropertySlot_8_4);
+        player3Properties.put("85", player3PropertySlot_8_5);
+        player3Properties.put("86", player3PropertySlot_8_6);
+        player3Properties.put("91", player3PropertySlot_9);
+        player3Properties.put("92", player3PropertySlot_9_2);
+        player3Properties.put("93", player3PropertySlot_9_3);
+        player3Properties.put("94", player3PropertySlot_9_4);
+        player3Properties.put("95", player3PropertySlot_9_5);
+        player3Properties.put("96", player3PropertySlot_9_6);
+        player3Properties.put("101", player3PropertySlot_10);
+        player3Properties.put("102", player3PropertySlot_10_2);
+        player3Properties.put("103", player3PropertySlot_10_3);
+        player3Properties.put("104", player3PropertySlot_10_4);
+        player3Properties.put("105", player3PropertySlot_10_5);
+        player3Properties.put("106", player3PropertySlot_10_6);
         
     }
 
@@ -2448,6 +2566,7 @@ public class GamePlayScreen extends javax.swing.JFrame {
         WinnerScreen WS = new WinnerScreen();
         WS.setVisible(true);
         this.setVisible(false); //sets game play screen view to false
+        dispose();
     }//GEN-LAST:event_toWinnerScreenButtonActionPerformed
 
     private void player2TotalMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2TotalMoneyActionPerformed
@@ -3296,8 +3415,17 @@ public class GamePlayScreen extends javax.swing.JFrame {
      * Sets your total money visually in the GUI
      * @param value 
      */
-    public void setYourTotalMoney(int value){
-        yourTotalMoney.setText(""+value);
+    public void setYourTotalMoney(int value, String name){
+        if (name.equals("bot_1")){
+            player2TotalMoney.setText(""+value);
+        }
+        else if (name.equals("bot_2")){
+            player3TotalMoney.setText(""+value);
+        }
+        else {
+            yourTotalMoney.setText(""+value);
+        }
+        
     }
     
     /**
@@ -3422,11 +3550,54 @@ public class GamePlayScreen extends javax.swing.JFrame {
     }
     
     /**
-     * Displays a money card on your money slot with given image path
-     * @param imagePath 
+     * Displays a property the bot wants to play.
+     * @param imagePath
+     * @param property 
      */
-    public void displayPlayedMoneyCard(String imagePath){
-        yourMoneySlot.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagePath)));
+    public void displayBotPlayedPropertyCard(String imagePath, int[] property, String name){
+        //get property slot in string to use as key in hash map
+        String propertySlot = ""+property[0]+property[1];
+        
+        //get property to put image in it
+        if (name.equals("bot_1")){
+            player2Properties.get(propertySlot).setIcon(new javax.swing.ImageIcon(getClass().getResource(imagePath)));
+        }
+        else if (name.equals("bot_2")){
+            player3Properties.get(propertySlot).setIcon(new javax.swing.ImageIcon(getClass().getResource(imagePath)));
+        }
+    }
+    
+    /**
+     * Displays a money card on your money slot with given image path.
+     * Using player param, will decide whose money to update.
+     * @param imagePath 
+     * @param player
+     */
+    public void displayPlayedMoneyCard(String imagePath, String name){
+        if (name.equals("bot_1")){
+            player2MoneySlot.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagePath)));
+        }
+        else if (name.equals("bot_2")){
+            player3MoneySlot.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagePath)));  
+        }
+        else {
+            yourMoneySlot.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagePath)));
+        }
+        
+    }
+    
+    /**
+     * Displays the winner screen when one is found.
+     * @param name 
+     * @param money
+     * @param properties
+     */
+    public void displayWinnerScreen(String name, int money, int properties){
+        WinnerScreen WS = new WinnerScreen();
+        WS.setWinner(name, money, properties);
+        WS.setVisible(true);
+        this.setVisible(false); //sets game play screen view to false
+        dispose();
     }
     
     

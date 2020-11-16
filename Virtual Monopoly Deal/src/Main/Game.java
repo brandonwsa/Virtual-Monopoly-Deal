@@ -33,7 +33,11 @@ public class Game {
     private int difficultyLevel;
     private int handSlotPressed;
     private boolean playerTurn;//used to track who's turn it is
+    private boolean bot_1Turn;
+    private boolean bot_2Turn;
+    private boolean winnerFound;
     private int playCount;//used to track the amount of plays within a turn
+    private Player winner; //used for when a winner is found to pass name to winner screen
 
     
     
@@ -48,6 +52,9 @@ public class Game {
         discardDeck = new Deck();
         handSlotPressed = 0;
         playerTurn = true;
+        bot_1Turn = false;
+        bot_2Turn = false;
+        winnerFound = false;
         playCount = 0;
     }
     
@@ -56,64 +63,119 @@ public class Game {
      */
     public void runGame(){
         
-        boolean p_first_turn = true;
-        //get game setup info, player name, player count.
-        while(inPreGameState == true){
-            checkNumberOfPlayers();//gets player count.
-            checkDifficultyLevel();
-            checkPlayerName();//gets player name.   
+        try{
+            boolean p_first_turn = true;
+            //get game setup info, player name, player count.
+            while(inPreGameState == true){
+                checkNumberOfPlayers();//gets player count.
+                checkDifficultyLevel();
+                checkPlayerName();//gets player name.   
+            }
+
+            System.out.println("Diff level: "+difficultyLevel); //for testing
+            System.out.println("Number of players: "+numberOfPlayers); //for testing
+
+            //set player name on GPS
+            GPS.setPlayerName(name);
+
+            //create deck Object
+            createDeck();
+
+            //make players and bot objects.
+            createPlayersAndBots();
+
+            //sets the players hand in gameplay screen to their cards
+            setPlayerHand();
+
+            System.out.println("Entering main game loop"); //for testing
+
+            //main game loop.
+      //      int bcount = 0;
+            boolean p_dealed = false;
+            boolean b_dealed = false;
+
+            while(winnerFound == false){
+                if(playerTurn){
+                    if(playCount == 0 && p_dealed == false && p_first_turn == true){
+                        //deal out 2 cards at beginning of turn
+                        drawCard(player);
+                        drawCard(player);
+                        GPS.hideHandMenu();
+                        p_dealed = true;
+                        p_first_turn = false;
+                    }
+
+                    playerTakeTurn();
+                    reset_GPS_button_values();
+
+                    if(playCount >= 3){
+                        playerTurn = false;
+                        bot_1Turn = true;
+                        playCount = 0;
+                        p_dealed = false;
+                        p_first_turn = true;
+                        System.out.println("Taking bot turn...");//for testing
+                    }
+                }
+                else if (bot_1Turn){
+                    //deal 2 cards to bot
+                    if (playCount == 0 && b_dealed == false){
+                        drawCard(bot_1);
+                        drawCard(bot_1);
+                        b_dealed = true;
+                    }
+
+                    botTakeTurn(bot_1);
+
+                    if(playCount >= 3){ 
+                        //check if only 2 players or 3.
+                        if (numberOfPlayers == 2){
+                            playerTurn = true;
+                            System.out.println("Taking player turn...");//for testing
+                        }
+                        else {
+                            bot_2Turn = true;
+                            System.out.println("Taking bot_2 turn...");//for testing
+                        }
+
+                        bot_1Turn = false;
+                        playCount = 0;
+                        b_dealed = false;
+                    }
+                }
+                else if (bot_2Turn){
+                    //deal 2 cards to bot
+                    if (playCount == 0 && b_dealed == false){
+                        drawCard(bot_2);
+                        drawCard(bot_2);
+                        b_dealed = true;
+                    }
+
+                    botTakeTurn(bot_2);
+
+                    if(playCount >= 3){ 
+                        playerTurn = true;
+                        bot_2Turn = false;
+                        playCount = 0;
+                        b_dealed = false;
+                        System.out.println("Taking player turn...");//for testing
+                    }
+                }
+                winnerFound = checkForWinner();
+
+            }
+
+            //reset pre game state incase player plays again
+        //    PlayScreen.toGamePlayScreen = true;
+
+            //display winenr screen
+            GPS.displayWinnerScreen(winner.getName(), winner.getTotalMoney(), winner.getCompletedProperties());
+        }
+        catch (Exception e){
+            System.out.println("Something went wrong: "+e);
         }
         
-        //set player name on GPS
-        GPS.setPlayerName(name);
-
-        //create deck Object
-        createDeck();
         
-        //make players and bot objects.
-        createPlayersAndBots();
-        
-        //sets the players hand in gameplay screen to their cards
-        setPlayerHand();
-        
-        System.out.println("Entering main game loop"); //for testing
-        
-        //main game loop.
-        int bcount = 0;
-        boolean p_dealed = false;
-       
-        while(true){
-            if(playerTurn){
-                if(playCount == 0 && p_dealed == false && p_first_turn == true){
-                    //deal out 2 cards at beginning of turn
-                    drawCard();
-                    drawCard();
-                    GPS.hideHandMenu();
-                    p_dealed = true;
-                    p_first_turn = false;
-                }
-                
-                playerTakeTurn();
-                reset_GPS_button_values();
-
-                if(playCount >= 3){
-                    playerTurn = false;
-                    playCount = 0;
-                    p_dealed = false;
-                    p_first_turn = true;
-                    System.out.println("Taking bot turn...");//for testing
-                }
-            }
-            else{
-                bcount = botTakeTurn(bcount);
-                //if(bcount == 4){ //to be implemented once bot logic is in place 
-                    playerTurn = true;
-                    bcount = 0;
-                    System.out.println("Taking player turn...");//for testing
-               // }
-            }
-            
-        }
     }
     
     
@@ -137,7 +199,7 @@ public class Game {
                 difficultyLevel = PlayScreen.difficultyLevel;
              //   System.out.println(); //for some reason, this println statement is needed here inorder for the loop this method is in to exit properly when it's suppose to........
         }
-        else{ //pre game state is over, set to false.
+        else { //pre game state is over, set to false.
             inPreGameState = false;
         }
         
@@ -154,6 +216,45 @@ public class Game {
         else{ //pre game state is over, set to false.
             inPreGameState = false;
         }
+    }
+    
+    /**
+     * Checks for a winner
+     * @return boolean true if found
+     */
+    private boolean checkForWinner(){
+        if (numberOfPlayers == 3){
+            if (player.getCompletedProperties() == 3){
+                System.out.println("Player IS WINNER!");
+                winner = player;
+                return true;
+            }
+            else if (bot_1.getCompletedProperties() == 3){
+                System.out.println("Bot_1 IS WINNER!");
+                winner = bot_1;
+                return true;
+            }
+            else if (bot_2.getCompletedProperties() == 3){
+                System.out.println("Bot_2 IS WINNER!");
+                winner = bot_2;
+                return true;
+            }
+        }
+        else {
+            if (player.getCompletedProperties() == 3){
+                System.out.println("Player IS WINNER!");
+                winner = player;
+                return true;
+            }
+            else if (bot_1.getCompletedProperties() == 3){
+                System.out.println("Bot_1 IS WINNER!");
+                winner = bot_1;
+                return true;
+            }
+        }
+        
+        
+        return false;
     }
     
     
@@ -177,6 +278,8 @@ public class Game {
             
             //make bot 1
             bot_1 = new Bot();
+            bot_1.setDifficulty(difficultyLevel);
+            bot_1.setName("bot_1");
             
             //add 5 cards to Bot_1 hand
             for(int i = 0; i < 5;i++){
@@ -186,6 +289,8 @@ public class Game {
             //if player selected to play with 3 total players, then make the 2nd bot.
             if (numberOfPlayers == 3){
                 bot_2 = new Bot();
+                bot_2.setDifficulty(difficultyLevel);
+                bot_2.setName("bot_2");
                 
                 //add 5 cards to Bot_2 hand
                 for(int i = 0; i < 5;i++){
@@ -242,8 +347,6 @@ public class Game {
     
     /**
      * The actions the player can take when taking their turn.
-     * @param turn
-     * @return playCount
      */
     private void playerTakeTurn(){
         
@@ -256,7 +359,7 @@ public class Game {
         
         //checking for draw card button pressed
         if(GPS.getYourCardDeckPressed()==true){ //will remove in future so player cant keep drawing cards. For testing now
-            drawCard();
+        //    drawCard(player); //commentout to remove functionality.
             return;
         }
         //checking to see if end turn early was pressed 
@@ -294,15 +397,15 @@ public class Game {
                         String cardName = c.getName();
 
                         if(slotButtonPressed==2){ //if discard button pressed
-                             discardCard();
+                             discardCard(player);
                              return;
                         }
                         else if ((cardType.equals("property") || cardType.equals("wildcard")) && slotButtonPressed == 1){ //slotButtonPressed == 1 means that a property slot was pressed.
-                            playPropertyCard();
+                            playPropertyCard(player);
                             return;
                         }
                         else if ((cardType.equals("money") || cardType.equals("action") || cardType.equals("wild-rent") || cardType.equals("rent")) && slotButtonPressed == 0){//player is playing a card to add to their bank.
-                            playMoneyCard();
+                            playMoneyCard(player);
                             return;
                         }
                         else if (cardType.equals("rent") && slotButtonPressed != 1){
@@ -330,33 +433,102 @@ public class Game {
             }
         }
         //checking for draw card button pressed
-                 if(GPS.getYourCardDeckPressed()==true){ //will remove in future so player cant keep drawing cards. For testing now
-                    drawCard();
-                    return;
-                }
+        if(GPS.getYourCardDeckPressed()==true){ //will remove in future so player cant keep drawing cards. For testing now
+        //   drawCard(player); //commentout to remove functionality.
+           return;
+       }
         //checking to see if end turn early was pressed 
-                 if(GPS.getEndTurnEarlyPressed()==true){
-                     endTurnEarly();
-                     return;
-                }
+        if(GPS.getEndTurnEarlyPressed()==true){
+            endTurnEarly();
+            return;
+       }
         
         
         if(playCount >=3){
             //switch Players 
             System.out.println("Switch players");
             return;
-        }
+        } 
    }
     
-    //bot logic here? YUP!
+    
     /**
      * The actions the bot will take
-     * @param count
-     * @return playCount
      */
-    private int botTakeTurn(int count){
+    private void botTakeTurn(Bot b){
+        //bot picks a random card and sets it as the card to play
+        b.setCardToPlay(b.pickACard());
+        
+        try {
+            System.out.println("Bot trying to play: "+b.getCardToPlay().getName()); //for testing
+        }
+        catch(Exception e){
+            System.out.println("Bot has no card to play...");
+        }
+        
+        
+        //picks a play to make
+        int play = b.pickAPlay();
+        
+        if (b.getCardToPlay() != null){
+            try{          
+                //check card type to play and get card name.
+                Card c = b.getCardToPlay();
+                String cardType = c.getType().toLowerCase();
+                String cardName = c.getName();
 
-        return playCount;
+                if(play == 6){ //if discard button pressed
+                    System.out.println("\nBot is discaring card...");
+                    discardCard(b);
+                    return;
+                }
+                else if (play == 0){
+                    System.out.println("\nBot is ending turn early...");
+                    endTurnEarly();
+                }
+                else if ((cardType.equals("property") || cardType.equals("wildcard"))/* && play == 2*/){ //slotButtonPressed == 1 means that a property slot was pressed.
+                    System.out.println("\nBot is adding property...");
+                    playPropertyCard(b);
+                    return;
+                }
+                else if ((cardType.equals("money") || cardType.equals("action") || cardType.equals("wild-rent") || cardType.equals("rent"))/* && play == 1*/){//player is playing a card to add to their bank.
+                    System.out.println("\nBot is adding money...");
+                    playMoneyCard(b);
+                    return;
+                }
+                else if (cardType.equals("rent")/* && play == 4*/){
+                    System.out.println("\nBot is play a rent card...");
+                   playRentCard();
+                   return;
+                }
+                else if (cardType.equals("wild-rent")/* && play == 5*/){
+                   System.out.println("\nBot is playing a wild-rent card...");
+                   playWildRentCard();
+                   return;
+                }
+                else if ((cardType.equals("action")/* && play == 3*/) || cardName.contains("house") || cardName.contains("hotel")){
+                   System.out.println("\nBot is playing action card...");
+                   playActionCard();
+                   return;
+                }
+                else{ //no valid actions made
+                   b.setCardToPlay(null);
+                   return; //since no valid play was made.
+                }
+            }
+            catch(Exception e){
+                System.out.println("Can't play this card card. e:"+e);
+                GPS.setYourMoneySlotButtonAction(false);
+            }
+        }
+        else{
+            System.out.println("Bot picked null card...");
+        }
+        
+        if (b.handIsEmpty() == true){
+            System.out.println("Bot has no more cards in hand...");
+            endTurnEarly();
+        }
     }
     
     /**
@@ -427,23 +599,42 @@ public class Game {
      * Plays the property the player wants to
      * May refactor these in future for bot objects to use these methods as well
      */
-    private void playPropertyCard(){
+    private void playPropertyCard(Player p){
         //capture card to play
-        Card c = player.getCardToPlay();
+        Card c = p.getCardToPlay();
+        int[] yourPropertySlotPressed;
         
-        //play property card
-        int[] yourPropertySlotPressed = GPS.getYourPropertySlotPressed(); //int array of where the property is located in the matrix of player's properties.
-        boolean ableToPlay = player.playPropertyCard(yourPropertySlotPressed);
+        //play property card if human
+        if (p.isHuman() == true){
+            yourPropertySlotPressed = GPS.getYourPropertySlotPressed(); //int array of where the property is located in the matrix of player's properties.
+        }
+        //if a bot, will find where to place property
+        else {
+            if (p.getName().equals("bot_1")){
+                yourPropertySlotPressed = bot_1.pickPropertySlot(c);
+            }
+            else {
+                yourPropertySlotPressed = bot_2.pickPropertySlot(c);
+            }
+            
+        }
+        
+        boolean ableToPlay = p.playPropertyCard(yourPropertySlotPressed);
 
         System.out.println("ableToPlay property = "+ableToPlay);
         
         if (ableToPlay == true){
-            //display card in GUI
-            GPS.displayPlayedPropertyCard(c.getImagePath());
-            
-            //remove card image from hand in GUI
-            GPS.removeCardImageFromHand(handSlotPressed);
-            
+            //display card in GUI if human
+            //remove card image from hand in GUI if human
+            if (p.isHuman() == true){
+                GPS.displayPlayedPropertyCard(c.getImagePath());
+                GPS.removeCardImageFromHand(handSlotPressed);
+            }
+            //else, bot actions with GUI
+            else {
+                GPS.displayBotPlayedPropertyCard(c.getImagePath(), yourPropertySlotPressed, p.getName());
+            }
+
             playCount++;
         }
         
@@ -458,21 +649,24 @@ public class Game {
      * Plays the money card the player wants to
      * May refactor these in future for bot objects to use these methods as well
      */
-    private void playMoneyCard(){
+    private void playMoneyCard(Player p){
         //capture card to play
-        Card c = player.getCardToPlay();
+        Card c = p.getCardToPlay();
         
         //play money card
-        player.playMoneyCard();
+        p.playMoneyCard();
         
         //display player money count
-        GPS.setYourTotalMoney(player.getTotalMoney());
+        GPS.setYourTotalMoney(p.getTotalMoney(), p.getName());
         
         //display card in GUI
-        GPS.displayPlayedMoneyCard(c.getImagePath());
+        GPS.displayPlayedMoneyCard(c.getImagePath(), p.getName());
         
-        //remove card image from hand in GUI
-        GPS.removeCardImageFromHand(handSlotPressed);
+        //remove card image from player's hand in GUI if human.
+        if (p.isHuman() == true){
+            GPS.removeCardImageFromHand(handSlotPressed);
+        }
+        
         
         playCount++;
     }
@@ -538,17 +732,20 @@ public class Game {
      * Discards selected card
      * May refactor these in future for bot objects to use these methods as well
      */
-    private void discardCard(){
+    private void discardCard(Player p){
          //capture card to play
-        Card c = player.getCardToPlay();
+        Card c = p.getCardToPlay();
         
         //Add card to discard deck
-        player.discardCard(c, discardDeck);
+        p.discardCard(c, discardDeck);
         
         GPS.addCardImageToDiscardDeck(c.getImagePath());
         
-        //remove card image from hand in GUI
-        GPS.removeCardImageFromHand(handSlotPressed);
+        if (p.isHuman() == true){
+            //remove card image from hand in GUI
+            GPS.removeCardImageFromHand(handSlotPressed);
+        }
+        
         
         playCount++;
     }
@@ -558,19 +755,23 @@ public class Game {
      * Adds top card to hand and to GUI
      * May refactor these in future for bot objects to use these methods as well
      */
-    private void drawCard(){
+    private void drawCard(Player p){
+        
         //capture card to play
-        List<Card> hand = player.getHand();
+        List<Card> hand = p.getHand();
         for (Card c : hand){
             if (c == null){
                 //capture card to draw.
                 Card card = gameDeck.getTopCard();
                 
                 //draw card
-                player.drawCard(card);
+                p.drawCard(card);
 
-                //add card to hand in GUI
-                GPS.addCardImageToHand(card.getImagePath());
+                //add card to hand in GUI if player's turn
+                if (playerTurn == true){
+                    GPS.addCardImageToHand(card.getImagePath());
+                }
+                
                 
                 //returns out of method once added
                 return;

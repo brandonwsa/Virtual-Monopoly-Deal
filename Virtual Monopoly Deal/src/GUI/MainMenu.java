@@ -32,33 +32,33 @@ public class MainMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        howToPlayButton = new javax.swing.JButton();
+        playButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/howtoplaybutton.jpg"))); // NOI18N
-        jButton2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/howtoplaybuttonrollover.jpg"))); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        howToPlayButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/howtoplaybutton.jpg"))); // NOI18N
+        howToPlayButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/howtoplaybuttonrollover.jpg"))); // NOI18N
+        howToPlayButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                howToPlayButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 810, 200, 80));
+        getContentPane().add(howToPlayButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 810, 200, 80));
 
-        jButton1.setBackground(new java.awt.Color(204, 0, 0));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/playbutton.jpg"))); // NOI18N
-        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/playbuttonrollover.jpg"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        playButton.setBackground(new java.awt.Color(204, 0, 0));
+        playButton.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        playButton.setForeground(new java.awt.Color(255, 255, 255));
+        playButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/playbutton.jpg"))); // NOI18N
+        playButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/playbuttonrollover.jpg"))); // NOI18N
+        playButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                playButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 810, 200, 80));
+        getContentPane().add(playButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 810, 200, 80));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/monopoly_deal_logo_page.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 2058, -1));
@@ -66,18 +66,18 @@ public class MainMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
         // TODO add your handling code here:
         PlayScreen PS = new PlayScreen();
         PS.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_playButtonActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void howToPlayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_howToPlayButtonActionPerformed
         // TODO add your handling code here:
         HowToPlayScreen HTPS = new HowToPlayScreen();
         HTPS.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_howToPlayButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -118,8 +118,8 @@ public class MainMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton howToPlayButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton playButton;
     // End of variables declaration//GEN-END:variables
 }

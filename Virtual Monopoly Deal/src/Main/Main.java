@@ -25,4 +25,9 @@ public class Main {
         
         
     }
+    
+    public static void reset(){
+        GPS = new GamePlayScreen();
+        main(null);
+    }
 }

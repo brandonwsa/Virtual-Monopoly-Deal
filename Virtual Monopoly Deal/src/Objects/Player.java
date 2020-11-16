@@ -397,9 +397,44 @@ public class Player{
             
     }
     
+    /**
+     * Checks if player is human or bot
+     * @return true if human, false if not.
+     */
+    public boolean isHuman(){
+        if (!name.equals("bot_1") && !name.equals("bot_2")){
+            return true;
+        }
+        else{
+           return false;
+        }  
+    }
+    
+    /**
+     * Iterates through hand to see how many null cards. If all null, then hand is empty.
+     * @return true if empty
+     */
+    public boolean handIsEmpty(){
+        int i = 0;
+        
+        for (Card c : hand){
+            if (c == null){
+                i++;
+            }
+        }
+        
+        if (i == 12){
+            return true;
+        }
+        return false;
+    }
+    
     public void printHand(){
         for (int i=0; i<hand.size(); i++){
-            System.out.println(hand.get(i).getName());
+            if (hand.get(i) != null){
+                System.out.println(hand.get(i).getName());
+            }
+            
         }
             
     }

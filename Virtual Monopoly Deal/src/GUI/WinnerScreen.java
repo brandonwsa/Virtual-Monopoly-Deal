@@ -2,18 +2,22 @@
  * displays winner and exit button, play again button. Check doc for more info.
  */
 package GUI;
+import Main.Main;
 
 /**
  *
  * @author brand
  */
 public class WinnerScreen extends javax.swing.JFrame {
+    
+    private String winner;
 
     /**
      * Creates new form WinnerScreen
      */
     public WinnerScreen() {
         initComponents();
+        winner = "";
     }
 
     /**
@@ -104,7 +108,7 @@ public class WinnerScreen extends javax.swing.JFrame {
         playersTotalMoney.setEditable(false);
         playersTotalMoney.setFont(new java.awt.Font("Engravers MT", 1, 54)); // NOI18N
         playersTotalMoney.setForeground(new java.awt.Color(0, 0, 0));
-        playersTotalMoney.setText("23");
+        playersTotalMoney.setText("0");
         playersTotalMoney.setBorder(null);
         playersTotalMoney.setOpaque(false);
         playersTotalMoney.addActionListener(new java.awt.event.ActionListener() {
@@ -117,7 +121,7 @@ public class WinnerScreen extends javax.swing.JFrame {
         playersTotalProperties.setEditable(false);
         playersTotalProperties.setFont(new java.awt.Font("Engravers MT", 1, 54)); // NOI18N
         playersTotalProperties.setForeground(new java.awt.Color(0, 0, 0));
-        playersTotalProperties.setText("12");
+        playersTotalProperties.setText("0");
         playersTotalProperties.setBorder(null);
         playersTotalProperties.setOpaque(false);
         playersTotalProperties.addActionListener(new java.awt.event.ActionListener() {
@@ -141,9 +145,15 @@ public class WinnerScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_playersTotalPropertiesActionPerformed
 
     private void playAgainButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playAgainButtonActionPerformed
-        MainMenu MM = new MainMenu();
-        MM.setVisible(true);
+        
+     //   Main main = new Main();
         dispose();
+        Main.reset();
+        
+        
+    /*    MainMenu MM = new MainMenu();
+        MM.setVisible(true);
+        dispose(); */
     }//GEN-LAST:event_playAgainButtonActionPerformed
 
     private void playersTotalMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playersTotalMoneyActionPerformed
@@ -154,6 +164,18 @@ public class WinnerScreen extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitGameButtonActionPerformed
 
+    /**
+     * Sets the name of the winner.
+     * @param name 
+     */
+    public void setWinner(String name, int money, int properties){
+        winner = name;
+        playersTotalMoney.setText(""+money);
+        playersTotalProperties.setText(""+properties);
+        nameOfWinner.setText(winner);
+    }
+    
+    
     /**
      * @param args the command line arguments
      */

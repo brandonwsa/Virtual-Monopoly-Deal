@@ -86,7 +86,6 @@ public class PropertySlot{
     
     public int getRentAmount(){return rentAmount;}
     
-    public int getAmountOwned(){return amountOwned;}
     
     public int getPropertySlotNumber(){return propertySlotNumber;}
     
@@ -104,6 +103,10 @@ public class PropertySlot{
      */
     public boolean getIsCompleted(){
         return isCompleted;
+    }
+    
+    public int getTotalProperties(){
+        return propertiesInSlot.size();
     }
     
     /**
