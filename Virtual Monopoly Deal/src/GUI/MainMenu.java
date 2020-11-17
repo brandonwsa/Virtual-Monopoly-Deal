@@ -12,7 +12,7 @@
 package GUI;
 public class MainMenu extends javax.swing.JFrame {
     
-  //  private static GamePlayScreen GPS;
+    private GamePlayScreen GPS;
     
     /**
      * Creates new form StartScreen
@@ -69,6 +69,7 @@ public class MainMenu extends javax.swing.JFrame {
     private void playButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playButtonActionPerformed
         // TODO add your handling code here:
         PlayScreen PS = new PlayScreen();
+        PS.setGamePlayScreen(GPS);
         PS.setVisible(true);
         dispose();
     }//GEN-LAST:event_playButtonActionPerformed
@@ -79,6 +80,11 @@ public class MainMenu extends javax.swing.JFrame {
         HTPS.setVisible(true);
     }//GEN-LAST:event_howToPlayButtonActionPerformed
 
+    
+    public void setGamePlayScreen(GamePlayScreen gps){
+        GPS = gps;
+    }
+    
     /**
      * @param args the command line arguments
      */

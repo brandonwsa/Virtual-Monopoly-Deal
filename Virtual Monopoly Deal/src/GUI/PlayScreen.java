@@ -13,10 +13,10 @@ package GUI;
 
 public class PlayScreen extends javax.swing.JFrame {
     
-    public static int numberOfPlayers;
-    public static int difficultyLevel;
-    public static boolean toGamePlayScreen;
-    public static String playerName;
+    private int numberOfPlayers;
+    private int difficultyLevel;
+  //  public static boolean toGamePlayScreen;
+    private String playerName;
     private GamePlayScreen GPS;
 
     /**
@@ -25,7 +25,7 @@ public class PlayScreen extends javax.swing.JFrame {
     public PlayScreen() {
         numberOfPlayers = 0;
         difficultyLevel = 0;
-        toGamePlayScreen = false;
+    //    toGamePlayScreen = false;
         initComponents();
     }
 
@@ -148,11 +148,12 @@ public class PlayScreen extends javax.swing.JFrame {
         //gets playerName from text field
         playerName = jTextField1.getText();
         
-        GPS = Main.Main.GPS;
+    //    GPS = Main.Main.GPS;
         GPS.setNumberOfPlayers(numberOfPlayers);
         GPS.setDifficultyLevel(difficultyLevel);
+        GPS.setPlayerName(playerName);
         GPS.setVisible(true);
-        toGamePlayScreen = true;
+    //    toGamePlayScreen = true;
         dispose();//closes the jframe
     }//GEN-LAST:event_goButtonActionPerformed
 
@@ -184,6 +185,10 @@ public class PlayScreen extends javax.swing.JFrame {
         difficultyLevel = 2;
     }//GEN-LAST:event_hardButtonActionPerformed
 
+    public void setGamePlayScreen(GamePlayScreen gps){
+        GPS = gps;
+    }
+    
     /**
      * @param args the command line arguments
      */

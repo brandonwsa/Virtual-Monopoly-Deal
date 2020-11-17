@@ -22,7 +22,7 @@ public class GamePlayScreen extends javax.swing.JFrame {
     private boolean discardDeckPressed =  false;
     private boolean cardDeckPressed = false;
     private boolean endTurnEarlyPressed = false;
-    private int numberOfPlayers =0;
+    private int numberOfPlayers;
     private int difficultyLevel; 
     //shouldnt need this 2D array anymore, but keeping in case we do.
  //   private int[][] yourPropertySlots = new int[4][10]; //2D array used to store information on whether or not a specified property slot was pressed or not. If one was pressed, a 1 will be
@@ -31,12 +31,19 @@ public class GamePlayScreen extends javax.swing.JFrame {
     private javax.swing.JButton lastPropertyPressed = null; //will be used to know which property was set last. Used to displayImage of selected property slot.
     private HashMap<String, javax.swing.JButton> player2Properties = new HashMap<>(); //used to store player 2 property buttons
     private HashMap<String, javax.swing.JButton> player3Properties = new HashMap<>(); //used to store player 2 property buttons
+    private String playerName;
+    private WinnerScreen WS;
 
     /**
      * Creates new form GamePlayScreen
      */
     public GamePlayScreen() {
         initComponents();
+        
+        WS = new WinnerScreen();
+        
+        difficultyLevel = 0;
+        numberOfPlayers = 0;
         
         //add handslot buttons to arraylist
         handSlots.add(handSlot_1);
@@ -415,7 +422,6 @@ public class GamePlayScreen extends javax.swing.JFrame {
         yourTotalMoney = new javax.swing.JTextField();
         moneyEmblem2 = new javax.swing.JLabel();
         youLabel = new javax.swing.JLabel();
-        toWinnerScreenButton = new javax.swing.JButton();
         tableBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -2526,18 +2532,10 @@ public class GamePlayScreen extends javax.swing.JFrame {
         youLabel.setFont(new java.awt.Font("Eras Demi ITC", 0, 16)); // NOI18N
         youLabel.setForeground(new java.awt.Color(255, 255, 255));
         youLabel.setText("You:");
-        youLabel.setText(PlayScreen.playerName);
+        youLabel.setText(playerName);
         yourPlayArea.add(youLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
 
         jLayeredPane1.add(yourPlayArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 790, 1910, 310));
-
-        toWinnerScreenButton.setText("winner screen");
-        toWinnerScreenButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                toWinnerScreenButtonActionPerformed(evt);
-            }
-        });
-        jLayeredPane1.add(toWinnerScreenButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 10, -1, -1));
 
         tableBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/table background.png"))); // NOI18N
         tableBackground.setText("jLabel1");
@@ -2561,13 +2559,6 @@ public class GamePlayScreen extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void toWinnerScreenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toWinnerScreenButtonActionPerformed
-        WinnerScreen WS = new WinnerScreen();
-        WS.setVisible(true);
-        this.setVisible(false); //sets game play screen view to false
-        dispose();
-    }//GEN-LAST:event_toWinnerScreenButtonActionPerformed
 
     private void player2TotalMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2TotalMoneyActionPerformed
         // TODO add your handling code here:
@@ -3408,6 +3399,7 @@ public class GamePlayScreen extends javax.swing.JFrame {
      * @param name 
      */
     public void setPlayerName(String name){
+        playerName = name;
         youLabel.setText(name);
     }
     
@@ -3464,6 +3456,14 @@ public class GamePlayScreen extends javax.swing.JFrame {
     
     public void setEndTurnEarlyPressed(boolean value){
         endTurnEarlyPressed = value;
+    }
+    
+    public void setNumberOfPlayers(int numPlayers){
+        numberOfPlayers = numPlayers;
+    }
+    
+    public void setDifficultyLevel(int level){
+        difficultyLevel = level;
     }
     
     
@@ -3540,6 +3540,22 @@ public class GamePlayScreen extends javax.swing.JFrame {
         return yourMoneySlotButtonPressed;
     }
     
+    public String getPlayerName(){
+        return playerName;
+    }
+    
+    public int getNumberOfPlayers(){
+        return numberOfPlayers;
+    }
+    
+    public int getDifficultyLevel(){
+        return difficultyLevel;
+    }
+    
+    public boolean getPlayAgain(){
+        return WS.getPlayAgain();
+    }
+    
     /**
      * Displays a property card in property slot given the image path. Looks at last property button pressed.
      * to know where to put the image.
@@ -3593,7 +3609,6 @@ public class GamePlayScreen extends javax.swing.JFrame {
      * @param properties
      */
     public void displayWinnerScreen(String name, int money, int properties){
-        WinnerScreen WS = new WinnerScreen();
         WS.setWinner(name, money, properties);
         WS.setVisible(true);
         this.setVisible(false); //sets game play screen view to false
@@ -3744,14 +3759,6 @@ public class GamePlayScreen extends javax.swing.JFrame {
         moneyLabel.setVisible(false);
         propertiesLabel.setVisible(false);
         tableBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/table background Two Players.png")));
-    }
-    
-    public void setNumberOfPlayers(int numPlayers){
-        numberOfPlayers = numPlayers;
-    }
-    
-    public void setDifficultyLevel(int level){
-        difficultyLevel = level;
     }
     
     /**
@@ -3951,7 +3958,6 @@ public class GamePlayScreen extends javax.swing.JFrame {
     private javax.swing.JLabel propertiesLabel;
     private javax.swing.JButton resumeButton;
     private javax.swing.JLabel tableBackground;
-    private javax.swing.JButton toWinnerScreenButton;
     private javax.swing.JButton viewHandButton;
     private javax.swing.JButton viewMenuButton;
     private javax.swing.JButton yesToExitButton;

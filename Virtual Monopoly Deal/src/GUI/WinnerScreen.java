@@ -2,7 +2,7 @@
  * displays winner and exit button, play again button. Check doc for more info.
  */
 package GUI;
-import Main.Main;
+import Main.Game;
 
 /**
  *
@@ -11,13 +11,15 @@ import Main.Main;
 public class WinnerScreen extends javax.swing.JFrame {
     
     private String winner;
+    private boolean playAgain;
 
     /**
      * Creates new form WinnerScreen
      */
     public WinnerScreen() {
-        initComponents();
         winner = "";
+        playAgain = false;
+        initComponents();
     }
 
     /**
@@ -147,8 +149,9 @@ public class WinnerScreen extends javax.swing.JFrame {
     private void playAgainButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playAgainButtonActionPerformed
         
      //   Main main = new Main();
+        playAgain = true;
         dispose();
-        Main.reset();
+        
         
         
     /*    MainMenu MM = new MainMenu();
@@ -173,6 +176,10 @@ public class WinnerScreen extends javax.swing.JFrame {
         playersTotalMoney.setText(""+money);
         playersTotalProperties.setText(""+properties);
         nameOfWinner.setText(winner);
+    }
+    
+    public boolean getPlayAgain(){
+        return playAgain;
     }
     
     
