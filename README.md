@@ -28,7 +28,7 @@ Example: java -jar "D:\Docs\Western Stuff\Semester 4\Soft Eng I\Virtual-Monopoly
 ![Screenshot of GamePlayScreen:](https://github.com/brandonwsa/Virtual-Monopoly-Deal/blob/master/Virtual%20Monopoly%20Deal/screenshots/GamePlayScreen_SS1.PNG "Game play screen")
 ![Screenshot of GamePlayScreen:](https://github.com/brandonwsa/Virtual-Monopoly-Deal/blob/master/Virtual%20Monopoly%20Deal/screenshots/GamePlayScreen_SS2.PNG)
 ![Screenshot of GamePlayScreen:](https://github.com/brandonwsa/Virtual-Monopoly-Deal/blob/master/Virtual%20Monopoly%20Deal/screenshots/GamePlayScreen_SS3.PNG)
-![Screenshot of WinnerScreen:](https://github.com/brandonwsa/Virtual-Monopoly-Deal/blob/master/Virtual%20Monopoly%20Deal/screenshots/WinnerScreen SS.PNG)
+![Screenshot of WinnerScreen:](https://github.com/brandonwsa/Virtual-Monopoly-Deal/blob/master/Virtual%20Monopoly%20Deal/screenshots/WinnerScreen.PNG "Winner Screen")
 
 ## To Do
 - Finish adding functionality for rest of action cards.
