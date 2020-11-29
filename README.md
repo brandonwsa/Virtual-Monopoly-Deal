@@ -23,12 +23,12 @@ Example: java -jar "D:\Docs\Western Stuff\Semester 4\Soft Eng I\Virtual-Monopoly
 - User interacts with game through mouse clicks. Click the card you wish to play and select a valid place to play the card.
 
 ## Screenshots
-![Screenshot of Main Menu:](https://github.com/brandonwsa/Virtual-Monopoly-Deal/blob/master/Virtual%20Monopoly%20Deal/screenshots/MainMenu_SS.PNG)
-![Screenshot of Play Screen:](https://github.com/brandonwsa/Virtual-Monopoly-Deal/blob/master/Virtual%20Monopoly%20Deal/screenshots/PlayScreen_SS.PNG)
-![Screenshot of GamePlayScreen:](https://github.com/brandonwsa/Virtual-Monopoly-Deal/blob/master/Virtual%20Monopoly%20Deal/screenshots/GamePlayScreen_SS1.PNG)
+![Screenshot of Main Menu:](https://github.com/brandonwsa/Virtual-Monopoly-Deal/blob/master/Virtual%20Monopoly%20Deal/screenshots/MainMenu_SS.PNG "Main Menu")
+![Screenshot of Play Screen:](https://github.com/brandonwsa/Virtual-Monopoly-Deal/blob/master/Virtual%20Monopoly%20Deal/screenshots/PlayScreen_SS.PNG "Game set up screen")
+![Screenshot of GamePlayScreen:](https://github.com/brandonwsa/Virtual-Monopoly-Deal/blob/master/Virtual%20Monopoly%20Deal/screenshots/GamePlayScreen_SS1.PNG "Game play screen")
 ![Screenshot of GamePlayScreen:](https://github.com/brandonwsa/Virtual-Monopoly-Deal/blob/master/Virtual%20Monopoly%20Deal/screenshots/GamePlayScreen_SS2.PNG)
 ![Screenshot of GamePlayScreen:](https://github.com/brandonwsa/Virtual-Monopoly-Deal/blob/master/Virtual%20Monopoly%20Deal/screenshots/GamePlayScreen_SS3.PNG)
-![Screenshot of WinnerScreen:](https://github.com/brandonwsa/Virtual-Monopoly-Deal/blob/master/Virtual%20Monopoly%20Deal/screenshots/WinnerScreen_SS.PNG)
+![Screenshot of WinnerScreen:](https://github.com/brandonwsa/Virtual-Monopoly-Deal/blob/master/Virtual%20Monopoly%20Deal/screenshots/WinnerScreen_SS.PNG "Winner screen")
 
 ## To Do
 - Finish adding functionality for rest of action cards.
