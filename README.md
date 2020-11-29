@@ -22,6 +22,14 @@ Example: java -jar "D:\Docs\Western Stuff\Semester 4\Soft Eng I\Virtual-Monopoly
 - View the how to play screen in the game.
 - User interacts with game through mouse clicks. Click the card you wish to play and select a valid place to play the card.
 
+## Screenshots
+![Screenshot of Main Menu:](https://github.com/brandonwsa/Virtual-Monopoly-Deal/tree/master/Virtual%20Monopoly%20Deal/screenshots/MainMenu_SS.png)
+![Screenshot of Play Screen:](https://github.com/brandonwsa/Virtual-Monopoly-Deal/tree/master/Virtual%20Monopoly%20Deal/screenshots/PlayScreen_SS.png)
+![Screenshot of GamePlayScreen:](https://github.com/brandonwsa/Virtual-Monopoly-Deal/tree/master/Virtual%20Monopoly%20Deal/screenshots/GamePlayScreen_SS1.png)
+![Screenshot of GamePlayScreen:](https://github.com/brandonwsa/Virtual-Monopoly-Deal/tree/master/Virtual%20Monopoly%20Deal/screenshots/GamePlayScreen_SS2.png)
+![Screenshot of GamePlayScreen:](https://github.com/brandonwsa/Virtual-Monopoly-Deal/tree/master/Virtual%20Monopoly%20Deal/screenshots/GamePlayScreen_SS3.png)
+![Screenshot of WinnerScreen:](https://github.com/brandonwsa/Virtual-Monopoly-Deal/tree/master/Virtual%20Monopoly%20Deal/screenshots/WinnerScreen_SS.png)
+
 ## To Do
 - Finish adding functionality for rest of action cards.
 - All action cards have functionality of being able to be played as a money card, but only hotel and house action cards have finished functionality to be played on properties correctly.
