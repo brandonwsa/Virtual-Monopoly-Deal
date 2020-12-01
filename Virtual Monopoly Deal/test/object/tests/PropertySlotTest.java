@@ -11,15 +11,14 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import Objects.Card;
 
 /**
  *
  * @author brand
  */
-public class cardTest {
+public class PropertySlotTest {
     
-    public cardTest() {
+    public PropertySlotTest() {
     }
     
     @BeforeClass
