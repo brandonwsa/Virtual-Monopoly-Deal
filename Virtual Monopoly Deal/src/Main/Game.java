@@ -104,7 +104,6 @@ public class Game {
                         p_dealed = true;
                         p_first_turn = false;
                     }
-
                     playerTakeTurn();
                     reset_GPS_button_values();
 
@@ -114,6 +113,7 @@ public class Game {
                         playCount = 0;
                         p_dealed = false;
                         p_first_turn = true;
+                        discardCardAfterTurn(player);
                         System.out.println("Taking bot turn...");//for testing
                     }
                 }
@@ -784,6 +784,28 @@ public class Game {
         
         playCount++;
     }
+    
+  private void discardCardAfterTurn(Player p){
+        int count = 0;
+        Card d;
+         List<Card> hand = p.getHand();
+         //counts current cards in deck
+            for (Card c : hand){
+                if (c != null){
+                   count++;
+                   System.out.println(count);
+                }
+                if(c!=null & count > 7){
+                    handSlotPressed = count;
+                    p.discardCard(c, discardDeck);
+                    GPS.removeCardImageFromHand(handSlotPressed);
+                    count--;
+ 
+                }
+            }
+            
+    }
+  
    
     
      /**
@@ -817,7 +839,9 @@ public class Game {
             System.out.println("Card was not drawn: player hand is full");
         }
         catch(Exception e){
-            System.out.println("Error in drawCard() in Game.java e: "+e);
+           System.out.println("Game deck is empty. Repopulating game deck with discard ");
+            gameDeck = discardDeck;
+            gameDeck.shuffle();
         }
         
     }
