@@ -37,8 +37,6 @@ public class GamePlayScreenTest {
         ArrayList cardImagePaths = null;
         GamePlayScreen instance = new GamePlayScreen();
         instance.setPlayerStartingHand(cardImagePaths);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -50,8 +48,6 @@ public class GamePlayScreenTest {
         String name = "";
         GamePlayScreen instance = new GamePlayScreen();
         instance.setPlayerName(name);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -64,8 +60,6 @@ public class GamePlayScreenTest {
         String name = "";
         GamePlayScreen instance = new GamePlayScreen();
         instance.setYourTotalMoney(value, name);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -78,8 +72,6 @@ public class GamePlayScreenTest {
         int column = 0;
         GamePlayScreen instance = new GamePlayScreen();
         instance.setYourPropertySlotPressed(row, column);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -91,8 +83,6 @@ public class GamePlayScreenTest {
         boolean value = false;
         GamePlayScreen instance = new GamePlayScreen();
         instance.setYourMoneySlotButtonAction(value);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -104,8 +94,6 @@ public class GamePlayScreenTest {
         boolean value = false;
         GamePlayScreen instance = new GamePlayScreen();
         instance.setYourDiscardDeckPressed(value);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -117,8 +105,6 @@ public class GamePlayScreenTest {
         boolean value = false;
         GamePlayScreen instance = new GamePlayScreen();
         instance.setYourCardDeckPressed(value);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -130,8 +116,6 @@ public class GamePlayScreenTest {
         boolean value = false;
         GamePlayScreen instance = new GamePlayScreen();
         instance.setEndTurnEarlyPressed(value);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -143,8 +127,6 @@ public class GamePlayScreenTest {
         int numPlayers = 0;
         GamePlayScreen instance = new GamePlayScreen();
         instance.setNumberOfPlayers(numPlayers);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -156,8 +138,6 @@ public class GamePlayScreenTest {
         int level = 0;
         GamePlayScreen instance = new GamePlayScreen();
         instance.setDifficultyLevel(level);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -170,8 +150,6 @@ public class GamePlayScreenTest {
         int expResult = 0;
         int result = instance.checkHandSlotButtonPressed();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -184,8 +162,6 @@ public class GamePlayScreenTest {
         int[] expResult = null;
         int[] result = instance.getYourPropertySlotPressed();
         assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -198,8 +174,6 @@ public class GamePlayScreenTest {
         boolean expResult = false;
         boolean result = instance.getYourDiscardDeckPressed();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -212,8 +186,6 @@ public class GamePlayScreenTest {
         boolean expResult = false;
         boolean result = instance.getYourCardDeckPressed();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -226,8 +198,6 @@ public class GamePlayScreenTest {
         boolean expResult = false;
         boolean result = instance.getEndTurnEarlyPressed();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -241,8 +211,6 @@ public class GamePlayScreenTest {
         String expResult = "";
         String result = instance.getHandSlotCardImage(handSlot);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -255,8 +223,6 @@ public class GamePlayScreenTest {
         boolean expResult = false;
         boolean result = instance.getYourMoneySlotButtonAction();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -266,11 +232,10 @@ public class GamePlayScreenTest {
     public void testGetPlayerName() {
         System.out.println("getPlayerName");
         GamePlayScreen instance = new GamePlayScreen();
-        String expResult = "";
+        String expResult = "Sara";
+        instance.setPlayerName("Sara");
         String result = instance.getPlayerName();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -280,11 +245,10 @@ public class GamePlayScreenTest {
     public void testGetNumberOfPlayers() {
         System.out.println("getNumberOfPlayers");
         GamePlayScreen instance = new GamePlayScreen();
-        int expResult = 0;
+        int expResult = 3;
+        instance.setNumberOfPlayers(3);
         int result = instance.getNumberOfPlayers();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -294,11 +258,10 @@ public class GamePlayScreenTest {
     public void testGetDifficultyLevel() {
         System.out.println("getDifficultyLevel");
         GamePlayScreen instance = new GamePlayScreen();
-        int expResult = 0;
+        int expResult = 1;
+        instance.setDifficultyLevel(1);
         int result = instance.getDifficultyLevel();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -311,8 +274,6 @@ public class GamePlayScreenTest {
         boolean expResult = false;
         boolean result = instance.getPlayAgain();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -325,8 +286,6 @@ public class GamePlayScreenTest {
         boolean expResult = false;
         boolean result = instance.getMakeMeWinner();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -338,8 +297,6 @@ public class GamePlayScreenTest {
         String imagePath = "";
         GamePlayScreen instance = new GamePlayScreen();
         instance.displayPlayedPropertyCard(imagePath);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -353,8 +310,6 @@ public class GamePlayScreenTest {
         String name = "";
         GamePlayScreen instance = new GamePlayScreen();
         instance.displayBotPlayedPropertyCard(imagePath, property, name);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -367,8 +322,6 @@ public class GamePlayScreenTest {
         String name = "";
         GamePlayScreen instance = new GamePlayScreen();
         instance.displayPlayedMoneyCard(imagePath, name);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -382,8 +335,6 @@ public class GamePlayScreenTest {
         int properties = 0;
         GamePlayScreen instance = new GamePlayScreen();
         instance.displayWinnerScreen(name, money, properties);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -395,8 +346,6 @@ public class GamePlayScreenTest {
         int handSlotNum = 0;
         GamePlayScreen instance = new GamePlayScreen();
         instance.removeCardImageFromHand(handSlotNum);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -408,8 +357,6 @@ public class GamePlayScreenTest {
         String imagePath = "";
         GamePlayScreen instance = new GamePlayScreen();
         instance.addCardImageToHand(imagePath);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -421,8 +368,6 @@ public class GamePlayScreenTest {
         String img = "";
         GamePlayScreen instance = new GamePlayScreen();
         instance.addCardImageToDiscardDeck(img);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -433,8 +378,6 @@ public class GamePlayScreenTest {
         System.out.println("hideHandMenu");
         GamePlayScreen instance = new GamePlayScreen();
         instance.hideHandMenu();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -445,8 +388,6 @@ public class GamePlayScreenTest {
         System.out.println("hideThirdPlayer");
         GamePlayScreen instance = new GamePlayScreen();
         instance.hideThirdPlayer();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -457,8 +398,6 @@ public class GamePlayScreenTest {
         System.out.println("main");
         String[] args = null;
         GamePlayScreen.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }
