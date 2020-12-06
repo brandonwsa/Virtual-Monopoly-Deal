@@ -35,6 +35,7 @@ public class HowToPlayScreenTest {
         System.out.println("main");
         String[] args = null;
         HowToPlayScreen.main(args);
+        
         Exception result = HowToPlayScreen.LAST_EXCEPTION;
         Exception expResult = null;
         assertEquals(result, expResult);
