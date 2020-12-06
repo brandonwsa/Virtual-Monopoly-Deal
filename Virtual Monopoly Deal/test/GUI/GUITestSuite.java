@@ -15,13 +15,13 @@ import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 @SuiteClasses({
-    GamePlayScreen.class,
-    HowToPlayScreen.class,
+    GamePlayScreenTest.class,
+    HowToPlayScreenTest.class,
     MainMenuTest.class,
     PlayScreenTest.class,
     WinnerScreenTest.class
 })
-public class GUITestSuite {
+ public class GUITestSuite {
     
 }
 
