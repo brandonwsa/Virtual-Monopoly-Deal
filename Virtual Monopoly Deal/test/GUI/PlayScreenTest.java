@@ -33,11 +33,9 @@ public class PlayScreenTest {
     @Test
     public void testSetGamePlayScreen() {
         System.out.println("setGamePlayScreen");
-        GamePlayScreen gps = null;
+        GamePlayScreen gps = new GamePlayScreen();
         PlayScreen instance = new PlayScreen();
         instance.setGamePlayScreen(gps);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -48,8 +46,6 @@ public class PlayScreenTest {
         System.out.println("main");
         String[] args = null;
         PlayScreen.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }
