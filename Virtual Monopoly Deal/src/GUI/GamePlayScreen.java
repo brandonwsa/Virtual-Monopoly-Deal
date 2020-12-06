@@ -3779,6 +3779,44 @@ public class GamePlayScreen extends javax.swing.JFrame {
         tableBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/table background Two Players.png")));
     }
     
+    public void selectHandSlotViaAPI(int slot){
+        handSlotButtonPressed[slot]=1;
+    }
+    
+    public void selectPropertySlotViaAPI(int row,int col){
+        yourPropertySlotPressed[0]=row;
+         yourPropertySlotPressed[1]=col;
+    }
+    
+     public void selectDiscardDeckViaAPI(){
+        discardDeckPressed = true;
+    }
+     
+    public void selectCardDeckViaAPI(){
+        cardDeckPressed = true;
+    }
+    public void selectEndTurnEarlyViaAPI(){
+        endTurnEarlyPressed = true;
+    }
+    
+     public void selectMoneySlotButtonViaAPI(){
+        yourMoneySlotButtonPressed = true;
+    }
+     
+      public void selectMakeMeWinnerButtonViaAPI(){
+        makeMeWinner = true;
+    }
+      
+      public void setLastPropertyPressedViaAPI(){
+        lastPropertyPressed = yourPropertySlot_8_5;
+    }
+      
+      public void yourMoneySlotPressedPressedViaAPI(boolean set){
+        yourMoneySlotButtonPressed = set;
+    }
+      
+     
+    
     /**
      * @param args the command line arguments
      */

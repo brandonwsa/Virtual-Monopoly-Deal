@@ -36,8 +36,7 @@ public class PlayerTest {
         System.out.println("init");
         Player instance = new Player();
         instance.init();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertTrue(instance.hand.get(0)==null);
     }
 
     /**
@@ -49,9 +48,7 @@ public class PlayerTest {
         Player instance = new Player();
         List expResult = null;
         List result = instance.getHand();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertNotEquals(expResult, result);
     }
 
     /**
@@ -59,13 +56,12 @@ public class PlayerTest {
      */
     @Test
     public void testGetLastCardPlayed() {
+        Card c = new Card(5);
         System.out.println("getLastCardPlayed");
         Player instance = new Player();
-        Card expResult = null;
+        instance.setLastCardPlayed(c);
         Card result = instance.getLastCardPlayed();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(c, result);
     }
 
     /**
@@ -73,13 +69,12 @@ public class PlayerTest {
      */
     @Test
     public void testGetMoney() {
+        Card c = new Card(4);
         System.out.println("getMoney");
         Player instance = new Player();
-        List expResult = null;
+        instance.addMoney(c);
         List result = instance.getMoney();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertNotEquals(null, result);
     }
 
     /**
@@ -89,11 +84,10 @@ public class PlayerTest {
     public void testGetProperties() {
         System.out.println("getProperties");
         Player instance = new Player();
-        List expResult = null;
+        Card c = new Card(0);
+        instance.addProperty(c, 3);
         List result = instance.getProperties();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertNotEquals(null, result);
     }
 
     /**
@@ -106,8 +100,6 @@ public class PlayerTest {
         int expResult = 0;
         int result = instance.getCompletedProperties();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -117,11 +109,10 @@ public class PlayerTest {
     public void testGetName() {
         System.out.println("getName");
         Player instance = new Player();
-        String expResult = "";
+        String expResult = "becca";
+        instance.setName("becca");
         String result = instance.getName();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -130,12 +121,12 @@ public class PlayerTest {
     @Test
     public void testGetTotalMoney() {
         System.out.println("getTotalMoney");
+        Card c = new Card(0);
         Player instance = new Player();
-        int expResult = 0;
+        instance.addMoney(c);
+        int expResult = 10;
         int result = instance.getTotalMoney();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -144,12 +135,11 @@ public class PlayerTest {
     @Test
     public void testGetCardToPlay() {
         System.out.println("getCardToPlay");
+         Card c = new Card(0);
         Player instance = new Player();
-        Card expResult = null;
+        instance.setCardToPlay(c);
         Card result = instance.getCardToPlay();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertNotEquals(null, result);
     }
 
     /**
@@ -158,11 +148,10 @@ public class PlayerTest {
     @Test
     public void testSetLastCardPlayed() {
         System.out.println("setLastCardPlayed");
-        Card c = null;
+        Card c = new Card(0);
         Player instance = new Player();
         instance.setLastCardPlayed(c);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(instance.getLastCardPlayed(),c);
     }
 
     /**
@@ -171,11 +160,10 @@ public class PlayerTest {
     @Test
     public void testSetName() {
         System.out.println("setName");
-        String n = "";
+        String n = "becca";
         Player instance = new Player();
         instance.setName(n);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertNotEquals(instance.getName(),null);
     }
 
     /**
@@ -184,11 +172,10 @@ public class PlayerTest {
     @Test
     public void testSetCardToPlay() {
         System.out.println("setCardToPlay");
-        Card c = null;
+        Card c = new Card(1);
         Player instance = new Player();
         instance.setCardToPlay(c);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertNotEquals(instance.getCardToPlay(),null);
     }
 
     /**
@@ -197,11 +184,10 @@ public class PlayerTest {
     @Test
     public void testAddToHand() {
         System.out.println("addToHand");
-        Card card = null;
+        Card card = new Card(0);
         Player instance = new Player();
         instance.addToHand(card);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertNotEquals(instance.getHand().get(0),null);
     }
 
     /**
@@ -210,11 +196,10 @@ public class PlayerTest {
     @Test
     public void testAddMoney() {
         System.out.println("addMoney");
-        Card card = null;
+        Card card = new Card(0);
         Player instance = new Player();
         instance.addMoney(card);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertNotEquals(instance.getMoney(),null);
     }
 
     /**
@@ -223,12 +208,10 @@ public class PlayerTest {
     @Test
     public void testAddProperty() {
         System.out.println("addProperty");
-        Card card = null;
-        int propertySlotColumn = 0;
+        Card card = new Card(70);
+        int propertySlotColumn = 1;
         Player instance = new Player();
         instance.addProperty(card, propertySlotColumn);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -237,12 +220,11 @@ public class PlayerTest {
     @Test
     public void testAddHouse() {
         System.out.println("addHouse");
-        Card card = null;
-        int propertySlotColumn = 0;
+        Card card = new Card(50);
+        int propertySlotColumn = 3;
         Player instance = new Player();
         instance.addHouse(card, propertySlotColumn);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(instance.LAST_EXCEPTION,null);
     }
 
     /**
@@ -251,12 +233,11 @@ public class PlayerTest {
     @Test
     public void testAddHotel() {
         System.out.println("addHotel");
-        Card card = null;
-        int propertySlotColumn = 0;
+        Card card = new Card(50);
+        int propertySlotColumn = 3;
         Player instance = new Player();
         instance.addHotel(card, propertySlotColumn);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(instance.LAST_EXCEPTION,null);
     }
 
     /**
@@ -267,8 +248,7 @@ public class PlayerTest {
         System.out.println("addCompletedProperty");
         Player instance = new Player();
         instance.addCompletedProperty();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertTrue(instance.getCompletedProperties()>0);
     }
 
     /**
@@ -280,8 +260,7 @@ public class PlayerTest {
         Card card = null;
         Player instance = new Player();
         instance.removeCardFromHand(card);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(instance.LAST_EXCEPTION,null);
     }
 
     /**
@@ -290,11 +269,11 @@ public class PlayerTest {
     @Test
     public void testDrawCard() {
         System.out.println("drawCard");
-        Card c = null;
+        Card c = new Card(0);
         Player instance = new Player();
         instance.drawCard(c);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(instance.LAST_EXCEPTION,null);
+       
     }
 
     /**
@@ -303,12 +282,11 @@ public class PlayerTest {
     @Test
     public void testDiscardCard() {
         System.out.println("discardCard");
-        Card card = null;
-        Deck discard = null;
+        Card card = new Card(0);
+        Deck discard = new Deck();
         Player instance = new Player();
         instance.discardCard(card, discard);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(discard.getTopCard(),card);
     }
 
     /**
@@ -320,8 +298,6 @@ public class PlayerTest {
         Card card = null;
         Player instance = new Player();
         instance.playCard(card);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -330,13 +306,14 @@ public class PlayerTest {
     @Test
     public void testPlayPropertyCard() {
         System.out.println("playPropertyCard");
-        int[] propertySlot = null;
+        int[] propertySlot = new int[1];
+        Card c = new Card(70);
+        propertySlot[0]=1;
         Player instance = new Player();
-        boolean expResult = false;
+        instance.setCardToPlay(c);
+        boolean expResult = true;
         boolean result = instance.playPropertyCard(propertySlot);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -345,13 +322,14 @@ public class PlayerTest {
     @Test
     public void testPlayHouseOrHotelCard() {
         System.out.println("playHouseOrHotelCard");
-        int[] propertySlot = null;
+        Card c = new Card(70);
+       int[] propertySlot = new int[1];
+        propertySlot[0]=1;
         Player instance = new Player();
+        instance.setCardToPlay(c);
         boolean expResult = false;
         boolean result = instance.playHouseOrHotelCard(propertySlot);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -361,9 +339,11 @@ public class PlayerTest {
     public void testPlayMoneyCard() {
         System.out.println("playMoneyCard");
         Player instance = new Player();
+        Card c = new Card(0);
+        instance.setCardToPlay(c);
+        int money = instance.getTotalMoney();
         instance.playMoneyCard();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertTrue(money<instance.getTotalMoney());
     }
 
     /**
@@ -372,11 +352,10 @@ public class PlayerTest {
     @Test
     public void test_checkCompletedProperties() {
         System.out.println("_checkCompletedProperties");
-        PropertySlot propSlot = null;
+        PropertySlot propSlot = new PropertySlot(1);
         Player instance = new Player();
         instance._checkCompletedProperties(propSlot);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(0,instance.getCompletedProperties());
     }
 
     /**
@@ -386,11 +365,10 @@ public class PlayerTest {
     public void testIsHuman() {
         System.out.println("isHuman");
         Player instance = new Player();
-        boolean expResult = false;
+        instance.setName("becca");
+        boolean expResult = true;
         boolean result = instance.isHuman();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -400,11 +378,9 @@ public class PlayerTest {
     public void testHandIsEmpty() {
         System.out.println("handIsEmpty");
         Player instance = new Player();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.handIsEmpty();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -415,8 +391,7 @@ public class PlayerTest {
         System.out.println("printHand");
         Player instance = new Player();
         instance.printHand();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       assertEquals(instance.LAST_EXCEPTION,null);
     }
     
 }
