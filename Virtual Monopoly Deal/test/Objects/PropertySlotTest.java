@@ -34,11 +34,9 @@ public class PropertySlotTest {
     @Test
     public void testAddPropertyCard() {
         System.out.println("addPropertyCard");
-        Card c = null;
-        PropertySlot instance = null;
+        Card c = new Card(70);
+        PropertySlot instance = new PropertySlot(2);
         instance.addPropertyCard(c);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -47,11 +45,9 @@ public class PropertySlotTest {
     @Test
     public void testAddHouseCard() {
         System.out.println("addHouseCard");
-        Card c = null;
-        PropertySlot instance = null;
+        Card c = new Card(80);
+        PropertySlot instance = new PropertySlot(2);
         instance.addHouseCard(c);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -60,11 +56,9 @@ public class PropertySlotTest {
     @Test
     public void testAddHotelCard() {
         System.out.println("addHotelCard");
-        Card c = null;
-        PropertySlot instance = null;
+        Card c = new Card(50);
+        PropertySlot instance = new PropertySlot(2);
         instance.addHotelCard(c);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -73,12 +67,14 @@ public class PropertySlotTest {
     @Test
     public void testGetRentAmount() {
         System.out.println("getRentAmount");
-        PropertySlot instance = null;
-        int expResult = 0;
+        PropertySlot instance = new PropertySlot(1);
+        Card c = new Card(0);
+        instance.addPropertyCard(c);
+        instance.setPropertyColor("green");
+        instance.setRentAmount();
+        int expResult = 2;
         int result = instance.getRentAmount();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -87,12 +83,10 @@ public class PropertySlotTest {
     @Test
     public void testGetPropertySlotNumber() {
         System.out.println("getPropertySlotNumber");
-        PropertySlot instance = null;
-        int expResult = 0;
+        PropertySlot instance = new PropertySlot(2);
+        int expResult = 2;
         int result = instance.getPropertySlotNumber();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -101,12 +95,11 @@ public class PropertySlotTest {
     @Test
     public void testGetPropertyColor() {
         System.out.println("getPropertyColor");
-        PropertySlot instance = null;
-        String expResult = "";
+        PropertySlot instance = new PropertySlot(2);
+        instance.setPropertyColor("green");
+        String expResult = "green";
         String result = instance.getPropertyColor();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -115,12 +108,10 @@ public class PropertySlotTest {
     @Test
     public void testGetIsCompleted() {
         System.out.println("getIsCompleted");
-        PropertySlot instance = null;
+        PropertySlot instance = new PropertySlot(2);
         boolean expResult = false;
         boolean result = instance.getIsCompleted();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -128,13 +119,14 @@ public class PropertySlotTest {
      */
     @Test
     public void testGetTotalProperties() {
+        Card c = new Card(70);
         System.out.println("getTotalProperties");
-        PropertySlot instance = null;
-        int expResult = 0;
+        PropertySlot instance = new PropertySlot(2);
+        instance.addPropertyCard(c);
+        instance.getPropertiesInSlot();
+        int expResult = 1;
         int result = instance.getTotalProperties();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -143,11 +135,10 @@ public class PropertySlotTest {
     @Test
     public void testSetPropertyColor() {
         System.out.println("setPropertyColor");
-        String color = "";
-        PropertySlot instance = null;
+        String color = "green";
+        PropertySlot instance = new PropertySlot(2);
         instance.setPropertyColor(color);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertNotEquals(instance.getPropertyColor(),null);
     }
 
     /**
@@ -156,10 +147,12 @@ public class PropertySlotTest {
     @Test
     public void testSetRentAmount() {
         System.out.println("setRentAmount");
-        PropertySlot instance = null;
+        PropertySlot instance = new PropertySlot(2);
+        Card c = new Card(0);
+        instance.addPropertyCard(c);
+        instance.setPropertyColor("green");
         instance.setRentAmount();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(2,instance.getRentAmount());
     }
 
     /**
@@ -168,12 +161,10 @@ public class PropertySlotTest {
     @Test
     public void testCanAddPropertyCard() {
         System.out.println("canAddPropertyCard");
-        PropertySlot instance = null;
-        boolean expResult = false;
+        PropertySlot instance = new PropertySlot(5);
+        boolean expResult = true;
         boolean result = instance.canAddPropertyCard();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -181,13 +172,18 @@ public class PropertySlotTest {
      */
     @Test
     public void testCanAddHouse() {
+        Card c = new Card(107);
+        Card d = new Card(106);
+        Card e = new Card(105);
         System.out.println("canAddHouse");
-        PropertySlot instance = null;
-        boolean expResult = false;
+        PropertySlot instance = new PropertySlot(6);
+        instance.setPropertyColor("yellow");
+        instance.addPropertyCard(c);
+        instance.addPropertyCard(d);
+        instance.addPropertyCard(e);
+        boolean expResult = true;
         boolean result = instance.canAddHouse();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -196,12 +192,19 @@ public class PropertySlotTest {
     @Test
     public void testCanAddHotel() {
         System.out.println("canAddHotel");
-        PropertySlot instance = null;
-        boolean expResult = false;
+         Card c = new Card(107);
+        Card d = new Card(106);
+        Card e = new Card(105);
+        Card g = new Card(0);
+       PropertySlot instance = new PropertySlot(6);
+        instance.setPropertyColor("yellow");
+        instance.addPropertyCard(c);
+        instance.addPropertyCard(d);
+        instance.addPropertyCard(e);
+        instance.addHouseCard(g);
+        boolean expResult = true;
         boolean result = instance.canAddHotel();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -210,10 +213,10 @@ public class PropertySlotTest {
     @Test
     public void testPrintProperties() {
         System.out.println("printProperties");
-        PropertySlot instance = null;
+        Card c = new Card(0);
+        PropertySlot instance = new PropertySlot(2);
+        instance.addPropertyCard(c);
         instance.printProperties();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -222,12 +225,12 @@ public class PropertySlotTest {
     @Test
     public void testIsEmpty() {
         System.out.println("isEmpty");
-        PropertySlot instance = null;
+        Card c = new Card(105);
+        PropertySlot instance = new PropertySlot(1);
+        instance.addPropertyCard(c);
         boolean expResult = false;
         boolean result = instance.isEmpty();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -235,13 +238,14 @@ public class PropertySlotTest {
      */
     @Test
     public void testGetPropertiesInSlot() {
+        Card c = new Card(105);
         System.out.println("getPropertiesInSlot");
-        PropertySlot instance = null;
-        ArrayList<Card> expResult = null;
+        PropertySlot instance = new PropertySlot(2);
+        instance.addPropertyCard(c);
+        ArrayList<Card> expResult = new ArrayList<>();
+        expResult.add(c);
         ArrayList<Card> result = instance.getPropertiesInSlot();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }
