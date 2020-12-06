@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class Player{
     
+      public static Exception LAST_EXCEPTION; //captures last exception in class. Used for testing.
     protected String name;
  //   protected int ID; //dont think we need
     protected int completedProperties;
@@ -143,6 +144,8 @@ public class Player{
         properties.get(propertySlotColumn-1).addHouseCard(card); //minus 1 for correct index
         System.out.println("House added to prop "+properties.get(propertySlotColumn-1));
         properties.get(propertySlotColumn-1).printProperties();
+       LAST_EXCEPTION = null;
+        
     }
     
     /**
@@ -154,6 +157,7 @@ public class Player{
         properties.get(propertySlotColumn-1).addHotelCard(card); //minus 1 for correct index
         System.out.println("Hotel added to prop "+properties.get(propertySlotColumn-1));
         properties.get(propertySlotColumn-1).printProperties();
+       LAST_EXCEPTION = null;
     }
     
     public void addCompletedProperty(){
@@ -172,6 +176,7 @@ public class Player{
             if (c == card){
                 hand.set(i, null); //set card to null
                 System.out.println("Card removed from hand.");
+                LAST_EXCEPTION = null;
                 return;
             }
             i++;
@@ -184,6 +189,7 @@ public class Player{
      */
     public void drawCard(Card c){
         addToHand(c);
+        LAST_EXCEPTION = null;
     }
     
     /**
@@ -435,9 +441,10 @@ public class Player{
             if (hand.get(i) != null){
                 System.out.println(hand.get(i).getName());
             }
+           
             
         }
-            
+            LAST_EXCEPTION = null; 
     }
     
 }
