@@ -36,8 +36,7 @@ public class BotTest {
         int diffLevel = 0;
         Bot instance = new Bot();
         instance.setDifficulty(diffLevel);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(instance.getDifficulty(),0);
     }
 
     /**
@@ -48,10 +47,9 @@ public class BotTest {
         System.out.println("getDifficulty");
         Bot instance = new Bot();
         int expResult = 0;
+        instance.setDifficulty(expResult);
         int result = instance.getDifficulty();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -61,11 +59,8 @@ public class BotTest {
     public void testPickAPlay() {
         System.out.println("pickAPlay");
         Bot instance = new Bot();
-        int expResult = 0;
         int result = instance.pickAPlay();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertTrue(result<7);
     }
 
     /**
@@ -77,9 +72,7 @@ public class BotTest {
         Bot instance = new Bot();
         Card expResult = null;
         Card result = instance.pickACard();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertNull(result);
     }
 
     /**
@@ -92,9 +85,7 @@ public class BotTest {
         Bot instance = new Bot();
         int[] expResult = null;
         int[] result = instance.pickPropertySlot(c);
-        assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertNotSame(expResult, result);
     }
     
 }
