@@ -12,6 +12,8 @@ package Main;
 public class Main {
     
     public static void main(String[] args){
+        boolean isReset;
+        
         //make game
         Game VirtualMonopolyDeal = new Game();
         boolean playAgain = VirtualMonopolyDeal.runGame();
@@ -25,25 +27,30 @@ public class Main {
             System.out.println("Something happened while sleeping. e: "+e);
         }
         
+        
         while(true){
             //if player wants to play again, reset game and run it again. Continue this till they system.exit() out.
             if (playAgain == true){
-                VirtualMonopolyDeal.resetGame();
-                playAgain = VirtualMonopolyDeal.runGame();
-                
-                try{
-                    System.out.println("Sleeping...");
-                    Thread.sleep(500); 
+                isReset = VirtualMonopolyDeal.resetGame();
+                if (isReset){
+                    playAgain = VirtualMonopolyDeal.runGame();
+                    try{
+                        System.out.println("Sleeping...");
+                        Thread.sleep(500); 
+                    }
+                    catch(InterruptedException e){
+                        System.out.println("Something happened while sleeping. e: "+e);
+                    }
                 }
-                catch(InterruptedException e){
-                    System.out.println("Something happened while sleeping. e: "+e);
+                else {
+                    System.out.println("Game did not fully reset properly...");
+                    return;
                 }
             }
             else{
                 return;
             }
-        }
-        
+        }  
     }
     
 }

@@ -7,6 +7,7 @@ import java.util.Stack;
 
 public class Deck {
     
+    public static Exception LAST_EXCEPTION; //captures last exception in class. Used for testing.
     private Stack<Card> cardsInDeck;
     private int amountOfCards;
     
@@ -19,12 +20,20 @@ public class Deck {
      * Fills deck with cards.
      */
     public void fillDeck(){
-        Card card;
-        //fill deck with cards. 108 total cards in the deck
-        for (int i=0; i<108; i++){
-            card = new Card(i);
-            addCard(card);
+        
+        try{
+            Card card;
+            //fill deck with cards. 108 total cards in the deck
+            for (int i=0; i<108; i++){
+                card = new Card(i);
+                addCard(card);
+            }
         }
+        catch(Exception e){
+            System.out.println("Error when filling deck in fillDeck() in Deck.java. e: "+e);
+            LAST_EXCEPTION = e; //capture exception to use for testing.
+        }
+        
     }
     
     public int addCard(Card card){
@@ -58,8 +67,15 @@ public class Deck {
      * Prints the cards in the deck, the name and their type.
      */
     public void printCards(){
-        for (int i=0; i<cardsInDeck.size(); i++){
-            System.out.println(cardsInDeck.get(i).getName()+"\t type: "+cardsInDeck.get(i).getType());  
-        }  
+        try{
+            for (int i=0; i<cardsInDeck.size(); i++){
+                System.out.println(cardsInDeck.get(i).getName()+"\t type: "+cardsInDeck.get(i).getType());  
+            }  
+        }
+        catch(Exception e){
+            System.out.println("Error when printing cards in printCards() in Deck.java. e: "+e);
+            LAST_EXCEPTION = e; //capture exception to use for testing.
+        }
+        
     }
 }

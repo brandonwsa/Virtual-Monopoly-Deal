@@ -12,6 +12,8 @@
 package GUI;
 public class HowToPlayScreen extends javax.swing.JFrame {
 
+    public static Exception LAST_EXCEPTION; //used to capture last exception in the class. Also used for testing.
+    
     /**
      * Creates new form HowToPlay
      */
@@ -72,22 +74,33 @@ public class HowToPlayScreen extends javax.swing.JFrame {
             }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(HowToPlayScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            LAST_EXCEPTION = ex;
         } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(HowToPlayScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            LAST_EXCEPTION = ex;
         } catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(HowToPlayScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            LAST_EXCEPTION = ex;
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(HowToPlayScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            LAST_EXCEPTION = ex;
         }
         //</editor-fold>
         //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new HowToPlayScreen().setVisible(true);
-            }
-        });
+        try{
+            /* Create and display the form */
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    new HowToPlayScreen().setVisible(true);
+                }
+            });
+        }
+        catch(Exception e){
+            System.out.println("Error in main(String args[]) in HowToPlayScreen.java. e: "+e);
+            LAST_EXCEPTION = e;
+        }
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

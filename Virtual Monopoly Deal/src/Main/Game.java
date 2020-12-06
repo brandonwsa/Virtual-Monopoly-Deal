@@ -851,12 +851,20 @@ public class Game {
         System.out.println("Ending turn early...");
     }
     
-    public void resetGame(){
-        System.out.println("Resetting game...");
-        player = null;
-        bot_1 = null;
-        bot_2 = null;
-        init();
+    public boolean resetGame(){
+        try{
+            System.out.println("Resetting game...");
+            player = null;
+            bot_1 = null;
+            bot_2 = null;
+            init();
+        }
+        catch(Exception e){
+            System.out.println("Error when resetting game in Game.resetGame(). e: "+e);
+            return false;
+        }
+
+        return true;
     }
     
  /*   public static void main(String[] args){

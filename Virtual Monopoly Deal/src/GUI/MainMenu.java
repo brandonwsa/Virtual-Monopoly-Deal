@@ -12,6 +12,7 @@
 package GUI;
 public class MainMenu extends javax.swing.JFrame {
     
+    public static Exception LAST_EXCEPTION; //used to capture last exception in the class. Also used for testing.
     private GamePlayScreen GPS;
     
     /**
@@ -82,7 +83,14 @@ public class MainMenu extends javax.swing.JFrame {
 
     
     public void setGamePlayScreen(GamePlayScreen gps){
-        GPS = gps;
+        try{
+            GPS = gps;
+        }
+        catch(Exception e){
+            System.out.println("Error when in setGamePlayScreen() in MainMenu.java. e: "+e);
+            LAST_EXCEPTION = e;
+        }
+        
     }
     
     /**
@@ -103,24 +111,35 @@ public class MainMenu extends javax.swing.JFrame {
             }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            LAST_EXCEPTION = ex;
         } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            LAST_EXCEPTION = ex;
         } catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            LAST_EXCEPTION = ex;
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            LAST_EXCEPTION = ex;
         }
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MainMenu().setVisible(true);
-            }
-        });
+        try{
+            /* Create and display the form */
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    new MainMenu().setVisible(true);
+                }
+            });
+        }
+        catch(Exception e){
+            System.out.println("Error in main(String args[]) in MainMenu.java");
+            LAST_EXCEPTION = e;
+        }
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
