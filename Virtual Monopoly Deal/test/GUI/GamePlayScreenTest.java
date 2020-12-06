@@ -273,6 +273,12 @@ public class GamePlayScreenTest {
     public void testGetNumberOfPlayers() {
         System.out.println("getNumberOfPlayers");
         GamePlayScreen instance = new GamePlayScreen();
+        try{
+            Thread.sleep(1000);
+        }
+        catch(Exception e){
+            //caught exception. no need to print message
+        }
         instance.setNumberOfPlayers(3);
         int result = instance.getNumberOfPlayers();
         assertNotEquals(0,result);
