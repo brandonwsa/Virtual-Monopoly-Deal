@@ -33,13 +33,11 @@ public class WinnerScreenTest {
     @Test
     public void testSetWinner() {
         System.out.println("setWinner");
-        String name = "";
-        int money = 0;
-        int properties = 0;
+        String name = "brandon";
+        int money = 40;
+        int properties = 9;
         WinnerScreen instance = new WinnerScreen();
         instance.setWinner(name, money, properties);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -52,8 +50,6 @@ public class WinnerScreenTest {
         boolean expResult = false;
         boolean result = instance.getPlayAgain();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -64,8 +60,6 @@ public class WinnerScreenTest {
         System.out.println("main");
         String[] args = null;
         WinnerScreen.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }
