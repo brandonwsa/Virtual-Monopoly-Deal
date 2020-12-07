@@ -24,6 +24,7 @@ public class GamePlayScreen extends javax.swing.JFrame {
     private boolean endTurnEarlyPressed = false;
     private int numberOfPlayers;
     private int difficultyLevel; 
+    private int victim; //will be 2 if player2 is victim or 3 if player 3 is victim.
     //shouldnt need this 2D array anymore, but keeping in case we do.
  //   private int[][] yourPropertySlots = new int[4][10]; //2D array used to store information on whether or not a specified property slot was pressed or not. If one was pressed, a 1 will be
                                                        //temporarily placed in the correct row column association with the property slot button.
@@ -45,6 +46,7 @@ public class GamePlayScreen extends javax.swing.JFrame {
         
         difficultyLevel = 0;
         numberOfPlayers = 0;
+        victim = 0;
         
         //add handslot buttons to arraylist
         handSlots.add(handSlot_1);
@@ -196,7 +198,13 @@ public class GamePlayScreen extends javax.swing.JFrame {
     private void initComponents() {
 
         jLayeredPane1 = new javax.swing.JLayeredPane();
+        actionCardPrompt = new javax.swing.JLabel();
         make_me_win = new javax.swing.JButton();
+        rentMoneyPaymentPrompt = new javax.swing.JPanel();
+        moneyPromptLabel = new javax.swing.JLabel();
+        moneyListLabel = new javax.swing.JLabel();
+        addMoneyToRentAmountButton = new javax.swing.JButton();
+        moneyInHandComboBox = new javax.swing.JComboBox<>();
         confirmExitPanel = new javax.swing.JPanel();
         areYouSureLabel = new javax.swing.JLabel();
         yesToExitButton = new javax.swing.JButton();
@@ -294,6 +302,7 @@ public class GamePlayScreen extends javax.swing.JFrame {
         player3Label = new javax.swing.JLabel();
         moneyEmblem1 = new javax.swing.JLabel();
         player3TotalMoney = new javax.swing.JTextField();
+        player3PlayAgainstButton = new javax.swing.JButton();
         player2PlayArea = new javax.swing.JPanel();
         player2MoneySlot = new javax.swing.JButton();
         player2PropertySlot_1_6 = new javax.swing.JButton();
@@ -359,6 +368,7 @@ public class GamePlayScreen extends javax.swing.JFrame {
         moneyEmblem = new javax.swing.JLabel();
         player2TotalMoney = new javax.swing.JTextField();
         player2Label = new javax.swing.JLabel();
+        player2PlayAgainstButton = new javax.swing.JButton();
         yourPlayArea = new javax.swing.JPanel();
         yourMoneySlot = new javax.swing.JButton();
         yourPropertySlot_1_6 = new javax.swing.JButton();
@@ -432,6 +442,11 @@ public class GamePlayScreen extends javax.swing.JFrame {
         jLayeredPane1.setPreferredSize(new java.awt.Dimension(1920, 1080));
         jLayeredPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        actionCardPrompt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        actionCardPrompt.setForeground(new java.awt.Color(255, 255, 255));
+        jLayeredPane1.add(actionCardPrompt, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 620, 30));
+        actionCardPrompt.setVisible(false);
+
         make_me_win.setText("Make me win");
         make_me_win.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -439,6 +454,44 @@ public class GamePlayScreen extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(make_me_win, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 10, -1, -1));
+
+        rentMoneyPaymentPrompt.setBackground(new java.awt.Color(153, 0, 0));
+        rentMoneyPaymentPrompt.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 255, 255)));
+        rentMoneyPaymentPrompt.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        moneyPromptLabel.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        moneyPromptLabel.setForeground(new java.awt.Color(255, 255, 255));
+        moneyPromptLabel.setText("Money:");
+        rentMoneyPaymentPrompt.add(moneyPromptLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        moneyListLabel.setForeground(new java.awt.Color(255, 255, 255));
+        moneyListLabel.setText("Are you sure you want to exit the game?");
+        rentMoneyPaymentPrompt.add(moneyListLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+
+        addMoneyToRentAmountButton.setBackground(new java.awt.Color(255, 255, 255));
+        addMoneyToRentAmountButton.setText("Add");
+        addMoneyToRentAmountButton.setBorder(exitGameButton.getBorder());
+        addMoneyToRentAmountButton.setPreferredSize(new java.awt.Dimension(128, 32));
+        addMoneyToRentAmountButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addMoneyToRentAmountButtonActionPerformed(evt);
+            }
+        });
+        rentMoneyPaymentPrompt.add(addMoneyToRentAmountButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, -1, -1));
+
+        moneyInHandComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        moneyInHandComboBox.removeAllItems();
+        moneyInHandComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                moneyInHandComboBoxActionPerformed(evt);
+            }
+        });
+        rentMoneyPaymentPrompt.add(moneyInHandComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
+
+        confirmExitPanel.setVisible(false);
+
+        jLayeredPane1.add(rentMoneyPaymentPrompt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1500, 210, 410, 430));
+        rentMoneyPaymentPrompt.setVisible(false);
 
         confirmExitPanel.setBackground(new java.awt.Color(153, 0, 0));
         confirmExitPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 255, 255)));
@@ -1315,8 +1368,15 @@ public class GamePlayScreen extends javax.swing.JFrame {
         player3TotalMoney.setForeground(new java.awt.Color(255, 255, 255));
         player3TotalMoney.setText("0");
         player3TotalMoney.setBorder(null);
-        player3TotalMoney.setOpaque(false);
         player3PlayArea.add(player3TotalMoney, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 70, -1));
+
+        player3PlayAgainstButton.setText("Play Against");
+        player3PlayAgainstButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player3PlayAgainstButtonActionPerformed(evt);
+            }
+        });
+        player3PlayArea.add(player3PlayAgainstButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
 
         jLayeredPane1.add(player3PlayArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 1910, 260));
 
@@ -1893,7 +1953,6 @@ public class GamePlayScreen extends javax.swing.JFrame {
         player2TotalMoney.setForeground(new java.awt.Color(255, 255, 255));
         player2TotalMoney.setText("0");
         player2TotalMoney.setBorder(null);
-        player2TotalMoney.setOpaque(false);
         player2TotalMoney.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 player2TotalMoneyActionPerformed(evt);
@@ -1905,6 +1964,14 @@ public class GamePlayScreen extends javax.swing.JFrame {
         player2Label.setForeground(new java.awt.Color(255, 255, 255));
         player2Label.setText("Player2:");
         player2PlayArea.add(player2Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
+
+        player2PlayAgainstButton.setText("Play Against");
+        player2PlayAgainstButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player2PlayAgainstButtonActionPerformed(evt);
+            }
+        });
+        player2PlayArea.add(player2PlayAgainstButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
         jLayeredPane1.add(player2PlayArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, 1910, 260));
 
@@ -2528,7 +2595,6 @@ public class GamePlayScreen extends javax.swing.JFrame {
         yourTotalMoney.setForeground(new java.awt.Color(255, 255, 255));
         yourTotalMoney.setText("0");
         yourTotalMoney.setBorder(null);
-        yourTotalMoney.setOpaque(false);
         yourTotalMoney.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 yourTotalMoneyActionPerformed(evt);
@@ -3396,6 +3462,44 @@ public class GamePlayScreen extends javax.swing.JFrame {
         makeMeWinner = true;
     }//GEN-LAST:event_make_me_winActionPerformed
 
+    private void player3PlayAgainstButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player3PlayAgainstButtonActionPerformed
+        victim = 3;
+    }//GEN-LAST:event_player3PlayAgainstButtonActionPerformed
+
+    private void player2PlayAgainstButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player2PlayAgainstButtonActionPerformed
+        victim = 2;
+    }//GEN-LAST:event_player2PlayAgainstButtonActionPerformed
+
+    private void addMoneyToRentAmountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMoneyToRentAmountButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addMoneyToRentAmountButtonActionPerformed
+
+    private void moneyInHandComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moneyInHandComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_moneyInHandComboBoxActionPerformed
+
+    /**
+     * Set text of action card prompt.
+     * @param prompt 
+     */
+    public void setActionCardPrompt(String prompt){
+        actionCardPrompt.setText(prompt);
+    }
+    
+    
+    /**
+     * Adds money cards in your money slot to combo box in rent payment prompt.
+     * @param cards 
+     */
+    public void setMoneyComboBox(ArrayList<String> cards){
+        
+        //iterate through money string list and add money to combo box.
+        for (String item : cards){
+            moneyInHandComboBox.addItem(item);
+        }
+        
+    }
+    
     /**
      * Set player starting hand visually in GUI.
      * @param cardImagePaths 
@@ -3572,6 +3676,31 @@ public class GamePlayScreen extends javax.swing.JFrame {
     
     public boolean getMakeMeWinner(){
         return makeMeWinner;
+    }
+    
+    /**
+     * gets victim of an action card player is playing against.
+     * @return 
+     */
+    public int getVictim(){
+        return victim;
+    }
+    
+    /**
+     * Display or not display action card prompt
+     * @param value 
+     */
+    public void displayActionCardPrompt(boolean value){
+        actionCardPrompt.setVisible(value);
+    }
+    
+    
+    /**
+     * display or not display rent payment prompt for player.
+     * @param value 
+     */
+    public void displayRentPaymentPrompt(boolean value){
+        rentMoneyPaymentPrompt.setVisible(value);
     }
     
     /**
@@ -3853,6 +3982,8 @@ public class GamePlayScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel actionCardPrompt;
+    private javax.swing.JButton addMoneyToRentAmountButton;
     private javax.swing.JLabel areYouSureLabel;
     private javax.swing.JPanel confirmExitPanel;
     private javax.swing.JButton deckButton;
@@ -3882,10 +4013,14 @@ public class GamePlayScreen extends javax.swing.JFrame {
     private javax.swing.JLabel moneyEmblem;
     private javax.swing.JLabel moneyEmblem1;
     private javax.swing.JLabel moneyEmblem2;
+    private javax.swing.JComboBox<String> moneyInHandComboBox;
     private javax.swing.JLabel moneyLabel;
+    private javax.swing.JLabel moneyListLabel;
+    private javax.swing.JLabel moneyPromptLabel;
     private javax.swing.JButton noToExitButton;
     private javax.swing.JLabel player2Label;
     private javax.swing.JButton player2MoneySlot;
+    private javax.swing.JButton player2PlayAgainstButton;
     private javax.swing.JPanel player2PlayArea;
     private javax.swing.JButton player2PropertySlot_1;
     private javax.swing.JButton player2PropertySlot_10;
@@ -3950,6 +4085,7 @@ public class GamePlayScreen extends javax.swing.JFrame {
     private javax.swing.JTextField player2TotalMoney;
     private javax.swing.JLabel player3Label;
     private javax.swing.JButton player3MoneySlot;
+    private javax.swing.JButton player3PlayAgainstButton;
     private javax.swing.JPanel player3PlayArea;
     private javax.swing.JButton player3PropertySlot_1;
     private javax.swing.JButton player3PropertySlot_10;
@@ -4013,6 +4149,7 @@ public class GamePlayScreen extends javax.swing.JFrame {
     private javax.swing.JButton player3PropertySlot_9_6;
     private javax.swing.JTextField player3TotalMoney;
     private javax.swing.JLabel propertiesLabel;
+    private javax.swing.JPanel rentMoneyPaymentPrompt;
     private javax.swing.JButton resumeButton;
     private javax.swing.JLabel tableBackground;
     private javax.swing.JButton viewHandButton;

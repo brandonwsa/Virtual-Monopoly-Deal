@@ -32,7 +32,7 @@ public class Card{
     private final String[] cardTypes = {"money", "property", "rent", "wild-rent", "wildcard", "action"}; //used to house the types of cards a card can be.
                                                                                                         //wildcard is wild property card.
 
-      private String propertyColor = "";
+      private String propertyColor = ""; //will need to refactor name
 //    private String color_1;
 //    private String color_2;
     

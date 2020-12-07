@@ -85,6 +85,22 @@ public class Player{
         return cardToPlay;
     }
     
+    /**
+     * Gets names with values from money.
+     * @return 
+     */
+    public ArrayList getCardNamesWithValuesFromMoney(){
+        ArrayList<String> namesAndValues = new ArrayList();
+        
+        for (Card c : money){
+            if (c!=null){
+                namesAndValues.add(c.getName().concat(" Value: "+c.getValue()));
+            }
+        }
+        
+        return namesAndValues;
+    }
+    
     public void setLastCardPlayed(Card c){
         lastCardPlayed = c;
     }
@@ -393,6 +409,87 @@ public class Player{
         removeCardFromHand(c);
     }
     
+    
+    public boolean payRent(int rent, Player renter){
+        
+        if (hasToPayRent() == false){
+            return false;
+        }
+        
+        while (rent > 0){
+            
+        }
+        
+        return true;
+    }
+    
+    /**
+     * Checks to see if player can play a rent card against their victim.
+     * @param propertySlot
+     * @param victim
+     * @return value of rent for that propertySlot or 0 if has just so no. or -1 if can not play
+     */
+    public int canPlayRentCard(int[] propertySlot, Player victim){
+        try{
+            Card c = getCardToPlay();
+            int rentValue;
+            String rentColor = c.getPropertyColor(); //need to refactor method name.
+            int propertySlotColumn = propertySlot[0];
+            PropertySlot propSlot = properties.get(propertySlotColumn-1); //property slot to add card to
+            String propertyColor = propSlot.getPropertyColor();
+
+            System.out.println("Trying to play rent card: "+c.getName());
+            System.out.println("On property slot "+propSlot.getPropertyColor());
+
+            //check rent type
+            if (c.getType().contains("wild-rent")){
+                System.out.println("Checking if victim has just say no.");
+                //check if victim has a just say no
+            /*    if (victim.hasJustSayNo()){
+                    //if has just say no
+                    return 0; //may not have enough time to add just say no functionality
+                } */
+       //         else{
+                    rentValue = propSlot.getRentAmount();
+                    return rentValue;
+       //         }
+            }
+            else if (c.getType().contains("rent")){
+                //check property slot color same as rent here
+                if (rentColor.contains(propertyColor)){ //will need to improve to check if player can player rent on railroad-and-light-blue if rent is railroad-and-utility. 
+                    rentValue = propSlot.getRentAmount();
+                    return rentValue;
+                }
+            }
+
+            return -1; //if can not play
+        }
+        catch(Exception e){
+            System.out.println("Error in canPlayRentCard() in Player.java. e: "+e);
+        }
+        
+        return -1;
+        
+    }
+    
+    /**
+     * checks if person has to pay rent or not.
+     * @param rent
+     * @param renter
+     * @return 
+     */
+    private boolean hasToPayRent(){
+     /*   if (hasJustSayNo()){
+            return false;
+        }
+        else*/ if (totalMoney == 0 && properties.isEmpty()){
+            return false;
+        }
+        
+        return true;
+    }
+
+    
     /**
      * Checks if any properties are completed
      * @param propSlot 
@@ -403,6 +500,43 @@ public class Player{
         }
             
     }
+    
+    /**
+     * Checks to see if player has a just say no card.
+     * @return 
+     */
+    protected boolean hasJustSayNo(){
+        try{
+            for (Card c : hand){
+                if (c.getName().contains("just-say-no")){
+                    return true;
+                }
+            }
+            return false;
+        }
+        catch(Exception e){
+            System.out.println("Error in hasJustSayNo() in Player.java");
+        }
+        return false;
+    }
+    
+    /**
+     * Checks to see if player has absolutely 0 cards. No money, properties, nothing in hand.
+     * @return true if 0 cards
+     */
+    public boolean hasNoCards(){
+        try{
+            if (hand.isEmpty() && money.isEmpty() && properties.isEmpty()){
+                return true;
+            }
+            return false;
+        }
+        catch(Exception e){
+            System.out.println("Error in hasNoCards() in Player. e: "+e);
+        }
+        return false;
+    }
+    
     
     /**
      * Checks if player is human or bot
