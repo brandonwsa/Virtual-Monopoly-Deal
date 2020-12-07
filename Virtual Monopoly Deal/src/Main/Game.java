@@ -141,6 +141,7 @@ public class Game {
                         bot_1Turn = false;
                         playCount = 0;
                         b_dealed = false;
+                        discardCardAfterTurn(bot_1);
                     }
                 }
                 else if (bot_2Turn){
@@ -158,6 +159,7 @@ public class Game {
                         bot_2Turn = false;
                         playCount = 0;
                         b_dealed = false;
+                        discardCardAfterTurn(bot_2);
                         System.out.println("Taking player turn...");//for testing
                     }
                 }
@@ -785,24 +787,33 @@ public class Game {
         playCount++;
     }
     
-  private void discardCardAfterTurn(Player p){
+    /**
+     * Discards any extra cards from hand at end of turn.
+     * @param p 
+     */
+    private void discardCardAfterTurn(Player p){
         int count = 0;
-        Card d;
-         List<Card> hand = p.getHand();
-         //counts current cards in deck
-            for (Card c : hand){
-                if (c != null){
-                   count++;
-                   System.out.println(count);
-                }
-                if(c!=null & count > 7){
-                    handSlotPressed = count;
-                    p.discardCard(c, discardDeck);
-                    GPS.removeCardImageFromHand(handSlotPressed);
-                    count--;
- 
-                }
+        List<Card> hand = p.getHand();
+        
+        //counts current cards in deck
+        for (Card c : hand){
+            if (c != null){
+               count++;
+               System.out.println(count);
             }
+            if(c!=null && p.amountOfCardsInHand() > 7){
+                System.out.println("Discarding card "+c.getName()+" from "+p.getName()+" hand");
+                handSlotPressed = count;
+                p.discardCard(c, discardDeck);
+                if (p.isHuman()){
+                    GPS.removeCardImageFromHand(handSlotPressed);
+                }
+                GPS.addCardImageToDiscardDeck(c.getImagePath());
+
+            }
+        }
+
+         
             
     }
   

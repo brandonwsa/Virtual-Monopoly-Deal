@@ -394,4 +394,18 @@ public class PlayerTest {
        assertEquals(instance.LAST_EXCEPTION,null);
     }
     
+    /**
+     * Test of amountOfCardsInHand method, of class Player.
+     */
+    @Test
+    public void testAmountOfCardsInHand(){
+        System.out.println("amountOfCardsInHand");
+        Player instance = new Player();
+        Card c = new Card(0);
+        instance.addToHand(c);
+        int expResult = 1;
+        int result = instance.amountOfCardsInHand();
+        assertEquals(result, expResult);
+    }
+    
 }

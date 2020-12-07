@@ -418,6 +418,23 @@ public class Player{
     }
     
     /**
+     * Checks to see how many cards are in the player's hand
+     * @return 
+     */
+    public int amountOfCardsInHand(){
+        
+        int count = 0;
+        
+        for (Card c : hand){
+            if (c != null){
+                count++;
+            }
+        }
+        
+        return count;
+    }
+    
+    /**
      * Iterates through hand to see how many null cards. If all null, then hand is empty.
      * @return true if empty
      */
