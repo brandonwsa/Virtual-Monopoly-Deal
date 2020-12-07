@@ -468,8 +468,7 @@ public class Game {
                            return;
                         }
                         else if (cardType.equals("wild-rent") && slotButtonPressed == 2){
-                           //playWildRentCard();
-                           playRentCard(player);
+                           playWildRentCard(player);
                            return;
                         }
                         else if ((cardType.equals("action") && slotButtonPressed != 1) || cardName.contains("house") || cardName.contains("hotel")){
@@ -559,7 +558,7 @@ public class Game {
                 }
                 else if (cardType.equals("wild-rent")/* && play == 5*/){
                    System.out.println("\nBot is playing a wild-rent card...");
-                   playWildRentCard();
+                   playWildRentCard(b);
                    return;
                 }
                 else if ((cardType.equals("action")/* && play == 3*/) || cardName.contains("house") || cardName.contains("hotel")){
@@ -734,7 +733,7 @@ public class Game {
      * May refactor these in future for bot objects to use these methods as well
      */
     private void playRentCard(Player p){
-        Card c = p.getCardToPlay();
+/* UNCOMMENT HERE        Card c = p.getCardToPlay();
         Player victim; //victim of rent card.
     //    Player victim_2; //kept commented out till reqular rent functionality is proper.
         int whoToPlayAgainst = 0; //will be 2 if player2, 3 if payer 3. Bot wont use this.
@@ -763,7 +762,7 @@ public class Game {
                         System.out.println("Something while sleeping in playRentCard() in Game.java. e: "+e);
                     }
                 }
-
+*/
                 //get victim. KEPT OUT ATM till regular rent functionality is proper.
         //        victim = getVictim(whoToPlayAgainst);
         //        System.out.println("You're playing rent card against: "+victim.getName());
@@ -810,7 +809,7 @@ public class Game {
                     System.out.println("Rent value for "+victim.getName()+" is "+rentValue);
                 }  
             }     */
-        }
+/* UNCOMMENT HERE        }
         else { //if bot playing rent card.
             victim = getVictim(1); //temporary always play rent against human (player)
         }
@@ -846,13 +845,6 @@ public class Game {
                         //reset prompt display value
                         GPS.setYourMoneySlotButtonAction(false);
                         
-                        //sleep for sometime.
-                        try{
-                            Thread.sleep(100);
-                        }
-                        catch(Exception e){
-                            System.out.println("Something while sleeping in playRentCard() in Game.java. e: "+e);
-                        }
                         
                     }
                     
@@ -869,7 +861,7 @@ public class Game {
             }
             else {
                 //have victim pay rent
-                boolean paid = victim.payRent(rentValue, p);
+                ArrayList<Card> paymentCards = victim.payRent(rentValue, p);
                 
                 //if victim does not have to pay cause they have no money and no properties
                 if (paid == false){
@@ -893,8 +885,8 @@ public class Game {
         else if (rentValue == -1){
             GPS.displayActionCardPrompt(false);
             return; //return out if unable to play for somereason. Does not increase play count.
-        }
-        
+        } 
+*/        
         
     }
     
@@ -902,8 +894,118 @@ public class Game {
      * Plays wild rent card player wants to
      * May refactor these in future for bot objects to use these methods as well
      */
-    private void playWildRentCard(){
-        playCount++;
+    private void playWildRentCard(Player p){
+        Card c = p.getCardToPlay();
+        Player victim; //victim of rent card.
+        int whoToPlayAgainst = 0; //will be 2 if player2, 3 if payer 3. Bot wont use this.
+        int propertySlot[] = {0, 0};
+        
+        System.out.println("Wild-rent card being played.");
+        System.out.println("click money pile or a property to play rent card");
+        
+        if (p.isHuman()){
+            //display message to have player pick a property slot in GPS and victim "play against" button
+            //^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            GPS.setActionCardPrompt("Pick a player to play against and click a property to charge rent for!");
+            GPS.displayActionCardPrompt(true);
+
+            while (whoToPlayAgainst == 0 || propertySlot[0] == 0){
+                propertySlot = GPS.getYourPropertySlotPressed();
+                whoToPlayAgainst = GPS.getVictim();
+                System.out.println("Waiting for player to play against and property to be chosen....");
+
+                //sleep for sometime.
+                try{
+                    Thread.sleep(100);
+                }
+                catch(Exception e){
+                    System.out.println("Something while sleeping in playRentCard() in Game.java. e: "+e);
+                }
+            }
+        }
+        else { //if bot playing rent card.
+            victim = getVictim(1); //temporary always play rent against human (player)
+        }
+        
+      
+        //get victim
+        victim = getVictim(whoToPlayAgainst);
+        System.out.println("You're playing rent card against: "+victim.getName());
+        
+        //get rent value
+        int rentValue = p.canPlayRentCard(propertySlot, victim);
+        System.out.println("Rent value for "+victim.getName()+" is "+rentValue);
+        
+        System.out.println("Property to get rent from: "+propertySlot[0]+" "+propertySlot[1]);
+        
+        GPS.setActionCardPrompt(victim.getName()+" has to pay "+rentValue+" to "+p.getName());
+        
+        if (rentValue > 0){
+            //if victim is human, will prompt the player to pick cards to pay rent with.
+            if (victim.isHuman()){
+                while (rentValue > 0 || p.hasNoCards() == true){ //loop until rent is paid off or player has 0 cards.
+                    //check if user clicked money pile or a property
+                    if (GPS.getYourMoneySlotButtonAction() == true){
+                        //display prompt to have player type what cards to pay with.
+                        //^^^^^^^^^^^^^^^^^^^
+                        //set money combo box with your money
+                        System.out.println("Waiting to get money...");
+                        List<Card> money = p.getMoney(); //capture player's money.
+                        ArrayList<String> moneyCards = p.getCardNamesWithValuesFromMoney();
+                        GPS.setMoneyComboBox(moneyCards);
+                        GPS.displayRentPaymentPrompt(true);
+                        
+                        //reset prompt display value
+                        GPS.setYourMoneySlotButtonAction(false);
+                        
+                        
+                    }
+                    
+                    
+                    //sleep for sometime.
+                    try{
+                        Thread.sleep(100);
+                    }
+                    catch(Exception e){
+                        System.out.println("Something while sleeping in playRentCard() in Game.java. e: "+e);
+                    }
+                }
+                //display prompt to pay rent
+            }
+            else {
+                
+                //check if victim has to pay rent if they dont have any money or properties to pay with
+                if (victim.hasToPayRent()){
+                    //get the cards victim will pay with then pay rent and update GUI
+                    ArrayList<Card> paymentCards = victim.getPaymentCards(rentValue);
+                    
+                    //pay the rent with payment cards
+                    
+                    //update GUI
+                }
+                else {
+                    System.out.println("Victim doesnt have money or properties to pay with.");
+                    playCount++;
+                    return;
+                }
+                
+                
+                //display cards given to renter.
+            }
+            
+            
+            playCount++;
+            GPS.displayActionCardPrompt(false);
+        }
+        else if (rentValue == 0){ //victim has just say no
+            //see if victim wants to play just say no here.
+            playCount++;
+            GPS.displayActionCardPrompt(false);
+        }
+        else if (rentValue == -1){
+            GPS.displayActionCardPrompt(false);
+            return; //return out if unable to play for somereason. Does not increase play count.
+        }
     }
     
     /**

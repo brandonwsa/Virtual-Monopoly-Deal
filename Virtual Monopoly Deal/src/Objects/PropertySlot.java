@@ -367,6 +367,17 @@ public class PropertySlot{
         return 6;
     }
     
+    /**
+     * Removes property from property slot.
+     * @param c 
+     */
+    public void removeProperty(Card c){
+        propertiesInSlot.remove(c);
+        amountOfFreePropertySlots++;
+        setRentAmount();
+        propertyColor = null;
+    }
+    
     public ArrayList<Card> getPropertiesInSlot(){return propertiesInSlot;}
     
     

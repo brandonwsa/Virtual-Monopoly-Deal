@@ -409,18 +409,49 @@ public class Player{
         removeCardFromHand(c);
     }
     
-    
-    public boolean payRent(int rent, Player renter){
+    /**
+     * Pays rent to renter.
+     * @param rent
+     * @param renter
+     * @return ArrayList of cards used to pay rent.
+     */
+    public ArrayList getPaymentCards(int rent){
+        ArrayList<Card> paymentCards = new ArrayList<Card>();
         
-        if (hasToPayRent() == false){
-            return false;
-        }
-        
-        while (rent > 0){
+        //if victim has less money than rent, give all money to renter and the rest in properties.
+        if (totalMoney < rent){
+            //get all the money cards
+            for (Card c : money){
+                totalMoney = totalMoney - c.getValue();
+                rent = rent - c.getValue();
+                money.remove(c);
+                paymentCards.add(c);
+            }
             
+            //find property slots that are not complete
+            for (PropertySlot prop : properties){
+                if (prop.getIsCompleted() == false){
+                    //find properties in propertySlot to pay with
+                    //prioritize single properties
+                    ArrayList<Card> propsInSlot = prop.getPropertiesInSlot();
+               //     if (prop.getTotalProperties() == 1){
+                    for (Card c : propsInSlot){
+                        rent = rent - c.getValue();
+                        prop.removeProperty(c);
+                        paymentCards.add(c);
+                        
+                        if (rent <= 0){
+                            return paymentCards;
+                        }
+                    }
+             //       }
+                }
+            }
         }
         
-        return true;
+        //if victim has exact or more money...
+        
+        return paymentCards;
     }
     
     /**
@@ -478,7 +509,7 @@ public class Player{
      * @param renter
      * @return 
      */
-    private boolean hasToPayRent(){
+    public boolean hasToPayRent(){
      /*   if (hasJustSayNo()){
             return false;
         }
